@@ -1,0 +1,87 @@
+ html {
+    background-image:linear-gradient( lightblue, white);
+ }
+ body{
+    margin: auto;
+    font-family: "Times New Roman", Times, serif;
+    
+
+}
+
+#page {
+   margin-top: 40px;
+   width: 90%;
+   
+   margin-left: auto;
+   margin-right: auto;
+
+   -webkit-box-shadow: 0px 10px 14px 0px rgba(0,0,0,0.75);
+   -moz-box-shadow: 0px 10px 14px 0px rgba(0,0,0,0.75);
+   box-shadow: 0px 10px 14px 0px rgba(0,0,0,0.75);
+}
+aside {
+    float: left;
+    width: 220px;
+}
+
+/*********************** container ***********************/
+.contain{
+    
+
+}
+/*********************** header ***********************/
+#choice-lang {
+    display: flex;
+    justify-content: space-around;
+    
+    margin-left: 80%;
+    margin-right: 50px;
+
+}
+
+.lang-choice {
+    width: 55px;
+}
+.ban {
+    /*background-color: white;*/
+}
+#carouselExampleIndicators {
+    width: 55%;
+}
+
+/*********************** nav ***********************/
+nav{
+    display: flex;
+    font-size: 12px;
+}
+.nav-item{
+    background-image:linear-gradient( rgb(187, 206, 212), rgb(128, 151, 163));
+    border: solid 0.1px black;
+}
+
+.img-nav{
+    background-image:linear-gradient( rgb(187, 206, 212), rgb(128, 151, 163));
+}
+
+/*********************** aside ***********************/
+aside{
+    background-image: url("../images/aside.png");
+    font-size: 12px;
+}
+
+/*********************** footer ***********************/
+footer {
+    display: flex;
+    justify-content: center;
+}
+#footer {
+    display: flex;
+    justify-content: space-around;
+    
+    position: absolute;
+    bottom: 0;
+    width: 500px;
+    height: auto;
+    background: lightblue;
+    color: #FFFFFF;
+}
