@@ -1,22 +1,25 @@
 
     <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link active" href="#" width="120px">ACCUEIL</a>
+        <div class="img-nav" >
+            <img src="assets/images/feux2" alt="..."   >
+        </div>
+        <li class="nav-item ">
+            <a class="nav-link active" href="#" >ACCUEIL</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" width="120px">PRESENTATION</a>
+            <a class="nav-link" href="#" >PRESENTATION</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" width="120px">CONTEXTES D'INTERVENTIONS</a>
+            <a class="nav-link" href="#" >CONTEXTES D'INTERVENTIONS</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" width="120px">AUDIT & DIAGNOSTIC STRATEGIQUES</a>
+            <a class="nav-link" href="#" >AUDIT & DIAGNOSTIC STRATEGIQUES</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" width="120px">ACCOMPAGNEMENT OPERATIONNEL</a>
+            <a class="nav-link" href="#" >ACCOMPAGNEMENT OPERATIONNEL</a>
         </li>
         <li class="nav-item" width="80px">
-            <a class="nav-link" href="#" width="120px">DIRECTION FINANCIERE EXTERNALISEE</a>
+            <a class="nav-link" href="#" >DIRECTION FINANCIERE EXTERNALISEE</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#" >CONTACT & EQUIPE</a>
