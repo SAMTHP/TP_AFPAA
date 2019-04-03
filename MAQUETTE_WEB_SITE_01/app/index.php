@@ -1,133 +1,143 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Titre principal de la page</title>
+		<meta charset="utf-8">
+		<meta name="description" content="165c. uniques">
+		<!-- For Internet Explhorreur : to force css3 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- Tablettes 'n' Mobiles -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- main css and js -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="assets/css/style.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="assets/js/javascript.js"></script>
     </head>
+
     <body>
-        <div id="page">
-            <div class="contain">
-                <header>
-                    <div id="choice-lang" >
-                        <div class="lang-choice">
-                            <a href="#" ><img src="assets/images/flag-french" alt="Français" ></a>
-                        </div>
-                        
-                        <div class="lang-choice">
-                            <a href="#" ><img src="assets/images/flag-britain" alt="Français" ></a>
-                        </div>
+        
+        <div id="page" >
+            <!-- Entête de la zone considérée -->
+            <header>
+                <div id="choice-lang" >
+                    
+                    <div class="lang-choice">
+                        <a href="#" ><img src="assets/images/flag-french" alt="Français" ></a>
                     </div>
 
-                    <div class="ban row">
-                        
-                            <div class="logo col-3">
-                                <img src="assets/images/logo" class="d-block w-100" alt="..." height="250px">
-                            </div>
-                            <div class="1"></div>
-                            <div id="carouselExampleIndicators" class="carousel slide col-5" data-ride="carousel" >
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-                                </ol>
-                                <div class="carousel-inner" >
-                                    <div class="carousel-item active carousel-image">
-                                        <img src="assets/images/carousel-1" class="d-block w-100" alt="..." height="250px">
-                                    </div>
-                                    <div class="carousel-item carousel-image">
-                                        <img src="assets/images/carousel-2" class="d-block w-100" alt="..." height="250px">
-                                    </div>
-                                    <div class="carousel-item carousel-image">
-                                        <img src="assets/images/carousel-4" class="d-block w-100" alt="..." height="250px">
-                                    </div>
-                                    <div class="carousel-item carousel-image">
-                                        <img src="assets/images/carousel-5" class="d-block w-100" alt="..." height="250px">
-                                    </div>
-                                    <div class="carousel-item carousel-image">
-                                        <img src="assets/images/carousel-6" class="d-block w-100" alt="..." height="250px">
-                                    </div>
-                                    <div class="carousel-item carousel-image">
-                                        <img src="assets/images/carousel-7" class="d-block w-100" alt="..." height="250px">
-                                    </div>
-                                    <div class="carousel-item carousel-image">
-                                        <img src="assets/images/carousel-8" class="d-block w-100" alt="..." height="250px">
-                                    </div>
-                                    <div class="carousel-item carousel-image">
-                                        <img src="assets/images/carousel-9" class="d-block w-100" alt="..." height="250px">
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                            <div class="3"></div>
+                    <div class="lang-choice">
+                        <a href="#" ><img src="assets/images/flag-britain" alt="Français" ></a>
                     </div>
-                </header>
-
-                <nav height="40px;">
-                    <div class="img-nav">
-                        <img src="assets/images/feux2" class="d-block w-100" alt="..." height="35px" width="300px" >
-                    </div>
-                    <div>
-                        <?php require 'view/nav.php' ?>
-                    </div>
-                </nav>
-                
-                <div class="row">
-                    <aside class="col-3">
-                        
-                            <a class="dropdown-item" href="#">PRESENTATION</a>
-                            <a class="dropdown-item " href="#">METHODOLOGIE</a>
-                            <a class="dropdown-item" href="#">NOTRE CULTURE & NOS VALEURS</a>
-                            <a class="dropdown-item" href="#">A QUI S'ADRESSE NOTRE OFFRE ?</a>
-                        
-                    </aside>
-                    <section class="col-9">
-                        <p>
-                            test Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, dolor rem? Corporis, nesciunt. Perspiciatis id temporibus hic ipsa fugit quasi. Non quod sint adipisci nemo corrupti quas voluptatem rerum. Inventore.
-                        </p>
-                        <p>
-                            test Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, dolor rem? Corporis, nesciunt. Perspiciatis id temporibus hic ipsa fugit quasi. Non quod sint adipisci nemo corrupti quas voluptatem rerum. Inventore.
-                        </p>
-                        <p>
-                            test Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, dolor rem? Corporis, nesciunt. Perspiciatis id temporibus hic ipsa fugit quasi. Non quod sint adipisci nemo corrupti quas voluptatem rerum. Inventore.
-                        </p>
-                        <p>
-                            test Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, dolor rem? Corporis, nesciunt. Perspiciatis id temporibus hic ipsa fugit quasi. Non quod sint adipisci nemo corrupti quas voluptatem rerum. Inventore.
-                        </p>
-                        <p>
-                            test Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, dolor rem? Corporis, nesciunt. Perspiciatis id temporibus hic ipsa fugit quasi. Non quod sint adipisci nemo corrupti quas voluptatem rerum. Inventore.
-                        </p>
-                        
-                        
-                    </section>
                 </div>
-            </div>
+
+                <div class="banniere">
+                    <div class="logo">
+                        <img id="logo" src="assets/images/logo" alt="..." height="250px">
+                    </div>
+                    <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel" >
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                        </ol>
+                        <div class="carousel-inner" >
+                            <div class="carousel-item active carousel-image">
+                                <img src="assets/images/carousel-1" class="d-block w-100" alt="..." height="250px">
+                            </div>
+                            <div class="carousel-item carousel-image">
+                                <img src="assets/images/carousel-2" class="d-block w-100" alt="..." height="250px">
+                            </div>
+                            <div class="carousel-item carousel-image">
+                                <img src="assets/images/carousel-4" class="d-block w-100" alt="..." height="250px">
+                            </div>
+                            <div class="carousel-item carousel-image">
+                                <img src="assets/images/carousel-5" class="d-block w-100" alt="..." height="250px">
+                            </div>
+                            <div class="carousel-item carousel-image">
+                                <img src="assets/images/carousel-6" class="d-block w-100" alt="..." height="250px">
+                            </div>
+                            <div class="carousel-item carousel-image">
+                                <img src="assets/images/carousel-7" class="d-block w-100" alt="..." height="250px">
+                            </div>
+                            <div class="carousel-item carousel-image">
+                                <img src="assets/images/carousel-8" class="d-block w-100" alt="..." height="250px">
+                            </div>
+                            <div class="carousel-item carousel-image">
+                                <img src="assets/images/carousel-9" class="d-block w-100" alt="..." height="250px">
+                            </div>
+                        </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                    </div>
+                <div>
+            </header>
+
+            <!-- Nav. principale de la page -->
+            <nav>
+                <?php require 'view/nav.php' ?>
+            </nav>
+
+            <!-- Les à-cotés de la page -->
+            <aside>
+                <div id="menu-aside">
+                    <a class="dropdown-item" href="#">PRESENTATION</a>
+                    <a class="dropdown-item " href="#">METHODOLOGIE</a>
+                    <a class="dropdown-item" href="#">NOTRE CULTURE & NOS VALEURS</a>
+                    <a class="dropdown-item" href="#">A QUI S'ADRESSE NOTRE OFFRE ?</a>
+                </div>
+                <div class="box-img-aside" >
+                    <img src="assets/images/logo" alt="..." class="img-aside" >
+                </div>
+            </aside>
+
+            <!-- Contenu textuel de la page -->
+            <section>
+                <div style="margin-left:20px;">
+                    <br>
+                    <h6>QUI SOMMES NOUS ?</h6 style="margin-bottom:-10%">
+                    <hr>
+                    <div class=row>
+                        <p class="col-8">
+                            De par la diversité de nos compétences, de notre expertise et de nos savoir-faire, nous apportons aux dirigeants les informations et les éléments d’analyses propres à éclairer leurs réflexion, à guider leurs choix afin d’arriver aux solutions pragmatiques et opérationnelles requises.
+                            <br><br>
+                            Notre expérience et notre compétence à l’international nous placent parmi les partenaires privilégiés de groupes internationaux et de sociétés étrangères souhaitant s’implanter en France.
+                        </p>
+                        <img src="assets/images/chess" alt="..." class=" img-section col-3"  >
+                    </div>
+                    <br>
+                    <div class=row>
+                        <p class="col-11">
+                            Notre cabinet a été créé en 2008 par Philippe Campos, Associé Gérant, Expert Comptable et Commissaire aux Comptes. Il est également Expert Financier auprès des tribunaux (Expert inscrit près la Cour d’Appel de Paris et de Versailles, Expert devant la Cour Pénale Internationale de La Haye). Il peut intervenir en qualité d’Arbitre, notamment sur les litiges financiers (Arbitre agréé par le Centre de Médiation et d’Arbitrage de Paris, membre de l’Association Française d’Arbitrage). Il est assisté d’une équipe de professionnels expérimentés.
+                        </p>
+                    </div>
+                    <div class=row>
+                        <p class="col-11">
+                            Nous sommes des professionnels du chiffre avec un positionnement sur des prestations sur-mesure et à haute valeur ajoutée. La volonté du fondateur est de rester un cabinet à taille humaine afin de conserver notre très forte réactivité.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
-            
+        
+        <!-- Pied-de-page de la page -->
         <footer>
             <div id="footer">
                 <?php require 'view/footer.php' ?>
             </div>
         </footer>
-        
 
-        
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
