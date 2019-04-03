@@ -16,18 +16,17 @@
     </head>
 
     <body>
-        
         <div id="page" >
             <!-- Entête de la zone considérée -->
             <header>
                 <div id="choice-lang" >
                     
                     <div class="lang-choice">
-                        <a href="#" ><img src="assets/images/flag-french" alt="Français" ></a>
+                        <a href="#" ><img src="assets/images/flag-french" alt="Français" class="french"><hr class="hr-french"></a>
                     </div>
 
                     <div class="lang-choice">
-                        <a href="#" ><img src="assets/images/flag-britain" alt="Français" ></a>
+                        <a href="#" ><img src="assets/images/flag-britain" alt="Français" class="britain"><hr class="hr-britain"></a>
                     </div>
                 </div>
 
