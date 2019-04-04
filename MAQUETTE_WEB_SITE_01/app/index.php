@@ -11,7 +11,10 @@
         <!-- main css and js -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link type="text/css" rel="stylesheet" href="assets/css/style.css">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <!--
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        -->
+        <script type="text/javascript" src="assets/js/jquery_3_3_1.js"></script>
         <script type="text/javascript" src="assets/js/javascript.js"></script>
     </head>
 
@@ -91,10 +94,10 @@
             <!-- Les à-cotés de la page -->
             <aside>
                 <div id="menu-aside">
-                    <a class="dropdown-item" href="#">PRESENTATION</a>
-                    <a class="dropdown-item " href="#">METHODOLOGIE</a>
-                    <a class="dropdown-item" href="#">NOTRE CULTURE & NOS VALEURS</a>
-                    <a class="dropdown-item" href="#">A QUI S'ADRESSE NOTRE OFFRE ?</a>
+                    <a class="dropdown-item" id="presentation" href="#">PRESENTATION</a>
+                    <a class="dropdown-item" id="methodologie" href="#">METHODOLOGIE</a>
+                    <a class="dropdown-item" id="culture" href="#">NOTRE CULTURE & NOS VALEURS</a>
+                    <a class="dropdown-item" id="offre" href="#">A QUI S'ADRESSE NOTRE OFFRE ?</a>
                 </div>
                 <div class="box-img-aside" >
                     <img src="assets/images/logo" alt="..." class="img-aside" >
@@ -103,30 +106,7 @@
 
             <!-- Contenu textuel de la page -->
             <section>
-                <div style="margin-left:20px;">
-                    <br>
-                    <h6>QUI SOMMES NOUS ?</h6 style="margin-bottom:-10%">
-                    <hr>
-                    <div class=row>
-                        <p class="col-8">
-                            De par la diversité de nos compétences, de notre expertise et de nos savoir-faire, nous apportons aux dirigeants les informations et les éléments d’analyses propres à éclairer leurs réflexion, à guider leurs choix afin d’arriver aux solutions pragmatiques et opérationnelles requises.
-                            <br><br>
-                            Notre expérience et notre compétence à l’international nous placent parmi les partenaires privilégiés de groupes internationaux et de sociétés étrangères souhaitant s’implanter en France.
-                        </p>
-                        <img src="assets/images/chess" alt="..." class=" img-section col-3"  >
-                    </div>
-                    <br>
-                    <div class=row>
-                        <p class="col-11">
-                            Notre cabinet a été créé en 2008 par Philippe Campos, Associé Gérant, Expert Comptable et Commissaire aux Comptes. Il est également Expert Financier auprès des tribunaux (Expert inscrit près la Cour d’Appel de Paris et de Versailles, Expert devant la Cour Pénale Internationale de La Haye). Il peut intervenir en qualité d’Arbitre, notamment sur les litiges financiers (Arbitre agréé par le Centre de Médiation et d’Arbitrage de Paris, membre de l’Association Française d’Arbitrage). Il est assisté d’une équipe de professionnels expérimentés.
-                        </p>
-                    </div>
-                    <div class=row>
-                        <p class="col-11">
-                            Nous sommes des professionnels du chiffre avec un positionnement sur des prestations sur-mesure et à haute valeur ajoutée. La volonté du fondateur est de rester un cabinet à taille humaine afin de conserver notre très forte réactivité.
-                        </p>
-                    </div>
-                </div>
+                
             </section>
         </div>
         
@@ -136,7 +116,7 @@
                 <?php require 'view/footer.php' ?>
             </div>
         </footer>
-
+        <script type="text/javascript" src="assets/js/aside.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
