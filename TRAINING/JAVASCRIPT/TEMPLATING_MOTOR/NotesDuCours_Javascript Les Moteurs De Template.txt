@@ -1,0 +1,105 @@
+﻿Titre du cours : JavaScript : Les moteurs de template
+
+Description : Si vous êtes développeur front-end, découvrez sans tarder les moteurs de template pour JavaScript. Après avoir créé un moteur en jQuery, votre formateur Julien Moulin vous initie aux moteurs Mustache, Handlebars et Dust. Définissez des objets puis apprenez à manipuler les données avec des boucles et des filtres. Grâce à cette formation, vous saurez dynamiser une vue avec n'importe quel langage et un peu de JavaScript.
+
+
+***********************************************
+Chapitre : 1. Découvrir les moteurs de template JavaScript
+***********************************************
+
+
+-----------------------------------------------
+Vidéo : Découvrir les principaux outils
+-----------------------------------------------
+Heure de la note :    Texte de la note :             
+
+0:00:34            - node, yarn                   
+
+0:00:34            Installation des outils :      
+
+0:00:42            extension : dust language support, handlebars, handlebars preview, html css support, html snippets, jQuery Code Snippets, jslint, latest TypeScript and javascript, mustache 
+
+
+-----------------------------------------------
+Vidéo : Apprendre l'histoire des moteurs de template JS
+-----------------------------------------------
+Heure de la note :    Texte de la note :             
+
+0:00:05            extension chrome : JSONVIEW, jQuery Debugger 
+
+
+-----------------------------------------------
+Vidéo : Connaître les frameworks les plus répandus
+-----------------------------------------------
+Heure de la note :    Texte de la note :             
+
+0:00:09            FRAMEWORK les plus intéressants : 
+
+0:00:11            - Mustache                     
+
+0:00:28            - Handlebars                   
+
+0:01:23            - Dust : Créé par linkedin     
+
+0:01:45            - Angular, react               
+
+
+***********************************************
+Chapitre : 2. Débuter avec un moteur en jQuery
+***********************************************
+
+
+-----------------------------------------------
+Vidéo : Créer une vue avec jQuery
+-----------------------------------------------
+Heure de la note :    Texte de la note :             
+
+0:00:25            Etape 1 : Création de l'index
+  
+
+0:00:45            - Intégration de la librairie jQuery directement en ligne de commande : yarn add jquery 
+
+
+0:01:06            - Relier jQuery sur l'index :
+ 
+		   <script src="node_modules/jquery/dist/jquery.js"></script> 
+
+
+0:01:20            - Vérification si tout se passe dans le navigateur : Voir si dans le network en console, est présent jquery.js 
+
+0:01:38            Etape 2 : Implémenter un moteur de template
+ 
+
+0:01:52            - Création d'un script personnalisé
+ 
+
+0:02:26            - Créer un container dans le body :
+		   
+	           <div id="container">
+
+			<span class="title"></span>
+		
+        <span class="content"></span>
+		
+   </div>
+ 
+
+0:03:06            - Travailler avec un objet dans le script :
+
+		   var object = {title: '<h1>Mon titre</h1>', content: '<p>lorem ipsum</p>'}; 
+
+
+0:03:25            - Dynamisation de l'objet en préparant les différents container qui vont recevoir l'information : 
+
+
+0:03:34            var title = $('.title');
+
+		   var content = $('.content'); 
+
+
+0:03:47            - Consommation de l'objet en y injectant des informations :
+ 
+
+0:03:49            titleContainer.html(object.title);
+
+		   contentContainer.html(object.content); 

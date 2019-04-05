@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template</title>
+</head>
+<body>
+    <div id="container">
+        <span class="title">
+
+        </span>
+        <span class="content">
+            
+        </span>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        var object = {title: '<h1>Mon titre</h1>', content: '<p>lorem ipsum</p>'};
+
+        var titleContainer = $('.title');
+        var contentContainer = $('.content');
+
+        titleContainer.html(object.title);
+        contentContainer.html(object.content);
+    </script>
+</body>
+</html>
