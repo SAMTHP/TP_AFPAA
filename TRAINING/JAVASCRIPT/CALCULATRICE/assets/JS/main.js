@@ -7,53 +7,55 @@ class Calculatrice
 
     Choice() {
         var array = this.choice;
+
         $('#one').click(function(){
-            $('#text').text($('#one').text());
+
+            $('#text').text($('#text').text()+$('#one').text());
             array.push($('#one').text());
            
         })
         
         $('#two').click(function(){
-            $('#text').text($('#two').text());
+            $('#text').text($('#text').text()+$('#two').text());
             array.push($('#two').text());
         })
         
         $('#three').click(function(){
-            $('#text').text($('#three').text());
+            $('#text').text($('#text').text()+$('#three').text());
             array.push($('#three').text());
         })
         
         $('#four').click(function(){
-            $('#text').text($('#four').text());
+            $('#text').text($('#text').text()+$('#four').text());
             array.push($('#four').text());
         })
         $('#five').click(function(){
-            $('#text').text($('#five').text());
+            $('#text').text($('#text').text()+$('#five').text());
             array.push($('#five').text());
         })
         
         $('#six').click(function(){
-            $('#text').text($('#six').text());
+            $('#text').text($('#text').text()+$('#six').text());
             array.push($('#six').text());
         })
         
         $('#seven').click(function(){
-            $('#text').text($('#seven').text());
+            $('#text').text($('#text').text()+$('#seven').text());
             array.push($('#seven').text());
         })
         
         $('#eight').click(function(){
-            $('#text').text($('#eight').text());
+            $('#text').text($('#text').text()+$('#eight').text());
             array.push($('#eight').text());
         })
         
         $('#nine').click(function(){
-            $('#text').text($('#nine').text());
+            $('#text').text($('#text').text()+$('#nine').text());
             array.push($('#nine').text());
         })
         
         $('#zero').click(function(){
-            $('#text').text($('#zero').text());
+            $('#text').text($('#text').text()+$('#zero').text());
             array.push($('#zero').text());
         })
         
