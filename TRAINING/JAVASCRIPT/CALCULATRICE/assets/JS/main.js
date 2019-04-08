@@ -89,24 +89,16 @@ class Calculatrice
         })
     }
     
-    
     getChoice()
     {
         return this.choice;
     }
 
     operation(array)
-    {
-        array.forEach(element => {
-            /*for(var i = 0;i<array.lengt;i++){
-                element[]
-            }*/
-            console.log(element);
-            if(element[1] == "+"){
-                var result = element[0] + element[2];
-                $('#text').text() = result;
-            }
-        });
+    {    
+        var result = parseInt(array[0],10)  + parseInt(array[2],10);
+        $('#text').text(result);
+        console.log(result);
     }
 }
 
@@ -115,6 +107,15 @@ var choice = calculatrice.Choice();
 
 var getChoice = calculatrice.getChoice();
 
-    calculatrice.operation(getChoice);
-    console.log('test');
 
+$('#result').click(function(){
+    calculatrice.operation(getChoice);
+});
+
+$('#reset').click(function(){
+    
+    calculatrice = new Calculatrice();
+    calculatrice.choice = [];
+    choice = calculatrice.Choice();
+    getChoice = calculatrice.getChoice();
+})
