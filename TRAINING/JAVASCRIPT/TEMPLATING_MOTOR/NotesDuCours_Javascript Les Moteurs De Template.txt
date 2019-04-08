@@ -55,51 +55,114 @@ Vidéo : Créer une vue avec jQuery
 Heure de la note :    Texte de la note :             
 
 0:00:25            Etape 1 : Création de l'index
-  
-
 0:00:45            - Intégration de la librairie jQuery directement en ligne de commande : yarn add jquery 
-
-
 0:01:06            - Relier jQuery sur l'index :
- 
 		   <script src="node_modules/jquery/dist/jquery.js"></script> 
-
-
-0:01:20            - Vérification si tout se passe dans le navigateur : Voir si dans le network en console, est présent jquery.js 
+0:01:20            - Vérification si tout se passe bien dans le navigateur : Voir si dans le network en console, est présent jquery.js 
 
 0:01:38            Etape 2 : Implémenter un moteur de template
  
-
 0:01:52            - Création d'un script personnalisé
- 
-
 0:02:26            - Créer un container dans le body :
-		   
 	           <div id="container">
-
 			<span class="title"></span>
-		
-        <span class="content"></span>
-		
-   </div>
- 
-
+        		<span class="content"></span>
+   		   </div>
 0:03:06            - Travailler avec un objet dans le script :
-
 		   var object = {title: '<h1>Mon titre</h1>', content: '<p>lorem ipsum</p>'}; 
-
-
 0:03:25            - Dynamisation de l'objet en préparant les différents container qui vont recevoir l'information : 
-
-
 0:03:34            var title = $('.title');
-
 		   var content = $('.content'); 
-
-
 0:03:47            - Consommation de l'objet en y injectant des informations :
- 
-
 0:03:49            titleContainer.html(object.title);
-
 		   contentContainer.html(object.content); 
+
+-----------------------------------------------
+
+Vidéo : Récupérer les valeurs de la vue
+
+-----------------------------------------------
+
+Heure de la note :    Texte de la note :   
+          
+
+0:00:22            Dynamisation des valeurs de la vue : 
+
+
+0:00:28            Etape 1 : Définir les tags de la vue 
+0:00:41            <div id="template">
+
+        		<h1></h1>
+
+			<p></p>
+
+    	           </div> 
+
+
+0:00:44            Etape 2 : Suppression des tags dans les valeurs de l'objet : var object = {title: 'Mon titre', content: 'lorem ipsum'}; 
+
+
+0:01:18            Etape 3 : Supprimer la suite du code 
+
+
+0:01:25            Etape 4 : Création d'une variable qui va récupérer le template de la vue : var container= $('#template'); 
+
+
+0:02:13            Etape 5 : Création de la variable template qui va injecter du html dans le container : var template = container.html(); 
+
+
+0:02:14            Etape 6 : Aller dans un tester d'expressions régulières
+0:02:32            - Objectif : Coder une expression régulière qui permet de récupérer les clés (les valeurs dans le templates) 
+
+0:02:58            {{ ( .* ) }} => Le point veut dire n'importe quel caractère, et * veut dire que ça peut se répéter jusqu'à la fin. 
+
+0:03:12            Pour matcher les deux, il faut ajouter un flag global. Ne pas oublier d'espacer entre les parenthèses, pour ne récupérer que la clés. 
+
+
+0:03:18            Etape 7 : Récupérer l'expression régulière et créer un pattern 
+0:03:40            - Création du pattern : var pattern = /{{ (.*) }}/g; 
+
+0:04:03            - Test du pattern, en faisant un exec sur le template : console.log(pattern.exec(template)); 
+
+0:04:19            - On vérifie si on récupère la première clé 
+
+
+0:04:25            Etape 8 : Création d'une boucle afin de récupérer toutes les clés : 
+0:05:12            while((match = pattern.exec(template)) !== null){
+
+            		var key = match[1];
+
+            		console.log(key); 
+		   } 
+
+
+-----------------------------------------------
+
+Vidéo : Utiliser un tableau de conversion
+
+-----------------------------------------------
+
+Heure de la note :    Texte de la note :             
+
+0:00:13            Etape 1 : Récupérer les valeurs grâce aux clés qui ont été récupérées 
+
+0:00:58            Test si on récupère bien les valeurs grâces aux clés : 
+
+0:00:59            while((match = pattern.exec(template)) !== null){
+
+		        var key = match[1];
+
+            		var value = object[key];
+
+
+            		if(!value){
+
+	 	               console.error('No value for : ', key)
+
+	                }
+
+
+            	        console.log(value);
+
+	           } 
+

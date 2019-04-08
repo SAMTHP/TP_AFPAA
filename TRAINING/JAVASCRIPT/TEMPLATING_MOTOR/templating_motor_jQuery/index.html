@@ -9,24 +9,46 @@
 </head>
 <body>
     
-    <div id="container">
-        <span class="title"></span>
-        <span class="content"></span>
+    <div id="template">
+        <h1>{{ title }}</h1>
+        <p>{{ content }}</p>
+        <span>{{ footerText }}</span>
     </div>
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script>
 
         // Création d'un objet
-        var object = {title: '<h1>Mon titre</h1>', content: '<p>lorem ipsum</p>'};
+        var object = {
+            title: 'Mon titre',
+            content: 'lorem ipsum',
+            footerText: 'Copyright 2000'
+        };
+        var container = $('#template');
+        var template = container.html();
+        var pattern = /{{ (.*) }}/g;
+        var match;
 
-        // Dynamisation de l'objet et préparation des différents container
+        while((match = pattern.exec(template)) !== null){
+            var key = match[1];
+            var value = object[key];
+
+            if(!value){
+                console.error('No value for : ', key)
+            }
+
+            console.log(value);
+        }
+
+        //console.log(pattern.exec(template));
+
+        /*// Dynamisation de l'objet et préparation des différents container
         var titleContainer = $('.title');
         var contentContainer = $('.content');
 
         // Consommation de l'objet et injection des infos dans le container
         titleContainer.html(object.title);
-        contentContainer.html(object.content);
+        contentContainer.html(object.content);*/
     </script>
 </body>
 </html>
