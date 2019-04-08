@@ -1,0 +1,65 @@
+html{
+    background: lightblue;
+}
+/**** container *****/
+#container{
+    width: 80%;
+    height: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    background: white;
+    
+}
+
+/*** calcultrice front ****/
+#calculatrice_front{
+    width: 30%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    background: gray;
+    border-radius: 10px;
+    box-shadow: 5px 4px 5px black;
+}
+
+/* display */
+#display{
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background: black;
+    border-radius: 10px;
+    border: 4px white;
+}
+
+#text{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+}
+
+/* pad */
+#pad{
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+button{
+    width: 60px;
+    height: 60px;
+    box-shadow: 2px 4px 5px black;
+    
+}
+
+.list-button{
+    margin-top: 5px;   
+}
