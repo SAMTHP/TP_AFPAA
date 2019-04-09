@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo_templating</title>
+    </head>
+    <body>
+        
+        <div id="template">
+            <h1>{{ title }}</h1>
+            <p>{{ content }}</p>
+            <span>{{ footer }}</span>
+            <span>{{ test }}</span>
+        </div>
+
+        <script src="node_modules/jquery/dist/jquery.js"></script> 
+        <script>
+            var object = {
+                title: 'Mon titre',
+                content: 'lorem ipsum ca insolu auradus deltar',
+                footer: 'Copyright SAMAPPAGENCY 2019',
+                
+            }
+
+            var container = $('#template');
+            var template = container.html();
+            var pattern = /{{ (.*) }}/g;
+            var match;
+
+            var modifiers = {
+                title: function(data){
+                    return data.toUpperCase()
+                }
+            }
+
+            while((match = pattern.exec(template)) !== null){
+                var toModify = match[0];
+                var key = match[1];
+                var value = object[key];
+
+                if(modifiers[key]){
+                    value = modifiers[key](value);
+                }
+
+                if(!value){
+                    console.error(key + " have no value");
+                    value = "";
+                }
+
+                template = template.replace(toModify, value)
+
+                console.log(value);
+            }
+
+            container.html(template);
+        </script>
+    </body>
+</html>

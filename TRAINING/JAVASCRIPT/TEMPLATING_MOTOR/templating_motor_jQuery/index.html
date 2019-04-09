@@ -29,16 +29,32 @@
         var pattern = /{{ (.*) }}/g;
         var match;
 
+        var modifiers = {
+            title: function(data){
+                return data.toUpperCase()
+            }
+        }
+
+        // Itération des clés du template lors d'execution du pattern
         while((match = pattern.exec(template)) !== null){
+            toModify = match[0];
             var key = match[1];
             var value = object[key];
+            
+            if(modifiers[key]){
+               value = modifiers[key](value);
+            }
 
             if(!value){
                 console.error('No value for : ', key)
+                value = "";
             }
 
-            console.log(value);
+            template = template.replace(toModify, value);
+            console.log(key, ":", value);
         }
+
+        container.html(template);
 
         //console.log(pattern.exec(template));
 

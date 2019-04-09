@@ -111,7 +111,7 @@ Heure de la note :    Texte de la note :
 0:02:13            Etape 5 : Création de la variable template qui va injecter du html dans le container : var template = container.html(); 
 
 
-0:02:14            Etape 6 : Aller dans un tester d'expressions régulières
+0:02:14            Etape 6 : Aller dans un tester d'expressions régulières (regex101)
 0:02:32            - Objectif : Coder une expression régulière qui permet de récupérer les clés (les valeurs dans le templates) 
 
 0:02:58            {{ ( .* ) }} => Le point veut dire n'importe quel caractère, et * veut dire que ça peut se répéter jusqu'à la fin. 
@@ -165,4 +165,58 @@ Heure de la note :    Texte de la note :
             	        console.log(value);
 
 	           } 
+
+
+
+-----------------------------------------------
+
+Vidéo : Afficher les valeurs dans la vue
+
+-----------------------------------------------
+
+Heure de la note :    Texte de la note :
+             
+
+0:00:21            Récupération du pattern au complet : 
+
+0:01:03            On va donc lui de remplacer la valeur sur notre template et de réinjecter le template à l'intérieur du container 
+
+0:01:07            Remplacement : template = template.replace(toModify, value); 
+
+0:01:28            Réinjection en dehors de la boucle  : container.html(template); 
+
+
+-----------------------------------------------
+
+Vidéo : Mettre en place des modificateurs
+
+-----------------------------------------------
+
+Heure de la note :    Texte de la note :
+             
+
+0:00:25            On va se baser sur des valeurs qui se trouvent dans le template, et les récupérer grâce aux expressions régulières. Ensuite on va récupérer les valeurs dans l'objet et les réinsérer dans le contenu 
+
+0:00:39            Mise en place d'un modifieur :
+ 
+
+0:01:50            Etape 1 - Création d'un nouvel objet : En fait en sorte d'avoir  la même clé pour l'objet que l'on veut modifier
+ 
+
+0:01:51            var modifiers = {
+            
+		       title: function(data){ 
+			     return data.toUpperCase()
+		       }
+        
+		   } 
+
+0:02:06            Etape 2 : Implémenter le modificateur
+
+0:02:07            Dans la condition while incorporer :
+	           if(modifiers[key]){
+
+               		value = modifiers[key](value);
+
+            	   } 
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo_templating</title>
+    </head>
+    <body>
+        <div id="container">Loading...</div>
+        <script id="template" type="x-tmpl-mustache">
+            <h1>{{ title }}</h1>
+            <p>{{ content }}</p>
+            <span>{{ footer }}</span>
+            <span>{{ test }}</span>
+        </script>
+
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/mustache/mustache.js"></script> 
+        <script>
+            var response = {
+                title: 'Mon titre',
+                content: 'lorem ipsum ca insolu auradus deltar',
+                footer: 'Copyright SAMAPPAGENCY 2019',
+            }
+                // Appel du template
+                var template = $('#template').html();
+                Mustache.parse(template);   // optional, speeds up future uses
+                var rendered = Mustache.render(template, {name: "Luke"});
+                $('#target').html(rendered);
+        </script>
+    </body>
+</html>
