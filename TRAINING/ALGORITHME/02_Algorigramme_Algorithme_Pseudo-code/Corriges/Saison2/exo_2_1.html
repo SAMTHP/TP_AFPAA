@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Exo 2.1</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Exercice 2.1">
+		<!-- For Internet Explhorreur : to force css3 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- Tablettes 'n' Mobiles -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- main css and js -->
+		<style type="text/css">
+		textarea {
+			height: 200px;
+			width: 80%;
+		}
+		</style>
+
+		<script type="text/javascript" src="jquery_3_3_1.js"></script>
+
+		<!-- CODE JAVASCRIPT -->
+		<script type="text/javascript">
+
+			// Algorithme Exo_2_1
+			function Exo_2_1_js_jquery()  {
+				// Variables val, double en num
+				var val, double;
+				// val= 231
+				val= 231;
+				// double= val * 2
+				double= val * 2;
+				// Ecrire val
+				$("#span_val").html("Val vaut " + val + ".");
+				// Ecrire double
+				$("#span_double").html("Double vaut " + double + ".");
+				// FIN
+			}
+
+			function Exo_2_1_js_innerhtml()  {
+				// Variables val, double en num
+				var val, double;
+				// val= 231
+				val= 231;
+				// double= val * 2
+				double= val * 2;
+				// Ecrire val
+				document.getElementById("span_val").innerHTML= "Val vaut " + val + ".";
+				// Ecrire double
+				document.getElementById("span_double").innerHTML= "Double vaut " + double + ".";
+				// FIN
+			}
+
+			// Algorithme Exo_2_1
+			function Exo_2_1_js_alert()  {
+				// Variables val, double en num
+				var val, double;
+				// val= 231
+				val= 231;
+				// double= val * 2
+				double= val * 2;
+				// Ecrire val
+				alert(val);
+				// Ecrire double
+				alert(double);
+				// FIN
+			}
+		</script>
+	</head>
+
+<body>
+
+	<div id="page">
+		<!-- Entête de la zone considérée -->
+		<header>
+			<h1>Mon super exo 2.1</h1>
+		</header>
+
+		<!-- Nav. principale de la page -->
+		<nav></nav>
+
+		<!-- Les à-cotés de la page -->
+		<aside></aside>
+
+		<!-- Contenu textuel de la page -->
+		<section>
+			<div>
+				<h2>PSEUDO-CODE</h2>
+				<textarea id="txt_pseudo_code">
+Algorithme Exo_2_1
+	Variables val, double en numériques
+DEBUT
+	Val= 231
+	Double= Val * 2
+	Ecrire Val
+	Ecrire Double
+FIN
+				</textarea>
+			</div>
+			<div>
+				<div class="div_center">
+					<button class="btn_green" onClick="Exo_2_1_js_innerhtml()">ALLEZ DWWM JS !</button>
+					&nbsp;&nbsp;&nbsp;
+					<button class="btn_green" onClick="Exo_2_1_js_jquery()">ALLEZ DWWM JQUERY !</button>
+				</div>
+			</div>
+			<div>
+				<span id="span_val"></span><br>
+				<span id="span_double"></span>
+			</div>
+		</section>
+
+		<!-- Pied-de-page de la page -->
+		<footer></footer>
+	</div>
+
+</body>
+</html>
+

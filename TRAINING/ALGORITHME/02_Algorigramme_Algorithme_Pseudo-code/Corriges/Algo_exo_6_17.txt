@@ -1,0 +1,24 @@
+ALGORITHME Exo_6_17
+	VARIABLES iSaisie, iCounter, iNombreUser, iValUser en Numérique
+	TABLEAU aOfNumbers en Numérique
+
+DEBUT
+	ECIRE "Combien de nombres à saisir ?"
+	LIRE iNombreUser
+	Redim aOfNumbers[iNombreUser-1]
+	
+	POUR iSaisie de 0 à iNombreUser-1, pas de 1
+		ECIRE "Nombre n° " + (iSaisie+1)
+		LIRE iValUser
+		
+		iCounter= iSaisie
+		TANTQUE (iValUser < aOfNumbers[iCounter]) ET (iCounter > 0)
+			aOfNumbers[iCounter]= aOfNumbers[iCounter-1]
+			iCounter--
+		FIN TANTQUE
+		
+		aOfNumbers[iCounter]= iValUser
+		
+	iSaisie SUIVANT
+FIN
+

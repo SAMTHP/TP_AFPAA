@@ -1,0 +1,28 @@
+ALGORITHME Exo_6_16
+	VARIABLES i, iCounter, iNombreUser en Numérique
+	VARIABLES sTXT en AlphaNumérique
+	TABLEAU aOfNumbers en Numérique
+DEBUT
+	sTXT= "Nombres non consécutifs."
+	
+	ECIRE "Combien de nombres à saisir ?"
+	LIRE iNombreUser
+	Redim aOfNumbers[iNombreUser-1]
+	
+	POUR i de 0 à iNombreUser-1, pas de 1
+		ECIRE "Nombre n° " + (i+1)
+		LIRE aOfNumbers[i]
+	i SUIVANT
+
+	iCounter= 0
+	TANTQUE aOfNumbers[iCounter]+1 == aOfNumbers[iCounter+1] ET iCounter < longueur(aOfNumbers)-1
+		iCounter++
+	FIN TANTQUE
+	
+	SI iCounter == longueur(aOfNumbers)-1 ALORS
+		sTXT= "Nombres consécutifs."
+	FINSI
+	
+	ECRIRE sTXT
+FIN
+

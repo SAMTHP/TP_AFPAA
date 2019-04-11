@@ -1,0 +1,86 @@
+Exo 5.10
+
+- ENONCE -
+Lire la suite des prix (en euros entiers et terminée par zéro) des achats d’un client. 
+Calculer la somme qu’il doit, lire la somme qu’il paye, et simuler la remise de la monnaie 
+en affichant les textes "10 Euros", "5 Euros" et "1 Euro" autant de fois 
+qu’il y a de coupures de chaque sorte à rendre.
+
+- QUE VA FAIRE LE PROGRAMME ? -
+
+1.] On passe les articles tant qu'il y'en a
+=> Lire le prix de chaque produit quand il passe à la caisse enregistreuse
+
+2.] Une fois les articles passés, on affiche la somme totale à régler
+
+3.] Le client donne une somme supérieure ou égale à la somme à régler
+
+4.] Rendre la monnaie, en gros, c'est la somme à régler "moins" la somme donnée par le client
+avec le moins de coupures et de pièces possible.
+=> calculer la différence
+=> exemple à rendre 58 € (je dois rendre 5 de 10€, 1 de 5€, et 3 pièces de 1€)
+
+	Reste : 58 €
+		> 10 € ? OUI => -10 €
+	Reste : 48 €
+		> 10 € ? OUI => -10 €
+	Reste : 38 €
+		> 10 € ? OUI => -10 €
+	Reste : 28 €
+		> 10 € ? OUI => -10 €
+	Reste : 18 €
+		> 10 € ? OUI => -10 €
+	Reste : 8 €
+		> 10 € ? NON
+	
+	8 € > 5 € ? OUI => -5 €
+	Reste : 3 € => 3 pièces de 1 €
+
+ALGORITHME Exo_5_10
+	VARIABLES iPrixArticle, iTotalSommeArticles, iSommeDonnee, iSommeArendre en NUMERIQUE
+	VARIABLES iNBbillets10, iNBbillets5 en NUMERIQUE
+
+DEBUT
+	// 1.] On passe les articles tant qu'il y'en a
+	// => Lire le prix de chaque produit quand il passe à la caisse enregistreuse
+	iPrixArticle= -1
+	iTotalSommeArticles= 0
+	
+	TANTQUE iPrixArticle != 0
+		ECRIRE "Montant de l'article : "
+		LIRE iPrixArticle
+		iTotalSommeArticles= iTotalSommeArticles + iPrixArticle
+	FINTANTQUE
+	
+	// 2.] Une fois les articles passés, on affiche la somme totale à régler
+	ECRIRE "Le montant total de vos articles à régler est de " + iTotalSommeArticles
+	
+	// 3.] Le client donne une somme supérieure ou égale à la somme à régler
+	ECRIRE "Combien tu me donnes stp ?"
+	LIRE iSommeDonnee
+
+	// 4.] Rendre la monnaie, en gros, c'est la somme à régler "moins" la somme donnée par le client
+	//     avec le moins de coupures et de pièces possible.
+	iSommeArendre= iSommeDonnee - iTotalSommeArticles
+
+	// Ici ma somme restante est de 58 €
+	iNBbillets10= 0
+	TANTQUE iSommeArendre >= 10
+		iNBbillets10= iNBbillets10 + 1
+		iSommeArendre= iSommeArendre - 10
+	FINTANTQUE
+	// => à la sortie du TANTQUE, iNBbillets10 vaut 5
+	
+	// Ici ma somme restante est de 8 €
+	iNBbillets5= 0
+	SI iSommeArendre >= 5
+		iNBbillets5= 1
+		iSommeArendre= iSommeArendre - 5
+	FINSI
+	// => à la sortie du SI, iNBbillets5 vaut 1
+	
+	// Ici ma somme restante est de 3 €
+	ECRIRE "Voici votre monnaie : " + iNBbillets10 + " billet(s) de 10 €, "
+									+ iNBbillets5 + " billet de 5 €, "
+									+ iSommeArendre + " pièce(s) de 1 €."
+FIN

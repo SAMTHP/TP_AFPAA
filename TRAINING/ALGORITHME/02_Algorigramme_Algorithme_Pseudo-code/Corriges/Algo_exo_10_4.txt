@@ -1,0 +1,57 @@
+ALGORITHME Exo_10_4
+	VARIABLES i, bDone en NUMERIQUE
+	VARIABLES sNouveauContenu en CARACTERE
+
+	STRUCTURE Bottin
+		sNom en CARACTERE * 20
+		sPrenom en CARACTERE * 15
+		sTel en CARACTERE * 10
+		sMail en CARACTERE * 20
+	FIN STRUCTURE
+	VARIABLES sSaisiePersonne, ligne_personne en Bottin
+	TABLEAU aOfMesPersonnes[] en Bottin
+DEBUT
+	ECRIRE "Entrez votre nom"
+	LIRE sSaisiePersonne.sNom
+	ECRIRE "Entrez votre prénom"
+	LIRE sSaisiePersonne.sPrenom
+	ECRIRE "Entrez votre numéro téléphone"
+	LIRE sSaisiePersonne.sTel
+	ECRIRE "Entrez votre email"
+	LIRE sSaisiePersonne.sMail
+
+	i= -1
+	bDone= 0
+	OUVRIR "Carnet.txt" sur 19 pour Lecture
+	TANT QUE non EOF (19)
+		LireFichier 19, ligne_personne
+		SI (fonction_minuscule_sans_accent(sSaisiePersonne.sNom) < fonction_minuscule_sans_accent(ligne_personne.sNom)) ET (bDone == 0) ALORS
+			i= i+1
+			REDIM aOfMesPersonnes[i]
+			aOfMesPersonnes[i]= sSaisiePersonne
+			bDone= 1
+		FINSI
+		i= i+1
+		REDIM aOfMesPersonnes[i]
+		aOfMesPersonnes[i]= ligne_personne
+	FINTANTQUE
+	FERMER 19
+	
+	SI (bDone == 0) ALORS
+		i= i+1
+		REDIM aOfMesPersonnes[i]
+		aOfMesPersonnes[i]= sSaisiePersonne
+	FINSI
+	
+	sNouveauContenu= ""
+	POUR i de 0 à longueur(aOfMesPersonnes)-1, PAS DE 1
+		sNouveauContenu= sNouveauContenu + aOfMesPersonnes[i] + "\n"
+	i SUIVANT
+	
+	Ouvrir "Carnet.txt" sur 19 pour Ecriture
+	EcrireFichier 19, sNouveauContenu
+	FERMER 19
+
+	ECRIRE sNouveauContenu
+FIN
+

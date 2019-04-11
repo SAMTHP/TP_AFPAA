@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Exo 2.3</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Exercice 2.1">
+		<!-- For Internet Explhorreur : to force css3 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- Tablettes 'n' Mobiles -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- main css and js -->
+		<style type="text/css">
+		textarea {
+			height: 200px;
+			width: 80%;
+		}
+		.btn_audace {
+			font-size: 15px;
+			font-weight: bold;
+			background-color: #e3007e;
+			color: white;
+			padding: 12px 40px;
+			cursor: pointer;
+			border: 1px solid #e3007e;
+		}
+		.btn_audace:hover {
+			background-color: white;
+			color: #e3007e;
+			border: 1px solid #e3007e;
+			transition-duration: 1s;
+		}
+		</style>
+
+		<script type="text/javascript" src="jquery_3_3_1.js"></script>
+
+		<!-- CODE JAVASCRIPT -->
+		<script type="text/javascript">
+			// Algorithme Exo_2_3
+			function Exo_2_3_js_jquery()  {
+			}
+
+			// Algorithme Exo_2_3
+			function Exo_2_3_js_innerhtml()  {
+			}
+
+			// Algorithme Exo_2_3
+			function Exo_2_3_js_alert()  {
+			}
+		</script>
+	</head>
+
+<body>
+
+	<div id="page">
+		<!-- Entête de la zone considérée -->
+		<header>
+			<h1>Mon super exo 2.3</h1>
+		</header>
+
+		<!-- Nav. principale de la page -->
+		<nav></nav>
+
+		<!-- Les à-cotés de la page -->
+		<aside></aside>
+
+		<!-- Contenu textuel de la page -->
+		<section>
+			<div>
+				<h2>Enoncé</h2>
+				<p>Ecrire un programme qui lit le prix HT d'un article, 
+				le nombre d'articles et le taux de TVA, et qui fournit le prix total TTC correspondant. 
+				Faire en sorte que des libellés apparaissent clairement.</p>
+				<h2>PSEUDO-CODE</h2>
+				<textarea id="txt_pseudo_code">
+Algorithme Exo_2_3
+	Variables iPrixArticleHT, iQuantiteArticle, iTauxTVA, iTotalTTC en NUMERIQUE
+DEBUT
+	ECRIRE "Veuillez saisir le prix HT de votre article :"
+	LIRE iPrixArticleHT
+	ECRIRE "Veuillez saisir le nombre d'articles :"
+	LIRE iQuantiteArticle
+	ECRIRE "Veuillez saisir le taux de TVA (0 - 100) en % :"
+	LIRE iTauxTVA
+	iTotalTTC= (iPrixArticleHT + (iPrixArticleHT * iTauxTVA / 100)) * iQuantiteArticle;
+	ECRIRE "Le total TTC est de " + iTotalTTC
+FIN
+				</textarea>
+			</div>
+			<div>
+				<div class="div_center">
+					<button class="btn_audace" onClick="Exo_2_3_js_alert()">JS ALERT</button>
+					&nbsp;&nbsp;&nbsp;
+					<button class="btn_audace" onClick="Exo_2_3_js_innerhtml()">JS INNERHTML</button>
+					&nbsp;&nbsp;&nbsp;
+					<button class="btn_audace" onClick="Exo_2_3_js_jquery()">JS JQUERY</button>
+				</div>
+			</div>
+			<div>
+				<span id="span_carre"></span><br>
+			</div>
+		</section>
+
+		<!-- Pied-de-page de la page -->
+		<footer></footer>
+	</div>
+
+</body>
+</html>
+

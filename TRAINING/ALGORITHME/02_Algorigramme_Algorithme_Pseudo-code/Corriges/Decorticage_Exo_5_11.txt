@@ -1,0 +1,26 @@
+1.] Demander à l'utilisateur le nombre de chevaux qui partent
+=> Avoir une variable iNBchevauxPartants
+
+2.] Demander à l'utilisateur le nombre de chevaux qu'il joue
+=> Avoir une variable iNBchevauxJoue
+
+3.] 
+X = iNBchevauxPartants ! / (iNBchevauxPartants - iNBchevauxJoue) ! 
+
+Comment obtenir mon X ?
+- Calculer (iNBchevauxPartants !) => iFactoChevauxPartants
+- Calculer (iNBchevauxPartants - iNBchevauxJoue) ! => iFactoDiffChevaux
+
+=> Du coup : X = iFactoChevauxPartants / iFactoDiffChevaux
+
+
+Y = iNBchevauxPartants ! / (iNBchevauxJoue ! * (iNBchevauxPartants – iNBchevauxJoue) !)
+Comment obtenir mon Y ?
+- Calculer (iNBchevauxPartants !) => iFactoChevauxPartants
+- Calculer (iNBchevauxJoue !) => iFactoChevauxJoue
+- Calculer (iNBchevauxPartants - iNBchevauxJoue) ! => iFactoDiffChevaux
+
+=> Du coup : Y = iFactoChevauxPartants / (iFactoChevauxJoue * iFactoDiffChevaux)
+
+
+

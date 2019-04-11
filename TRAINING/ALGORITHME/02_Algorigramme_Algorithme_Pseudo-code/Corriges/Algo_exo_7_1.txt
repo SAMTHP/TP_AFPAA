@@ -1,0 +1,42 @@
+ALGORITHME exo_7_1
+	TABLEAU : aTableau[] (en entier)
+	VARIABLES : iNbValeurs, iValeur, i, j, k (en entier), sResult (en alphanumérique)
+
+DEBUT
+	sResult= "Faux (les éléments du tableau ne sont pas tous consécutifs)"
+	
+	// On demande le nombre de valeurs à saisir
+	ECRIRE "Rentrez le nombre de valeurs à saisir (supérieur à 1)"
+	Lire iNbValeurs
+
+	// On dimensionne notre tableau
+	Redim aTableau[iNbValeurs]
+
+	// On boucle pour saisir les données
+	POUR i allant de 0 à iNbValeurs, pas de 1
+		ECRIRE "Saisir la valeur n°" + (i+1) + "/" + iNbValeurs
+		LIRE iValeur
+
+		// On parcours le tableau depuis la fin en remontant au début
+		// On place donc notre borne de départ au maximum, soit le tour (i) en cours
+		// Et on enlève 1 par tour
+		j= i
+		TANT QUE ((iValeur < aTableau[j-1]) ET (j > 0))
+			aTableau[j]= aTableau[j-1]
+			j--
+		FIN TANT QUE
+		aTableau[j]= iValeur
+	i SUIVANT
+
+	// On teste Si le snombres sont consécutifs
+	k= 1
+	TANT QUE (k < iNbValeurs) ET (aTableau[k]-1 == aTableau[k-1]
+		k++
+	FIN TANT QUE
+
+	SI k == iNbValeurs ALORS
+		sResult= "Les éléments du tableau sont tous consécutifs"
+	FIN SI
+
+	ECRIRE aTableau + sResult
+FIN
