@@ -23,7 +23,7 @@ function buying($tab_products){
     while($continue == "o"){
         $choice = readline("Tapez la clé du produit qui vous intéresse (1 à 4) :\n");
         if($choice < 1 || $choice > 4){
-            echo "Nous n'avons pas compris, votre choix. Fin du programme !\n";
+            echo "Nous n'avons pas compris votre choix. Fin du programme !\n";
             die;
         }
 
@@ -52,9 +52,11 @@ function paiement($sum){
     while($num < $sum){
         $cash = readline("Inscrivez le montant pour régler vos achats de $sum € : \n");
         $num = $cash;
-        if($cash < $sum){  
-            echo "Montant insuffisant ! \n";
-            paiement($sum);
+        if($num < $sum){  
+            echo "Montant insuffisant ! Fin du programme \n";
+            die;
+        } else {
+            return $cash;
         }
     }
     return $cash;
@@ -65,23 +67,48 @@ function returnMoney($paiement,$sum){
     $array_coin_given = [];
 
     $diff = $paiement - $sum;
-
-    $i = 0;
-    while($diff != 0){
-        foreach($array_coin_value as $value){
-            if($value <= $diff){
-                $diff -= $value;
-                array_push($array_coin_given, $value);
+   
+        while($diff != 0){
+            foreach($array_coin_value as $value){
+                while($value <= $diff){
+                    $diff -= $value;
+                    array_push($array_coin_given, $value);
+                }
             }
         }
-    }
-
     return $array_coin_given;
-
 }
 
+function showMoney($array_coin_money){
+    $diff = array_sum($array_coin_money);
+
+    echo "\n";
+    echo "Montant rendu : $diff €\n";
+    echo "\n";
+    echo "Détails coupures : \n";
+    echo "\n";
+    foreach($array_coin_money as $coin){
+        if($coin == 10 ){
+            echo "10 euros\n";
+        }elseif($coin == 5){
+            echo "5 euros\n";
+        }elseif($coin == 1){
+            echo "1 euro\n";
+        }
+    }
+}
+
+// Showing of products
 showProducts($tab_products);
+
+// Select & generate order
 $sum = buying($tab_products);
+
+// Paiement
 $paiement = paiement($sum);
+
+// Calculate of coins which are returned after paiement
 $return_money = returnMoney($paiement,$sum);
-print_r($return_money);
+
+// Showing of coins
+showMoney($return_money);
