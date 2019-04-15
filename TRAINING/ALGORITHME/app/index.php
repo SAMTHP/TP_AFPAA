@@ -60,6 +60,15 @@
         <div id="algo"></div>
       </div>
 
+      <!-- Execution du code -->
+      <section>
+        <div class="container" id="execution"></div>
+      </section>
+
+      <br>
+      <!-- Footer -->
+      <?php require_once "commun/footer.html"?>
+
       
       
 
