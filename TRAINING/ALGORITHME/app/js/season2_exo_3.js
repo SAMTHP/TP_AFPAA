@@ -11,7 +11,7 @@ $(document).ready(function(){
         $.get("../saison2/exo2_3_php.php", function(view){
             $("#algo").html(view); 
         })
-        $.get("../saison2/exo2_3_execution_form_final.php", function(view){
+        $.get("../saison2/exo2_3_execution_form.php", function(view){
             $("#execution").html(view); 
         })
         
