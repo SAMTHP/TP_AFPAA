@@ -1,20 +1,22 @@
 <div class="form-group js" style="display: flex; flex-direction: column;" >
-        <label for="exampleFormControlTextarea1"><img src="img/jquery.png"></label>
-        <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:700px" readonly="readonly">
+        <label for="exampleFormControlTextarea1"><img src="../img/jquery.png"></label>
+        <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:800px" readonly="readonly">
     ALGORITHME EXO 2.2 en JQUERY
                 
     DEBUT INSTRUCTION JQUERY
-        // VARIABLES choice, num_carre en NUMERIQUE
-        var choice, num_carre;
-        
-        // LIRE choice
-        choice = prompt("Veuillez saisir un nombre : ");
-        
-        // CALCUL DU CARRE
-        num_carre = choice * choice;
-        
-        // ECRITURE DU RESULTAT
-        alert(choice + " au carré donne : " + num_carre);
+        $("#submit").click(function(){
+            // VARIABLES choice, num_carre en NUMERIQUE
+            var choice, num_carre;
+            
+            // LIRE choice
+            choice = $("#choice").val();
+            
+            // CALCUL DU CARRE
+            num_carre = choice * choice;
+            
+            // ECRITURE DU RESULTAT
+            $("#result").html("<h2>Résultat :</h2>"+choice+" au carré donne : "+num_carre+"</p>");
+        }
     FIN INSTRUCTION JQUERY
         </textarea>
     </div>

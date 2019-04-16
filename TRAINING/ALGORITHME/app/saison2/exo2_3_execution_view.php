@@ -1,4 +1,4 @@
-<?php require_once "exo2_2_execution.php" ?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -19,14 +19,13 @@
       <!-- Affichage des résultats -->
 
         <div class="jumbotron " style="display: flex; justify-content: center;">
-            <div class="card" id="card" style="width: 25rem;">
+            <div class="card" id="card" style="width: 45rem;">
                 <img src="../img/code.jpeg" class="card-img-top" alt="wallpaper" style="height: 200px">
                 <div class="card-body" >
                     <h5 class="card-title">RESULTAT</h5>
                     <p class="card-text">
-                        <?php if(isset($num_carre)) :
-                            echo "$choice au carré donne : $num_carre";
-                        endif ?>
+                        <?php require_once "exo2_3_execution_order.php" ?>
+                        
                     </p>
                     <div style="display: flex; justify-content: center;">
                         <a href="index_global_saison2.php" class="btn btn-warning " >RETOUR</a>

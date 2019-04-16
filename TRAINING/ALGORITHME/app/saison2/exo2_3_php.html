@@ -1,7 +1,12 @@
-<?php
-
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 2.3 en PHP
+        
+DEBUT INSTRUCTION PHP
 class Order {
 
+    // Déclaration et initialisation du tableau contenant les produits
     private $tab_products = [
         "alimentaire" => [
             "TTC" => 5.5,
@@ -29,14 +34,17 @@ class Order {
         ]
     ];
     
+    // Déclartion et initialisation du tableau qui contiendra les commandes
     private $tab_order = [
         "produit" => [
     
         ]
     ];
     
+    // Fonction permettant de choisir la section désirée, retourne le choix en STRING
     function choiceSection(){
-        $choice_section = readline("Veuillez choisir le code de la section : (alimentaire = 1/electronique = 2)\n");
+        echo "Veuillez choisir le code de la section : (alimentaire = 1/electronique = 2)\n";
+        $choice_section = $_POST['choice'];
         if($choice_section == "1"){
             echo "Vous avez choisi la section alimentaire\n";
             echo "\n";
@@ -52,14 +60,17 @@ class Order {
         return $choice;
     }
 
+    // Fonction qui retourne le tableau produits
     public function getTabProducts(){
         return $this->tab_products;
     }
 
+    // Fonction qui retourne les tableau des commandes
     public function getTabOrder(){
         return $this->tab_order;
     }
     
+    // Fonction qui permet d'afficher les produits en fonction de la section choisie
     public function showProducts($section,$tab_products){
         $tab_product_section = [];
         echo "------------------------------------------\n";
@@ -90,6 +101,7 @@ class Order {
         return $tab_product_section;
     }
     
+    // Fonction qui va générer le montant de la commande, ansi que son prix TTC
     public function generateOrder($section,$tab_product_section,$tab_products,$tab_order){
         echo "-----------\n";
         echo "Commandes : \n";
@@ -98,7 +110,8 @@ class Order {
     
         foreach($tab_product_section as $element){
             if(isset($tab_products[$section][$element]['unite'])){
-                $quantity = readline("Choisissez la quantité en ".$tab_products[$section][$element]['unite']." pour le produit $element :\n");
+                echo "Choisissez la quantité en ".$tab_products[$section][$element]['unite']." pour le produit $element :\n";
+                $quantity = $_POST['quantity']
                 if($quantity > $tab_products[$section][$element]['stock'] || ($quantity < 0)){
                     echo "\n";
                     echo "La quantité demandée ne nous permet pas de répondre à vos attentes \n";
@@ -106,7 +119,8 @@ class Order {
                     self::generateOrder($section,$tab_product_section,$tab_products,$tab_order);
                 }
             } else {
-                $quantity = readline("Choisissez la quantité pour le produit $element :\n");
+                echo "Choisissez la quantité pour le produit $element :\n";
+                $quantity = $_POST['quantity'];
                 if($quantity > $tab_products[$section][$element]['stock'] || ($quantity < 0)){
                     echo "\n";
                     echo "La quantité demandée ne nous permet pas de répondre à vos attentes \n";
@@ -150,11 +164,11 @@ class Order {
         $total = array_sum($tab_total_TTC);
         echo "\n";
         echo "Total de la commande : $total € TTC\n";
-    
     }
-
+    
 }
 
+// Instanciation de la classe Order et appel des méthodes
 $order = new Order();
 $section = $order->choiceSection();
 $tab_products = $order->getTabProducts();
@@ -162,3 +176,6 @@ $tab_product_section = $order->showProducts($section,$tab_products);
 $tab_order = $order->getTabOrder();
 $order->generateOrder($section,$tab_product_section,$tab_products,$tab_order);
 
+FIN INSTRUCTION PHP
+        </textarea>
+</div>

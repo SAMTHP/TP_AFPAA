@@ -36,17 +36,12 @@ class Order {
     ];
     
     function choiceSection(){
-        $choice_section = readline("Veuillez choisir le code de la section : (alimentaire = 1/electronique = 2)\n");
+        $choice_section = $_POST['choice'];
         if($choice_section == "1"){
-            echo "Vous avez choisi la section alimentaire\n";
-            echo "\n";
             $choice = "alimentaire";
         } elseif($choice_section == "2") {
-            echo "Vous avez choisi la section electronique\n";
-            echo "\n";
             $choice = "electronique";
-        } else {
-            echo "Vous avez entré une mauvaise valeur ! Fin du programme !\n";
+        }else {
             die;
         }
         return $choice;
@@ -98,7 +93,7 @@ class Order {
     
         foreach($tab_product_section as $element){
             if(isset($tab_products[$section][$element]['unite'])){
-                $quantity = readline("Choisissez la quantité en ".$tab_products[$section][$element]['unite']." pour le produit $element :\n");
+                $quantity = $_POST['quantity'];
                 if($quantity > $tab_products[$section][$element]['stock'] || ($quantity < 0)){
                     echo "\n";
                     echo "La quantité demandée ne nous permet pas de répondre à vos attentes \n";
@@ -106,7 +101,7 @@ class Order {
                     self::generateOrder($section,$tab_product_section,$tab_products,$tab_order);
                 }
             } else {
-                $quantity = readline("Choisissez la quantité pour le produit $element :\n");
+                $quantity = $_POST['quantity'];
                 if($quantity > $tab_products[$section][$element]['stock'] || ($quantity < 0)){
                     echo "\n";
                     echo "La quantité demandée ne nous permet pas de répondre à vos attentes \n";
@@ -162,3 +157,4 @@ $tab_product_section = $order->showProducts($section,$tab_products);
 $tab_order = $order->getTabOrder();
 $order->generateOrder($section,$tab_product_section,$tab_products,$tab_order);
 
+ 

@@ -14,59 +14,21 @@
       <!-- NAVBAR -->
       <?php require "commun/nav.html" ?>
       <hr>
-
-      <!-- Choix des exos-->
       <div style="display: flex; justify-content: center;">
-        <div class="dropdown" >
-        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EXERCICES</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#" id="exo2_2">2.2</a>
-            <a class="dropdown-item" href="#">2.3</a>
-            <a class="dropdown-item" href="#">2.4</a>
-          </div>
-        </div>
+          <h1 style="color:lightblue">EXERCICES D'ALGORITHME</h1>
       </div>
-      
-      <br>
-
-      <!-- ENONCE -->
+      <!-- WALLPAPER -->
       <div class="jumbotron " style="display: flex; justify-content: center;">
-        <div class="card" id="card" style="width: 25rem;">
-          <img src="img/code.jpeg" class="card-img-top" alt="wallpaper" style="height: 200px">
-          <div class="card-body" >
-              <h5 class="card-title">Exercice 2.2</h5>
-              <p class="card-text">Ecrire un programme qui demande un nombre à l’utilisateur, puis qui calcule et affiche le carré de ce nombre.</p>
-              <div style="display: flex; justify-content: center;">
-                  <a href="#" class="btn btn-success " id="btn-pc">PSEUDO CODE</a>
-              </div>
-              <br>
-              <div style="display: flex; justify-content: space-around;">
-                <div >
-                  <a href="#" class="btn btn-warning" id="btn-js">JS</a>
-                </div>
-                <div >
-                  <a href="#" class="btn btn-info" id="btn-jquery">JQUERY</a>
-                </div>
-                <div >
-                  <a href="#" class="btn btn-primary" id="btn-php">PHP</a>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div>
-          <p>&nbsp</p>
-        </div>
-        <!-- Affichage algo -->
-        <div id="algo"></div>
+        <img src="img/wallpaper_gobal.png" class="card-img-top" alt="wallpaper" style="width:700px" >
       </div>
 
-      <!-- Execution du code -->
-      <section>
-        <div class="container" id="execution"></div>
-      </section>
+      <!-- GIF -->
+      <div style="display: flex; justify-content: center;">
+        <img src="img/matrix.gif" style="border-radius:20px" id="gif">
+      </div>
 
       <br>
-      <!-- Footer -->
+      <!-- FOOTER -->
       <?php require_once "commun/footer.html"?>
 
       
