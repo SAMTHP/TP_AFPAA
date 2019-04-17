@@ -3,18 +3,61 @@
         <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
     ALGORITHME EXO 2.3 en JQUERY
                 
-    DEBUT INSTRUCTION JS
-        // VARIABLES choice, num_carre en NUMERIQUE
-        var choice, num_carre;
-        
-        // LIRE choice
-        choice = prompt("Veuillez saisir un nombre : ");
-        
-        // CALCUL DU CARRE
-        num_carre = choice * choice;
-        
-        // ECRITURE DU RESULTAT
-        alert(choice + " au carré donne : " + num_carre);
-    FIN INSTRUCTION JS
+    DEBUT INSTRUCTION
+        // Déclaration et initialisation des variables qui stock les prix HT des articles
+        var price_apple = 1;
+        var price_milk = 1.5;
+        var price_iphone = 689;
+        var price_pc = 869;
+        FIN INSTRUCTION PHP
+
+        // Déclaration et initialisation des variables qui stock les taux de TVA
+        var TVA_5 = 1.055;
+        var TVA_20 = 1.2;
+
+        // Déclaration et initialisation des variables qui récupères les quantitées choisies par l'utilisateur
+        // LIRE :
+        var quantity_apple = $('#quantity-apple').val();
+        var quantity_milk = $('#quantity-milk').val();
+        var quantity_iphone = $('#quantity-iphone').val();
+        var quantity_pc = $('#quantity-pc').val();
+
+        // Déclaration et initialisation des variables qui calculent le prix HT total des produits
+        var total_apple_HT =  quantity_apple *  price_apple;
+        var total_milk_HT =  quantity_milk *  price_milk;
+        var total_iphone_HT =  quantity_iphone *  price_iphone;
+        var total_pc_HT =  quantity_pc *  price_pc;
+
+        // Déclaration et initialisation de la variable qui additionne les totaux HT
+        var total_HT =  total_apple_HT +  total_milk_HT  +  total_iphone_HT +  total_pc_HT ;
+
+        // Déclaration et initialisation des variables qui calculent le prix TTC des totaux HT
+        var total_apple_TTC =  total_apple_HT *  TVA_5;
+        var total_milk_TTC =  total_milk_HT *  TVA_5;
+        var total_iphone_TTC =  total_iphone_HT *  TVA_20;
+        var total_pc_TTC =  total_pc_HT *  TVA_20;
+
+        // Déclaration et initialisation de la variable qui additionne les totaux TTC
+        var total_TTC =  total_apple_TTC +  total_milk_TTC +  total_iphone_TTC +  total_pc_TTC;
+
+        // AFFICHAGE DES RESULTATS DANS LA VIEW
+        // ECRIRE :
+        $("#apple-quantity").text(quantity_apple);
+        $("#price-apple-ht").text(total_apple_HT + " €");
+        $("#price-apple-ttc").text(total_apple_TTC + " €");
+        $("#milk-quantity").text(quantity_milk);
+        $("#price-milk-ht").text(total_milk_HT + " €");
+        $("#price-milk-ttc").text(total_milk_TTC + " €");
+        $("#iphone-quantity").text(quantity_iphone);
+        $("#price-iphone-ht").text(total_iphone_HT + " €");
+        $("#price-iphone-ttc").text(total_iphone_TTC + " €");
+        $("#pc-quantity").text(quantity_pc);
+        $("#price-pc-ht").text(total_pc_HT + " €");
+        $("#price-pc-ttc").text(total_pc_TTC + " €");
+        $("#total-ht").text(total_HT + " €");
+        $("#total-ttc").text(total_TTC + " €");
+
+        $("#result").show();
+    FIN INSTRUCTION
         </textarea>
     </div>
