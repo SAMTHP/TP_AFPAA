@@ -1,170 +1,49 @@
-<div class="form-group pseudo-code" style="display: flex; flex-direction: column;" >
+<div class="form-group pseudo-code" style="display: flex; flex-direction: column" >
     <label for="exampleFormControlTextarea1"><img src="../img/code.png"></label>
     <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
-ALGORITHME EXO 2.3 en PSEUDO CODE
-
-CLASS Order
-    TABLEAU tabProducts(1,2) MULTIDIMENSIONSIONNEL (privé)
-    TABLEAU tabOrder(0) MULTIDIMENSIONSIONNEL (privé)
-
-    tabProducts = [
-            "alimentaire" => [
-            "TTC" => 5.5,
-            "pommes" => [
-                "prix HT" => 3,
-                "stock" => 10,
-                "unite" => "kilo"
-            ],
-            "lait" => [
-                "prix HT" => 2,
-                "stock" => 15,
-                "unite" => "litre"
-            ]
-        ],
-        "electronique" => [
-            "TTC" => 20,
-            "iphones 8s" => [
-                "prix HT" => 765,
-                "stock" => 12
-            ],
-            "pc lenovo legion i7" => [
-                "prix HT" => 860,
-                "stock" => 15
-            ]
-        ]
-    ]
-
-    tab_order = [
-        "produit" => [
-    
-        ]
-    ]
-
-    PUBLIC Fonction choiceSection() STRING
-        VARIABLES choiceSection en NUMERIQUE
-        VARIABLES choice en STRING
-
-        choiceSection = "";
-
-        ECRIRE "Veuillez choisir le code de la section : (alimentaire = 1/electronique = 2)"
-
-        Si choiceSection == 1 Alors
-            ECRIRE "Vous avez choisi la section alimentaire"
-            choice = "alimentaire"
-        SinonSi choiceSection == 2 Alors
-            ECRIRE "Vous avez choisi la section electronique"
-            choice = "electronique"
-        Sinon
-            ECRIRE "Vous avez entré une mauvaise valeur ! Fin du programme !"
-            FIN DU programme
-        Fin si
+ALGORITHME EXO 23 en PSEUDO CODE
+        VARIABLES price_apple, price_milk, price_iphone, price_pc en ENTIER
+        VARIABLES TVA_5, TVA_20 en ENTIER
+        VARIABLES quantity_apple, quantity_milk, quantity_iphone, quantity_pc en ENTIER
+        VARIABLES total_apple_HT, total_milk_HT, total_iphone_HT, total_pc_HT en ENTIER
+        VARIABLE total_HT en ENTIER
+        VARIABLES total_apple_TTC,total_milk_TTC,total_iphone_TTC,total_pc_TTC en ENTIER
+        VARIABLE total_TTC en ENTIER
+DEBUT
+        ECRIRE "AFFICHAGE DE TOUS LES PRODUITS, AINSI QUE LEURS PRIX HT ET TX DE TVA"
         
-        RETOURNE choice
-    Fin Fonction
+        ECRIRE "RENSEIGNEZ LES QUANTITES VOULUES"
 
-    PUBLIC Fonction getTabProducts() TABLEAU
-        RETOURNE tabProducts
-    Fin Fonction
+        // RECUPERATION DES CHOIX UTILISATEURS
+        LIRE "QUANTITE POMME"
+        quantity_apple = choixUser
 
-    PUBLIC Fonction getTabOrder() TABLEAU
-        RETOURNE tabOrder
-    Fin Fonction
+        LIRE "QUANTITE LAIT"
+        quantity_milk = choixUser
 
-    PUBLIC Fonction showProducts(section en STRING,tabProducts TABLEAU)
-        TABLEAU tabProductSection() en STRING
+        LIRE "QUANTITE IPHONE"
+        quantity_iphone = choixUser
 
-        ECRIRE "Les produits de la " & section & " sont : "
+        LIRE "QUANTITE PC"
+        quantity_pc = choixUser
 
-        PARCOURIR tabProducts[section] POSSEDE key => value
-            Si key != tabProducts[section]["TTC"] Alors
-                Si TYPE de tabProducts[section][key] == "tableau" Alors
-                    ECRIRE "Produit : " & key
-                    PARCOURIR tabProducts[section][key] POSSEDE element => result
-                        Si element == "prix HT" Alors
-                            ECRIRE "=> " & element & " : " & result & " € "
-                        Sinon
-                            ECRIRE "=> " & element & " : " & result
-                        Fin si
-                    Fin PARCOURIR
-                FIN si
-            FIN si
+        // CACUL DES TOTAUX HT PAR PRODUIT
+        total_apple_HT = quantity_apple * price_apple
+        total_milk_HT = quantity_milk * price_milk
+        total_iphone_HT = quantity_iphone * price_iphone
+        total_pc_HT = quantity_pc * price_pc
 
-            Si key != "TTC" Alors
-                INSERTION_TABLEAU(tabProductSection, key)
-            Fin si
-        Fin PARCOURIR
+        // SOMME DE TOUS LES TOTAUX HT
+        total_HT = total_apple_HT + total_milk_HT  + total_iphone_HT + total_pc_HT 
 
-        ECRIRE "Le taux de TVA des produits de la section " & section & " est de " & tabProducts[section]["TTC"] & "%"
-        
-        RETOURNE tabProductSection
-    Fin Fonction
+        // CALCUL DES TOTAUX TTC PAR PRODUIT
+        total_apple_TTC = total_apple_HT * TVA_5
+        total_milk_TTC = total_milk_HT * TVA_5
+        total_iphone_TTC = total_iphone_HT * TVA_20
+        total_pc_TTC = total_pc_HT * TVA_20
 
-    PUBLIC Fonction generateOrder(section en STRING, tabProductSection en TABLEAU, tabProduct en TABLEAU, tabOrder en TABLEAU )
-        VARIABLES quantity,priceTTC,total en NUMERIQUE
-        TABLEAU tabTotalTTC en NUMERIQUE
-
-        ECRIRE "Commandes : "
-
-        PARCOURIR tabProductSection POSSEDE element
-            Si tabProducts[section][element]["unite"] Alors
-                ECRIRE "Choisissez la quantité en " & tab_products[section][element]['unite'] & " pour le produit " & element & " : "
-                Si quantity >  tabProduct[section][element]["stock"] OU quantity < 0 Alors
-                    ECRIRE "La quantité demandée ne nous permet pas de répondre à vos attentes"
-                    generateOrder(section en STRING, tabProductSection en TABLEAU, tabProduct en TABLEAU, tabOrder en TABLEAU)
-                Fin si
-            Sinon
-                "Choisissez la quantité pour le produit " & element & " :"
-                Si quantity > tabProduct[section][element]['stock'] OU quantity < 0
-                    ECRIRE "La quantité demandée ne nous permet pas de répondre à vos attentes"
-                    generateOrder(section en STRING, tabProductSection en TABLEAU, tabProduct en TABLEAU, tabOrder en TABLEAU)
-                Fin Si
-            Fin Si
-
-            // Réduction des stocks
-            tabProducts[section][element]['stock'] -= quantity
-
-            // Calcul du prix en fonction de la quantité choisie
-            priceTTC = (tabProduct[section][element]["TTC"] * (1+(tabProducts[section]["TTC"]/100))) * quantity
-            INSERTION_TABLEAU(tabOrder, [element => ["Quantité" => quantity, "Prix" => priceTTC]])
-        Fin PARCOURIR
-
-        ECRIRE "IMPRESSION DU TICKER DE CAISSE"
-        ECRIRE "Section : " & section 
-
-        PARCOURIR tabOrder POSSEDE arrayProduct
-            PARCOURIR arrayProduct POSSEDE ref => infos
-                ECRIRE "Produit : " & ref
-                PARCOURIR infos POSSEDE key => value
-                    Si key == "Prix"
-                        ECRIRE "=> " & key & " TTC : " & value & " € "
-                        INSERTION_TABLEAU(tabTotalTTC, value)
-                    Sinon
-                        ECRIRE "=> " & key & " : " & value
-                    Fin si
-                Fin PARCOURIR
-            Fin PARCOURIR
-        Fin PARCOURIR
-
-        total = SOMME_TABLEAU(tabTotalTTC)
-        
-        ECRIRE "Total de la commande : " & total & " € TTC"
-    Fin Fonction
-
-FIN CLASS Order
-
-// INSTANCIATION
-VARIABLE order APPEL DE L'OBJET
-VARIABLE section en STRING
-TABLEAU tabProduct MULTIDIMENSIONSIONNEL
-TABLEAU tabProductSection en STRING
-TABLEAU tabOrder en STRING
-
-order = new Order()
-section = order->choiceSection()
-tabProduct = order-getTabProducts()
-tabProductSection = order->showProducts(section,tabProduct)
-tabOrder = order->getTabOrder()
-order->generateOrder(section,tabProductSection,tabProduct,tabOrder) 
-
+        // SOMME DE TOUS LES TOTAUX TTC
+        total_TTC = total_apple_TTC + total_milk_TTC + total_iphone_TTC + total_pc_TTC 
+FIN
     </textarea>
 </div>

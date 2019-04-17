@@ -31,4 +31,4 @@ $total_iphone_TTC = $total_iphone_HT * $TVA_20;
 $total_pc_TTC = $total_pc_HT * $TVA_20;
 
 // Total TTC
-$total_TTC = $total_apple_TTC + $total_milk_TTC + $total_iphone_TTC + $total_pc_TTC;
+$total_TTC = $total_apple_TTC + $total_milk_TTC + $total_iphone_TTC + $total_pc_TTC; 
