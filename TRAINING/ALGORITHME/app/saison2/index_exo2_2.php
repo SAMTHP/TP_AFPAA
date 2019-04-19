@@ -22,7 +22,7 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#" >2.2</a>
             <a class="dropdown-item" href="index_exo2_3.php">2.3</a>
-            <a class="dropdown-item" href="#">2.4</a>
+            <a class="dropdown-item" href="index_exo2_4.php">2.4</a>
           </div>
         </div>
       </div>

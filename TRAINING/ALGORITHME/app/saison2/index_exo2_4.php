@@ -8,8 +8,8 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link href="../css/algo.css" rel="stylesheet">
       <script type="text/javascript" src="../js/jquery_3_3_1.js" ></script>
-      <script type="text/javascript" src="../js/season2_exo_3.js"></script>
-      <script type="text/javascript" src="../js/exo2_3_execution_form_php.js"></script>      
+      <script type="text/javascript" src="../js/season2_exo_4.js"></script>
+      <!--<script type="text/javascript" src="../js/exo2_3_execution_form_php.js"></script>--> 
     </head>
   <body>
       <!-- NAVBAR -->
@@ -22,8 +22,8 @@
         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EXERCICES</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="index_exo2_2.php" >2.2</a>
-            <a class="dropdown-item" href="#">2.3</a>
-            <a class="dropdown-item" href="index_exo2_4.php">2.4</a>
+            <a class="dropdown-item" href="index_exo2_3.php">2.3</a>
+            <a class="dropdown-item" href="#">2.4</a>
           </div>
         </div>
       </div>
@@ -35,8 +35,8 @@
         <div class="card" id="card" style="width: 25rem;">
           <img src="../img/code.jpeg" class="card-img-top" alt="wallpaper" style="height: 200px">
           <div class="card-body" >
-              <h5 class="card-title">Exercice 2.3</h5>
-              <p class="card-text">Ecrire un programme qui lit le prix HT d’un article, le nombre d’articles et le taux de TVA, et qui fournit le prix total TTC correspondant. Faire en sorte que des libellés apparaissent clairement.</p>
+              <h5 class="card-title">Exercice 2.4</h5>
+              <p class="card-text">Ecrire un algorithme utilisant des variables de type chaîne de caractères, et affichant quatre variantes possibles de la célèbre « belle marquise, vos beaux yeux me font mourir d’amour ». On ne se soucie pas de la ponctuation, ni des majuscules.</p>
               <div style="display: flex; justify-content: center;">
                   <a href="#" class="btn btn-success " id="btn-pc">PSEUDO CODE</a>
               </div>

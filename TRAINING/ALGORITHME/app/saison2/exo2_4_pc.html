@@ -1,0 +1,51 @@
+<div class="form-group pseudo-code" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 2.4 en PSEUDO CODE
+        VARIABLE sentence en STRING
+        TABLEAUX array_sentence(8), array_sentence_reverse(8), array_sentence_sort(8), array_sentence_shuffle(8)
+
+    DEBUT
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA PHRASE
+        ECRIRE :
+        sentence = "belle marquise, vos beaux yeux me font mourir d'amour"
+        
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI VA DECOMPOSER TOUS LES MOTS DE LA PHRASE
+        array_sentence = explode(" ", sentence)
+
+        // DECLARATION ET INITIALISATION DU TABLEAUX QUI VONT MELANGER LES MOTS
+        array_sentence_reverse = array_reverse(array_sentence)
+        array_sentence_sort = array_sentence;
+        array_sentence_shuffle = array_sentence
+
+        ECRIRE "Affichage de la première variante : Phrase inversée"
+        Pour(i = 0; i < count(array_sentence); i++)
+            ECRIRE array_sentence_reverse[i] & " "
+        Fin Pour
+
+        // RANGEMENT DES MOTS PAR ORDRE ALPHABETIQUE
+        sort(array_sentence_sort)
+
+        ECRIRE "Affichage de la deuxième variante : Mots rangés par odre alphabétique"
+        Pour(i = 0; i < count(array_sentence); i++)
+            ECRIRE array_sentence_sort[i] & " "
+        Fin Pour
+
+        // RANGEMENT DES MOTS PAR ORDRE ALPHABETIQUE
+        sort(array_sentence_sort)
+
+        ECRIRE "Affichage de la troisième variante : Mots rangés de manière décroissante"
+        Pour(i = count(array_sentence)-1; i >= 0; i--)
+            ECRIRE array_sentence_sort[i] & " "
+        Fin Pour
+        
+        // RANGEMENT DES MOTS DANS LE DESORDRE
+        shuffle(array_sentence_shuffle)
+        
+        ECRIRE "Affichage de la seconde variante : Mots rangés au hasard"
+        Pour(i = 0; i < count(array_sentence); i++)
+            ECRIRE array_sentence_shuffle[i] & " "
+        Fin Pour
+    FIN
+    </textarea>
+</div>

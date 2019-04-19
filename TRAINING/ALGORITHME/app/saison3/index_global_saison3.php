@@ -8,57 +8,35 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link href="../css/algo.css" rel="stylesheet">
       <script type="text/javascript" src="../js/jquery_3_3_1.js" ></script>
-      <script type="text/javascript" src="../js/season2_exo_3.js"></script>
-      <script type="text/javascript" src="../js/exo2_3_execution_form_php.js"></script>      
+      
     </head>
   <body>
       <!-- NAVBAR -->
       <?php require "../commun/nav.html" ?>
       <hr>
-
+      <div style="display: flex; justify-content: center;">
+          <h1 style="color:lightblue">SAISON 3</h1>
+      </div>
       <!-- Choix des exos-->
       <div style="display: flex; justify-content: center;">
         <div class="dropdown" >
         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EXERCICES</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="index_exo2_2.php" >2.2</a>
-            <a class="dropdown-item" href="#">2.3</a>
-            <a class="dropdown-item" href="index_exo2_4.php">2.4</a>
+            <a class="dropdown-item" href="exo3_1/index_exo3_1.php">3.1</a>
+            <a class="dropdown-item" href="exo3_2/index_exo3_2.php">3.2</a>
+            <a class="dropdown-item" href="exo3_3/index_exo3_3.php">3.3</a>
+            <a class="dropdown-item" href="exo3_4/index_exo3_4.php">3.4</a>
+            <a class="dropdown-item" href="exo3_5/index_exo3_5.php">3.5</a>
+            <a class="dropdown-item" href="exo3_6/index_exo3_6.php">3.6</a>
           </div>
         </div>
       </div>
       
       <br>
-
+      
       <!-- ENONCE -->
       <div class="jumbotron " style="display: flex; justify-content: center;">
-        <div class="card" id="card" style="width: 25rem;">
-          <img src="../img/code.jpeg" class="card-img-top" alt="wallpaper" style="height: 200px">
-          <div class="card-body" >
-              <h5 class="card-title">Exercice 2.3</h5>
-              <p class="card-text">Ecrire un programme qui lit le prix HT d’un article, le nombre d’articles et le taux de TVA, et qui fournit le prix total TTC correspondant. Faire en sorte que des libellés apparaissent clairement.</p>
-              <div style="display: flex; justify-content: center;">
-                  <a href="#" class="btn btn-success " id="btn-pc">PSEUDO CODE</a>
-              </div>
-              <br>
-              <div style="display: flex; justify-content: space-around;">
-                <div >
-                  <a href="#" class="btn btn-warning" id="btn-js">JS</a>
-                </div>
-                <div >
-                  <a href="#" class="btn btn-info" id="btn-jquery">JQUERY</a>
-                </div>
-                <div >
-                  <a href="#" class="btn btn-primary" id="btn-php">PHP</a>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div>
-          <p>&nbsp</p>
-        </div>
-        <!-- Affichage algo -->
-        <div id="algo"></div>
+        <img src="../img/wallpaper.png" class="card-img-top" alt="wallpaper" style="height: 200px; width:700px">
       </div>
 
       <!-- Execution du code -->

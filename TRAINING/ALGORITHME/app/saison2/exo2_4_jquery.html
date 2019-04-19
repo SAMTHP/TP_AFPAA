@@ -1,0 +1,74 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 2.4 en JQUERY        
+DEBUT INSTRUCTION JQUERY
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA PHRASE
+    var sentence = "belle marquise, vos beaux yeux me font mourir d'amour";
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA DECOMPOSER TOUS LES MOTS DE LA PHRASE
+    var array_sentence = sentence.split(" ");
+
+    // DECLARATION ET INITIALISATION DU TABLEAUX QUI VONT MELANGER LES MOTS
+    var array_sentence_reverse = array_sentence.reverse();
+    var array_sentence_sort = array_sentence;
+    var array_sentence_shuffle = array_sentence;
+
+    // MELANGE DU TABLEAU PAR ORDRE ALPHABETIQUE
+    array_sentence_sort.sort();
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RECOMPOSER LA PHRASE DANS L'ORDRE ALPHABETIQUE
+    var sentence_sort = "";
+
+    // AFFECTATION DE LA VARIABLE DANS UNE BOUCLE FOR
+    for(var i = 0; i < array_sentence.length; i++){
+        sentence_sort += array_sentence_sort[i] + " ";
+    }
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RECOMPOSER LA PHRASE DANS L'ORDRE DECROISSANT
+    var sentence_desort = "";
+
+    // AFFECTATION DE LA VARIABLE DANS UNE BOUCLE FOR
+    for(var i = array_sentence.length - 1; i >= 0; i--){
+        sentence_desort += array_sentence_sort[i] + " ";
+    }
+
+    // MELANGE DESORDONNE DU TABLEAU  DANS UNE BOUCLE FOR
+    var j, x, i;
+    for (i = array_sentence.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = array_sentence_shuffle[i];
+        array_sentence_shuffle[i] = array_sentence_shuffle[j];
+        array_sentence_shuffle[j] = x;
+    }
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECOMPOSER LA PHRASE DE MANIERE DESORDONNE
+    var sentence_shuffle = "";
+
+    // AFFECTATION DE LA VARIABLE DANS UNE BOUCLE FOR
+    for(var i = 0; i < array_sentence.length; i++){
+        sentence_shuffle += array_sentence_shuffle[i] + " ";
+    }
+
+    // AFFICHAGE DES RESULTAT
+    $("#first").click(function(){
+        $("#result").html("<strong>Phrase inversée :</strong> " + sentence_reverse);
+    })
+    
+    $("#two").click(function(){
+        $("#result").html("<strong>Mots rangés par ordre alphabétique :</strong> " + sentence_sort);
+    })
+    
+    $("#three").click(function(){
+        $("#result").html("<strong>Mots rangés de manière décroissante :</strong> " + sentence_desort);
+    })
+    
+    $("#four").click(function(){
+        $("#result").html("<strong>Mots rangés au hasard :</strong> " + sentence_shuffle);
+    })
+
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>
