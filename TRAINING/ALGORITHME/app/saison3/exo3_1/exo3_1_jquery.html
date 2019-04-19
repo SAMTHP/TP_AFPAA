@@ -1,0 +1,22 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 3.1 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+    $("#submit").click(function () {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE
+        var choice = $("#choice").val();
+
+        if(choice < 0){
+        $("#result").text("Votre nombre est négatif");
+        }else if(choice > 0){
+            $("#result").text("Votre nombre est positif");
+        }else if(choice == 0){
+            $("#result").text("Pas compris :(");
+        }
+    }
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>

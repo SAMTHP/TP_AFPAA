@@ -1,0 +1,23 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 3.2 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // DECLARATION ET INITIALISATION DES VARIABLES QUI VONT STOCKER LES NOMBRES
+    $choice_1 = $_POST['choice1'];
+    $choice_2 = $_POST['choice2'];
+
+    if(($choice_1 * $choice_2) < 0){
+    echo "Le produit des deux nombres est négatif";
+    }elseif(($choice_1 * $choice_2) > 0){
+        echo "Le produit des deux nombrese est positif";
+    }elseif(($choice_1 * $choice_2) == 0){
+        echo "Pas compris :(";
+    }
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

@@ -1,0 +1,26 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 3.6 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+    $("#submit").click(function () {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE
+        var age = $("#choice").val();
+
+        if(age >= 6 && age <= 7){
+            $("#result").text("Vous êtes poussin");
+        }else if(age >= 8 && age <= 9){
+            $("#result").text("Vous êtes pupille");
+        }else if(age >= 10 && age <= 11){
+            $("#result").text("Vous êtes minime");
+        }else if(age >= 12){
+            $("#result").text("Vous êtes cadet");
+        }else{
+            $("#result").text("Vous êtes un babyyyyyy !!!");
+        }
+    }
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>

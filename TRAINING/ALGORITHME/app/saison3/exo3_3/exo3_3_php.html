@@ -1,0 +1,36 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 3.3 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // DECLARATION ET INITIALISATION DES VARIABLES QUI VONT STOCKER LES NOMS
+    $name_1 = $_POST['choice1'];
+    $name_2 = $_POST['choice2'];
+    $name_3 = $_POST['choice3'];
+
+    // INITIALISATION DU TABLEAU QUI VA STOCKER LES NOMS
+    $array_names = [];
+
+    // INSERTION DES NOMS DANS LE TABLEAU
+    array_push($array_names, $name_1, $name_2, $name_3);
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA TRIER LES NOMS PAR ORDRE ALPHABETIQUE
+    $array_sort_names = $array_names;
+
+    // TRI PAR ORDRE ALPHABETIQUE DU NOUVEAU TABLEAU CREE A CET EFFET
+    sort($array_sort_names);
+
+    // TEST SI LES NOMS DU PREMIER TABLEAU SONT RANGES PAR ORDRE ALPHABETIQUE
+    if($array_sort_names[0] == $array_names[0] && $array_sort_names[1] == $array_names[1] && $array_sort_names[2] == $array_names[2]){
+        echo "Vos noms sont rangés par ordre alphabétique";
+    } else {
+        echo "Vos noms ne sont pas rangés par ordre alphabétique";
+    }
+
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

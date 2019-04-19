@@ -1,0 +1,22 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 3.3 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+    $("#submit").click(function () {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE
+        var name_1 = $("#choice1").val();
+        var name_2 = $("#choice2").val();
+        var name_3 = $("#choice3").val();
+
+        if(array_sort_names[0] == array_names[0] && array_sort_names[1] == array_names[1] && array_sort_names[2] == array_names[2]){
+        $("result").text("Vos noms sont rangés par ordre alphabétique");
+        } else {
+            $("result").text("Vos noms ne sont pas rangés par ordre alphabétique");
+        }
+    }
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>

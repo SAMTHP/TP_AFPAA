@@ -1,0 +1,38 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 3.3 en JS
+
+DEBUT INSTRUCTION JS
+    document.getElementById("submit").onclick = function () {
+        // DECLARATION ET INITIALISATION DES VARIABLES QUI VONT STOCKER LES NOMS
+        var name_1 = document.getElementById("choice1").value;
+        var name_2 = document.getElementById("choice2").value;
+        var name_3 = document.getElementById("choice3").value;
+
+        // INITIALISATION DU TABLEAU QUI VA STOCKER LES NOMS
+        var array_names = [];
+
+        // INSERTION DES NOMS DANS LE TABLEAU
+        array_names.push(name_1, name_2, name_3);
+
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI VA TRIER LES NOMS PAR ORDRE ALPHABETIQUE
+        var array_sort_names = [];
+
+        // INSERTION DES NOMS DANS LE NOUVEAU TABLEAU
+        array_sort_names.push(name_1, name_2, name_3);
+
+        // TRI PAR ORDRE ALPHABETIQUE DU NOUVEAU TABLEAU CREE A CET EFFET
+        array_sort_names.sort();
+
+        // TEST SI LES NOMS DU PREMIER TABLEAU SONT RANGES PAR ORDRE ALPHABETIQUE
+        if(array_sort_names[0] == array_names[0] && array_sort_names[1] == array_names[1] && array_sort_names[2] == array_names[2]){
+        document.getElementById("result").innerText = "Vos noms sont rangés par ordre alphabétique";
+        } else {
+            document.getElementById("result").innerText = "Vos noms ne sont pas rangés par ordre alphabétique";
+        }
+    }
+FIN INSTRUCTION JS
+
+        </textarea>
+</div>

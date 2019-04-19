@@ -1,0 +1,23 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 3.5 en JS
+
+DEBUT INSTRUCTION JS
+    document.getElementById("submit").onclick = function () {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE
+        var choice1 = document.getElementById("choice1").value;
+        var choice2 = document.getElementById("choice2").value;
+
+        if((choice1 * choice2) < 0){
+        document.getElementById("result").innerText = "Le produit des deux nombres est négatif";
+        }else if((choice1 * choice2) > 0){
+            document.getElementById("result").innerText = "Le produit des deux nombres est positif";
+        }else if((choice1 * choice2) == 0){
+            document.getElementById("result").innerText = "Le produit des deux nombres est nul";
+        }
+    }
+FIN INSTRUCTION JS
+
+        </textarea>
+</div>

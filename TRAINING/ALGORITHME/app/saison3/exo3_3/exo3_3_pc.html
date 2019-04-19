@@ -1,0 +1,40 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 3.3 en PSEUDO CODE
+
+    VARIABLES name1,name2,name3 en STIRNG
+    TABLEAUX arrayNames(2),arraySortNames(2) en STRING
+
+DEBUT INSTRUCTION
+
+    ECRIRE "Veuillez entrer vos noms :"
+
+    // DECLARATION ET INITIALISATION DES VARIABLES QUI VONT STOCKER LES NOMS
+    name1 = choixUtilisateur
+    name2 = choixUtilisateur
+    name3 = choixUtilisateur
+
+    // INITIALISATION DU TABLEAU QUI VA STOCKER LES NOMS
+    arrayNames = []
+
+    // INSERTION DES NOMS DANS LE TABLEAU
+    INSERTION_TABLEAU(arrayNames, name_1, name_2, name_3)
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA TRIER LES NOMS PAR ORDRE ALPHABETIQUE
+    arraySortNames = arrayNames
+
+    // TRI PAR ORDRE ALPHABETIQUE DU NOUVEAU TABLEAU CREE A CET EFFET
+    TRI_CROISSANT(arraySortNames)
+
+    // TEST SI LES NOMS DU PREMIER TABLEAU SONT RANGES PAR ORDRE ALPHABETIQUE
+    Si(arraySortNames[0] == arrayNames[0] && arraySortNames[1] == arrayNames[1] && arraySortNames[2] == arrayNames[2]) Alors
+        ECRIRE "Vos noms sont rangés par ordre alphabétique"
+    Sinon
+        ECRIRE "Vos noms ne sont pas rangés par ordre alphabétique"
+    Fin Si
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>
