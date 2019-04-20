@@ -12,7 +12,7 @@
     </head>
   <body>
       <!-- NAVBAR -->
-      <?php require "../commun/nav.html" ?>
+      <?php require "../commun/nav_season.html" ?>
       <hr>
       <div style="display: flex; justify-content: center;">
           <h1 style="color:lightblue">SAISON 3</h1>

@@ -8,57 +8,35 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link href="../css/algo.css" rel="stylesheet">
       <script type="text/javascript" src="../js/jquery_3_3_1.js" ></script>
-      <script type="text/javascript" src="../js/season2_exo_4.js"></script>
-      <!--<script type="text/javascript" src="../js/exo2_3_execution_form_php.js"></script>--> 
+      
     </head>
   <body>
       <!-- NAVBAR -->
       <?php require "../commun/nav_season.html" ?>
       <hr>
-
+      <div style="display: flex; justify-content: center;">
+          <h1 style="color:lightblue">SAISON 4</h1>
+      </div>
       <!-- Choix des exos-->
       <div style="display: flex; justify-content: center;">
         <div class="dropdown" >
         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EXERCICES</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="index_exo2_2.php" >2.2</a>
-            <a class="dropdown-item" href="index_exo2_3.php">2.3</a>
-            <a class="dropdown-item" href="#">2.4</a>
+            <a class="dropdown-item" href="exo4_2/index_exo4_2.php">4.2</a>
+            <a class="dropdown-item" href="exo4_3/index_exo4_3.php">4.3</a>
+            <a class="dropdown-item" href="exo4_4/index_exo4_4.php">4.4</a>
+            <a class="dropdown-item" href="exo4_5/index_exo4_5.php">4.5</a>
+            <a class="dropdown-item" href="exo4_6/index_exo4_6.php">4.6</a>
+            <a class="dropdown-item" href="exo4_7/index_exo4_7.php">4.7</a>
           </div>
         </div>
       </div>
       
       <br>
-
+      
       <!-- ENONCE -->
       <div class="jumbotron " style="display: flex; justify-content: center;">
-        <div class="card" id="card" style="width: 25rem;">
-          <img src="../img/code.jpeg" class="card-img-top" alt="wallpaper" style="height: 200px">
-          <div class="card-body" >
-              <h5 class="card-title">Exercice 2.4</h5>
-              <p class="card-text">Ecrire un algorithme utilisant des variables de type chaîne de caractères, et affichant quatre variantes possibles de la célèbre « belle marquise, vos beaux yeux me font mourir d’amour ». On ne se soucie pas de la ponctuation, ni des majuscules.</p>
-              <div style="display: flex; justify-content: center;">
-                  <a href="#" class="btn btn-success " id="btn-pc">PSEUDO CODE</a>
-              </div>
-              <br>
-              <div style="display: flex; justify-content: space-around;">
-                <div >
-                  <a href="#" class="btn btn-warning" id="btn-js">JS</a>
-                </div>
-                <div >
-                  <a href="#" class="btn btn-info" id="btn-jquery">JQUERY</a>
-                </div>
-                <div >
-                  <a href="#" class="btn btn-primary" id="btn-php">PHP</a>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div>
-          <p>&nbsp</p>
-        </div>
-        <!-- Affichage algo -->
-        <div id="algo"></div>
+        <img src="../img/wallpaper.png" class="card-img-top" alt="wallpaper" style="height: 200px; width:700px">
       </div>
 
       <!-- Execution du code -->

@@ -2,157 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae72a660-ff66-4cec-9960-85f83625151a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_1/exo3_1_execution.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_1/exo3_1_execution_jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_2/exo3_2_execution.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_2/exo3_2_execution_jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_2/season3_exo_2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_3/exo3_3_execution.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_3/exo3_3_execution_jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_3/season3_exo_3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_4/exo3_4_execution.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_4/exo3_4_execution_jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_4/season3_exo_4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_5/exo3_5_execution.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_5/exo3_5_execution_jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_5/season3_exo_5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_6/exo3_6_execution.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_6/exo3_6_execution_jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/saison3/exo3_6/season3_exo_6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_1/exo3_1_execution_form_jquery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_1/exo3_1_execution_form_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_1/exo3_1_jquery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_1/exo3_1_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_1/exo3_1_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_1/exo3_1_pc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_1/exo3_1_pc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_1/exo3_1_php.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_execution.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_execution_form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_execution_form_jquery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_execution_form_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_execution_view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_jquery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_jquery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_pc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_pc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_php.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/exo3_2_php.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_2/index_exo3_2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_execution.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_execution_form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_execution_form_jquery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_execution_form_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_execution_view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_jquery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_jquery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_pc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_pc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_php.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/exo3_3_php.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_3/index_exo3_3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_execution.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_execution_form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_execution_form_jquery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_execution_form_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_execution_view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_jquery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_jquery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_pc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_pc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_php.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/exo3_4_php.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_4/index_exo3_4.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_execution.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_execution_form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_execution_form_jquery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_execution_form_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_execution_view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_jquery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_jquery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_pc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_pc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_php.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/exo3_5_php.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_5/index_exo3_5.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_execution.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_execution_form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_execution_form_jquery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_execution_form_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_execution_view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_jquery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_jquery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_pc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_pc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_php.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/exo3_6_php.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saison3/exo3_6/index_exo3_6.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/saison3/exo3_1/season3_exo_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/saison3/exo3_1/season3_exo_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saison1/exo1_5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saison1/exo1_5.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saison3/exo3_1/exo3_1_php.php" beforeDir="false" afterPath="$PROJECT_DIR$/saison3/exo3_1/exo3_1_php.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/js/saison3/exo3_5/season3_exo_5.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="697">
-                    <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/js/saison3/exo3_6/season3_exo_6.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="527">
-                    <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/js/saison3/exo3_6/exo3_6_execution.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="170">
-                    <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/js/saison3/exo3_6/exo3_6_execution_jquery.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="51">
-                    <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -383,16 +239,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555668975287</updated>
-      <workItem from="1555668978567" duration="16213000" />
+      <workItem from="1555668978567" duration="16543000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16213000" />
+    <option name="totallyTimeSpent" value="16543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="955" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.3129103" />

@@ -12,7 +12,7 @@
     </head>
   <body>
       <!-- NAVBAR -->
-      <?php require "../commun/nav.html" ?>
+      <?php require "../commun/nav_season.html" ?>
       <hr>
 
       <!-- Choix des exos-->
@@ -67,7 +67,7 @@
 
       <br>
       <!-- Footer -->
-      <?php require_once "../commun/footer.html"?>
+      <?php require_once "../commun/footer_season.html"?>
 
       
       
