@@ -10,8 +10,10 @@ function generateFuture($hour,$min){
     if($new_min >= 60){
         $rest = $new_min - 60;
         $new_hour = $hour += 1;
-        if($new_hour > 24){
+        if($new_hour == 24){
             $new_hour = 0;
+        } elseif($new_hour > 24){
+            $new_hour = 1;
         }
         array_push($array_future, $new_hour, $rest);
     } else {

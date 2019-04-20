@@ -2,7 +2,7 @@
 $(document).ready(function(){
     // Show pseudo code
     $("#btn-pc").click(function(){
-        $.get("../../saison3/exo3_2/exo3_2_pc.php", function(view){
+        $.get("../../saison4/exo4_2/exo4_2_pc.php", function(view){
             $("#algo").html(view); 
         })
     })
@@ -18,10 +18,10 @@ $(document).ready(function(){
     })
     // Show algo in js
     $("#btn-js").click(function(){
-        $.get("../../saison3/exo3_2/exo3_2_js.php", function(view){
+        $.get("../../saison4/exo4_2/exo4_2_js.php", function(view){
             $("#algo").html(view); 
         })
-        $.get("../../saison3/exo3_2/exo3_2_execution_form_js.html", function(view){
+        $.get("../../saison4/exo4_2/exo4_2_execution_form_js.html", function(view){
             $("#execution").html(view); 
         })
     })

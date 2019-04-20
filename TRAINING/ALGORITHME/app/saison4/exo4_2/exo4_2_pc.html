@@ -1,0 +1,54 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.2 en PSEUDO CODE
+
+    VARIABLE hour en ENTIER
+    VARIABLE min en ENTIER
+
+DEBUT INSTRUCTION
+    
+    //  INITIALISATION DES VARIABLES QUI VONT STOCKER LES HEURES ET MINUTES
+    ECRIRE "Entrez l'heure :"
+    hour = choixUtilisateur
+    ECIRE "Entrez les minutes :"
+    min = choixUtilisateur
+
+    Fonction generateFuture(hour en ENTIER,min en ENTIER) RETOURNE un TABLEAU
+        new_min = min + 1
+        array_future = []
+
+        Si ($new_min >= 60) Alors
+            rest = new_min - 60
+            new_hour = hour += 1
+            Si (new_hour > 24) Alors
+                new_hour = 0
+            Fin Si
+            INSERTION_TABLEAU(array_future, new_hour, rest)
+        Sinon
+            INSERTION_TABLEAU(array_future, hour, new_min)
+        Fin Si
+        RETOURNE array_future
+    Fin Fonction
+
+    Fonction showNewHour(array en TABLEAU) en STRING
+    
+        ECRIRE "Dans une minute il sera : "
+        Si (array[1] < 10) Alors
+            Si (array[0] < 10) Alors
+                ECRIRE "0" & array[0] & "H" & "0" & array[1]
+            Sinon Alors
+                ECRIRE array[0] & "H" & "0" & array[1]
+            Fin Si
+        Sinon Alors
+            ECIRE array[0] & "H" & array[1]
+        Fin Si
+    Fin Fonction
+
+    array_future = generateFuture(hour,$min)
+    showNewHour(array_future)
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>
