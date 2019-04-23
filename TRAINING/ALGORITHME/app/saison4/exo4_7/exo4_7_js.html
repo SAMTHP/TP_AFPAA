@@ -1,0 +1,90 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.7 en JS
+
+DEBUT INSTRUCTION JS
+    document.getElementById("submit").onclick = function () {
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LE BAREME DES TARIFS
+        var array_tarif = ["bleu","vert","orange","rouge"];
+        
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER L'AGE
+        var age = document.getElementById('age').value;
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA DATE D'OBTENTION DU PERMIS
+        var date_permis = document.getElementById('permis').value;
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA CALCULER LA DUREE D'OBTENTION DU PERMIS
+        var duree_permis = 2019 - date_permis;
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA VERIFIER SI L'UTILISATEUR A DEJA EU UN ACCDIDENT
+        var ask_accident = document.getElementById('accident').value;
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI SERVIRA DE FLAG A TRUE OU A FALSE SELON SI L'UTILISATEUR A UN ACCIDENT OU NON
+        var accident = false;
+
+        // TEST SI ACCIDENT OU NON, AFIN DE STATUER SUR LA VALEUR DU FLAG
+        if(ask_accident == "o"){
+            accident = true;
+        }
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE D'ACCIDENT SI TEST EST A TRUE
+        if(accident){
+            var nbre_accident = document.getElementById('nbr-accident').value;
+        }
+        
+        // TEST DES DIFFERENTES CONDITIONS ET ATTRIBUTION DES BAREMES DE TARIFS SELON LES INFOS RENSEIGNEES
+        if(age < 25 && duree_permis < 2 && !accident){
+            var index_section = 3;
+            document.getElementById('result').innerText = "Votre tarif sera défini selon le barème de la section "+array_tarif[index_section];
+            var new_index_section = index_section -= 1;
+            document.getElementById('avantage').innerText = "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème "+array_tarif[new_index_section];
+        } else if(age < 25 && duree_permis < 2 && accident){
+            document.getElementById('result').innerText = "Votre profil ne nous permet pas de vous assurer";
+        } else if(age < 25 && duree_permis >= 2 && !accident ){
+            var index_section = 2;
+            document.getElementById('result').innerText = "Votre tarif sera défini selon le barème de la section "+array_tarif[index_section];
+            var new_index_section = index_section -= 1;
+            document.getElementById('avantage').innerText = "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème "+array_tarif[new_index_section];
+        } else if(age >= 25 && duree_permis < 2 && !accident ){
+            var index_section = 2;
+            document.getElementById('result').innerText = "Votre tarif sera défini selon le barème de la section "+array_tarif[index_section];
+            var new_index_section = index_section -= 1;
+            document.getElementById('avantage').innerText = "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème "+array_tarif[new_index_section];
+        } else if(age < 25 && duree_permis >= 2 && nbre_accident <= 1){
+            var index_section = 3;
+            document.getElementById('result').innerText = "Votre tarif sera défini selon le barème de la section "+array_tarif[index_section];
+            var new_index_section = index_section -= 1;
+            document.getElementById('avantage').innerText = "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème "+array_tarif[new_index_section];
+        } else if(age < 25 && duree_permis >= 2 && nbre_accident > 1){
+            document.getElementById('result').innerText = "Votre profil ne nous permet pas de vous assurer";
+        } else if(age >= 25 && duree_permis < 2 && nbre_accident <= 1){
+            var index_section = 3;
+            document.getElementById('result').innerText = "Votre tarif sera défini selon le barème de la section "+array_tarif[index_section];
+            var new_index_section = index_section -= 1;
+            document.getElementById('avantage').innerText = "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème "+array_tarif[new_index_section];
+        } else if(age >= 25 && duree_permis < 2 && nbre_accident > 1){
+            document.getElementById('result').innerText = "Votre profil ne nous permet pas de vous assurer";
+        } else if(age >= 25 && duree_permis >= 2 && !accident){
+            var index_section = 1;
+            document.getElementById('result').innerText = "Votre tarif sera défini selon le barème de la section "+array_tarif[index_section];
+            var new_index_section = index_section -= 1;
+            document.getElementById('avantage').innerText = "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème "+array_tarif[new_index_section];
+        } else if(age >= 25 && duree_permis >= 2 && nbre_accident <= 1){
+            var index_section = 2;
+            document.getElementById('result').innerText = "Votre tarif sera défini selon le barème de la section "+array_tarif[index_section];
+            var new_index_section = index_section -= 1;
+            document.getElementById('avantage').innerText = "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème "+array_tarif[new_index_section];
+        } else if(age >= 25 && duree_permis >= 2 && nbre_accident > 1 && nbre_accident <= 2){
+            var index_section = 3;
+            document.getElementById('result').innerText = "Votre tarif sera défini selon le barème de la section "+array_tarif[index_section];
+            var new_index_section = index_section -= 1;
+            document.getElementById('avantage').innerText = "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème "+array_tarif[new_index_section];
+        } else if(age >= 25 && duree_permis >= 2 && nbre_accident >  2){
+            document.getElementById('result').innerText = "Votre profil ne nous permet pas de vous assurer";
+        }
+    }
+FIN INSTRUCTION JS
+
+        </textarea>
+</div>

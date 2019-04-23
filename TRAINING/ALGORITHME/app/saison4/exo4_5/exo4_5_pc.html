@@ -1,0 +1,26 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.5 en PSEUDO CODE
+
+    VARIABLE age en ENTIER
+    VARIABLE sexe en ENTIER
+
+DEBUT INSTRUCTION
+    
+    // DECLARATION ET INITIALISATION DES VARIABLES QUI VONT STOCKER L'AGE ET LE GENRE
+    age = _POST['age']
+    sexe = _POST['gender']
+
+    Si (sexe == "h" && age >= 20) Alors
+        ECRIRE "Vous êtes imposable !"
+    Sinon Si(sexe == "f" && age >= 18 && age <= 35) Alors
+        ECRIRE "Vous êtes imposable !"
+    Sinon
+        ECRIRE "Vous n'êtes pas imposable !"
+    Fin Si
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

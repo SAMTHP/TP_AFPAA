@@ -1,0 +1,23 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.5 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+    $("#submit").click(function () {
+        // DECLARATION ET INITIALISATION DES VARIABLES QUI VONT STOCKER L'AGE ET LE GENRE
+        var age = $('#age').val();
+        var sexe = $('#gender').val();
+
+        if(sexe == "h" && age >= 20){
+            $('#result').text("Vous êtes imposable !");
+        } else if(sexe == "f" && age >= 18 && age <= 35){
+            $('#result').text("Vous êtes imposable !");
+        } else {
+            $('#result').text("Vous n'êtes pas imposable !");
+        }
+    })
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>

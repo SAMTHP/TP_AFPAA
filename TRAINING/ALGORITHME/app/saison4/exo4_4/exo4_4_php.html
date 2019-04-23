@@ -1,0 +1,29 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.4 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE DE PHOTOCOPIES
+    $choice = $_POST['choice'];
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE PRIX
+    $price = 0;
+
+    for($i=0;$i<$choice;$i++){
+        if($i <= 10){
+            $price += 0.1;
+        }elseif($i>10 && $i<=30){
+            $price += 0.09;
+        }else{
+            $price += 0.08;
+        }
+    }
+    
+    echo " Vous allez payer $price €";
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

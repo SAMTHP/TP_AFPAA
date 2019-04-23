@@ -1,0 +1,61 @@
+<div class="form-group php" style="display: flex ; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.8 en PSEUDO CODE
+    VARIABLE day en ENTIER
+    VARIABLE month en ENTIER
+    VARIABLE year en ENTIER
+
+DEBUT INSTRUCTION
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE JOUR
+    day = choixUtilisateur
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE MOIS
+    month = choixUtilisateur
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER L'ANNEE
+    year = choixUtilisateur
+
+
+    // ANALYSE SI L'ANNEE EST BISSEXTILE OU NON
+    Fonction analyzeYear(year en ENTIER) en BOOLEEN
+        flag = false
+
+        Si (year % 4 == 0 && year % 100 != 0) Alors
+            flag = true
+        Sinon Si (year % 400 == 0) Alors
+            flag = true
+        Sinon Alors
+            flag = false
+        Fin Si
+        return flag
+    Fin Fonction
+
+    function dateValidation(month en ENTIER,day en ENTIER,flag en BOOLEEN) en STRING
+        Si (flag) Alors
+            Si (month == 2 && day <= 29) Alors
+                echo "La date est valide"
+            Sinon Si (month == 2 && day > 29) Alors
+                echo "La date est non valide"
+            Sinon Alors
+                echo "La date est valide"
+            Fin Si
+        Sinon 
+            Si (month == 2 && day <= 28) Alors
+                echo "La date est valide"
+            Sinon Si (month == 2 && day > 28) Alors
+                echo "La date est non valide"
+            Sinon
+                echo "La date est valide"
+            Fin Si
+        Fin Si
+    Fin Fonction
+
+    flag = analyzeYear(year)
+    dateValidation(month,day,flag)
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

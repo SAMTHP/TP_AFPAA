@@ -1,0 +1,57 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.8 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE JOUR
+    $day = $_POST['day'];
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE MOIS
+    $month = $_POST['month'];
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER L'ANNEE
+    $year = $_POST['year'];
+
+
+    // ANALYSE SI L'ANNEE EST BISSEXTILE OU NON
+    function analyzeYear($year){
+        $flag = false;
+    
+        if($year % 4 == 0 && $year % 100 != 0){
+            $flag = true;
+        } elseif($year % 400 == 0){
+            $flag = true;
+        } else{
+            $flag = false;
+        }
+        return $flag;
+    }
+    
+    function dateValidation($month,$day,$flag){
+        if($flag){
+            if($month == 2 && $day <= 29){
+                echo "La date est valide";
+            } elseif($month == 2 && $day > 29){
+                echo "La date est non valide";
+            } else {
+                echo "La date est valide";
+            }
+        } else {
+            if($month == 2 && $day <= 28){
+                echo "La date est valide";
+            } elseif($month == 2 && $day > 28){
+                echo "La date est non valide";
+            } else {
+                echo "La date est valide";
+            }
+        }
+    }
+    
+    $flag = analyzeYear($year);
+    dateValidation($month,$day,$flag);
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

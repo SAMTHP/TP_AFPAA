@@ -1,0 +1,32 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.4 en PSEUDO CODE
+
+    VARIABLE choice en ENTIER
+    VARIABLE price en ENTIER
+
+DEBUT INSTRUCTION
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE DE PHOTOCOPIES
+    choice = _POST['choice']
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE PRIX
+    price = 0
+
+    Pour (i=0;i<choice;i++) Alors
+        Si (i <= 10) Alors
+            price += 0.1
+        Sinon Si (i>10 && i<=30) Alors
+            price += 0.09
+        Sinon
+            price += 0.08
+        Fin Si
+    Fin Pour
+
+    ECRIRE " Vous allez payer price €"
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

@@ -1,13 +1,13 @@
 <div class="form-group php" style="display: flex; flex-direction: column;" >
-    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
     <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
-ALGORITHME EXO 4.2 en JS
+ALGORITHME EXO 4.2 en JQUERY
 
-DEBUT INSTRUCTION JS
-    document.getElementById("submit").onclick = function () {
+DEBUT INSTRUCTION JQUERY
+    $("#submit").click(function () {
         // DECLARATION ET INITIALISATION DES VARIABLES QUI VONT STOCKER LES HEURES ET MINUTES
-        var hour = parseInt(document.getElementById('hour').value);
-        var min = parseInt(document.getElementById('minutes').value);
+        var hour = parseInt($('#hour').val());
+        var min = parseInt($('#minutes').val());
         
         function generateFuture(hour,min){
             var new_min = min + 1;
@@ -17,8 +17,10 @@ DEBUT INSTRUCTION JS
                 var rest = new_min - 60;
                 
                 var new_hour = hour += 1;
-                if(new_hour > 24){
+                if(new_hour == 24){
                     new_hour = 0;
+                } else if (new_hour > 24){
+                    new_hour = 1;
                 }
                 array_future.push(new_hour, rest);
             } else {
@@ -31,19 +33,19 @@ DEBUT INSTRUCTION JS
 
             if(array[1] < 10){
                 if(array[0] < 10) {
-                    document.getElementById("result").innerHTML = "<strong>Dans une minute il sera :</strong><br>" + "0" + array[0] + "H" + "0" + array[1];
+                    $("#result").html("<strong>Dans une minute il sera :</strong><br>" + "0" + array[0] + "H" + "0" + array[1]);
                 } else {
-                    document.getElementById("result").innerHTML = "<strong>Dans une minute il sera :</strong><br>" + array[0] + "H" + "0" + array[1];
+                    $("#result").html("<strong>Dans une minute il sera :</strong><br>" + array[0] + "H" + "0" + array[1]);
                 }
             } else {
-                document.getElementById("result").innerHTML = "<strong>Dans une minute il sera :</strong><br>" + array[0] + "H" + array[1];
+                $("#result").html("<strong>Dans une minute il sera :</strong><br>" + array[0] + "H" + array[1]);
             }
         }
 
         var array_future = generateFuture(hour,min);
         showNewHour(array_future);
     }
-FIN INSTRUCTION JS
+FIN INSTRUCTION JQUERY
 
         </textarea>
 </div>

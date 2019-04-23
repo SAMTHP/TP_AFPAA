@@ -1,0 +1,58 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.8 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+    $("#submit").click(function () {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE JOUR
+        var day = $('#day').val();
+        
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE MOIS
+        var month = $('#month').val();
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER L'ANNEE
+        var year = $('#year').val();
+
+
+        // ANALYSE SI L'ANNEE EST BISSEXTILE OU NON
+        function analyzeYear(year){
+            var flag = false;
+    
+            if(year % 4 == 0 && year % 100 != 0){
+                flag = true;
+            } else if(year % 400 == 0){
+                flag = true;
+            } else{
+                flag = false;
+            }
+            return flag;
+        }
+        
+        function dateValidation(month,day,flag){
+            if(flag){
+                if(month == 2 && day <= 29){
+                    $('#result').text("La date est valide");
+                } else if(month == 2 && day > 29){
+                    $('#result').text("La date est non valide");
+                } else {
+                    $('#result').text("La date est valide");
+                }
+            } else {
+                if(month == 2 && day <= 28){
+                    $('#result').text("La date est valide");
+                } else if(month == 2 && day > 28){
+                    $('#result').text("La date est non valide");
+                } else {
+                    $('#result').text("La date est valide");
+                }
+            }
+        }
+    
+        var flag = analyzeYear(year);
+        dateValidation(month,day,flag);
+    })
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>

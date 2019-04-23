@@ -1,0 +1,86 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.7 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LE BAREME DES TARIFS
+    $array_tarif = ["bleu","vert","orange","rouge"];
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER L'AGE
+    $age = $_POST['age'];
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA DATE D'OBTENTION DU PERMIS
+    $date_permis = $_POST['permis'];
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA VERIFIER SI L'UTILISATEUR A DEJA EU UN ACCDIDENT
+    $ask_accident = $_POST['accident'];
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI SERVIRA DE FLAG A TRUE OU A FALSE SELON SI L'UTILISATEUR A UN ACCIDENT OU NON
+    $accident = false;
+
+    // TEST SI ACCIDENT OU NON, AFIN DE STATUER SUR LA VALEUR DU FLAG
+    if($ask_accident == "o"){
+        $accident = true;
+    }
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE D'ACCIDENT SI TEST EST A TRUE
+    if($accident){
+        $nbre_accident = $_POST['nbr-accident'];
+    }
+    
+    // TEST DES DIFFERENTES CONDITIONS ET ATTRIBUTION DES BAREMES DE TARIFS SELON LES INFOS RENSEIGNEES
+    if($age < 25 && $duree_permis < 2 && !$accident){
+        $index_section = 3;
+        echo "Votre tarif sera défini selon le barème de la section $array_tarif[$index_section]".BR;
+        $new_index_section = $index_section -= 1;
+        echo "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème $array_tarif[$new_index_section]";
+    } elseif($age < 25 && $duree_permis < 2 && $accident){
+        echo "Votre profil ne nous permet pas de vous assurer";
+    } elseif($age < 25 && $duree_permis >= 2 && !$accident ){
+        $index_section = 2;
+        echo "Votre tarif sera défini selon le barème de la section $array_tarif[$index_section]".BR;
+        $new_index_section = $index_section -= 1;
+        echo "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème $array_tarif[$new_index_section]";
+    } elseif($age >= 25 && $duree_permis < 2 && !$accident ){
+        $index_section = 2;
+        echo "Votre tarif sera défini selon le barème de la section $array_tarif[$index_section]".BR;
+        $new_index_section = $index_section -= 1;
+        echo "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème $array_tarif[$new_index_section]";
+    } elseif($age < 25 && $duree_permis >= 2 && $nbre_accident <= 1){
+        $index_section = 3;
+        echo "Votre tarif sera défini selon le barème de la section $array_tarif[$index_section]".BR;
+        $new_index_section = $index_section -= 1;
+        echo "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème $array_tarif[$new_index_section]";
+    } elseif($age < 25 && $duree_permis >= 2 && $nbre_accident > 1){
+        echo "Votre profil ne nous permet pas de vous assurer";
+    } elseif($age >= 25 && $duree_permis < 2 && $nbre_accident <= 1){
+        $index_section = 3;
+        echo "Votre tarif sera défini selon le barème de la section $array_tarif[$index_section]".BR;
+        $new_index_section = $index_section -= 1;
+        echo "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème $array_tarif[$new_index_section]";
+    } elseif($age >= 25 && $duree_permis < 2 && $nbre_accident > 1){
+        echo "Votre profil ne nous permet pas de vous assurer";
+    } elseif($age >= 25 && $duree_permis >= 2 && !$accident){
+        $index_section = 1;
+        echo "Votre tarif sera défini selon le barème de la section $array_tarif[$index_section]".BR;
+        $new_index_section = $index_section -= 1;
+        echo "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème $array_tarif[$new_index_section]";
+    } elseif($age >= 25 && $duree_permis >= 2 && $nbre_accident <= 1){
+        $index_section = 2;
+        echo "Votre tarif sera défini selon le barème de la section $array_tarif[$index_section]".BR;
+        $new_index_section = $index_section -= 1;
+        echo "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème $array_tarif[$new_index_section]";
+    } elseif($age >= 25 && $duree_permis >= 2 && $nbre_accident > 1 && $nbre_accident <= 2){
+        $index_section = 3;
+        echo "Votre tarif sera défini selon le barème de la section $array_tarif[$index_section]".BR;
+        $new_index_section = $index_section -= 1;
+        echo "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème $array_tarif[$new_index_section]";
+    } elseif($age >= 25 && $duree_permis >= 2 && $nbre_accident >  2){
+        echo "Votre profil ne nous permet pas de vous assurer";
+    }
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

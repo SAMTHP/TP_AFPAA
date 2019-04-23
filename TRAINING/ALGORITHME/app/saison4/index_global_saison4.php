@@ -28,6 +28,7 @@
             <a class="dropdown-item" href="exo4_5/index_exo4_5.php">4.5</a>
             <a class="dropdown-item" href="exo4_6/index_exo4_6.php">4.6</a>
             <a class="dropdown-item" href="exo4_7/index_exo4_7.php">4.7</a>
+            <a class="dropdown-item" href="exo4_8/index_exo4_8.php">4.8</a>
           </div>
         </div>
       </div>

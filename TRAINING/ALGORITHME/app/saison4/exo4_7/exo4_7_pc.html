@@ -1,0 +1,92 @@
+<div class="form-group php" style="display: flex ; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.7 en PSEUDO CODE
+    TABLEAU array_tarif(3) en STRING
+    VARIABLE age en ENTIER
+    VARIABLE date_permis en ENTIER
+    VARIABLE ask_accident en STRING
+    VARIABLE accident en BOOLEEN
+    VARIABLE nbre_accident en ENTIER
+
+DEBUT INSTRUCTION
+    
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LE BAREME DES TARIFS
+    array_tarif = ["bleu","vert","orange","rouge"]
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER L'AGE
+    age = _POST['age']
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA DATE D'OBTENTION DU PERMIS
+    date_permis = _POST['permis']
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA VERIFIER SI L'UTILISATEUR A DEJA EU UN ACCDIDENT
+    ask_accident = _POST['accident']
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI SERVIRA DE FLAG A TRUE OU A FALSE SELON SI L'UTILISATEUR A UN ACCIDENT OU NON
+    accident = false
+
+    // TEST SI ACCIDENT OU NON, AFIN DE STATUER SUR LA VALEUR DU FLAG
+    Si (ask_accident == "o") Alors
+        accident = true
+    Fin Si
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE D'ACCIDENT SI TEST EST A TRUE
+    Si (accident) Alors
+        nbre_accident = _POST['nbr-accident']
+    Fin Si
+
+    // TEST DES DIFFERENTES CONDITIONS ET ATTRIBUTION DES BAREMES DE TARIFS SELON LES INFOS RENSEIGNEES
+    Si(age < 25 && duree_permis < 2 && !accident)Alors
+        index_section = 3
+        ECRIRE "Votre tarif sera défini selon le barème de la section array_tarif[index_section]"
+        new_index_section = index_section -= 1
+        ECRIRE "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème array_tarif[new_index_section]"
+    Sinon Si(age < 25 && duree_permis < 2 && accident) Alors
+        ECRIRE "Votre profil ne nous permet pas de vous assurer"
+    Sinon Si(age < 25 && duree_permis >= 2 && !accident ) Alors
+        index_section = 2
+        ECRIRE "Votre tarif sera défini selon le barème de la section array_tarif[index_section]"
+        new_index_section = index_section -= 1
+        ECRIRE "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème array_tarif[new_index_section]"
+    Sinon if(age >= 25 && duree_permis < 2 && !accident ) Alors
+        index_section = 2
+        ECRIRE "Votre tarSi sera défini selon le barème de la section array_tarif[index_section]"
+        new_index_section = index_section -= 1
+        ECRIRE "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème array_tarif[new_index_section]"
+    Sinon Si(age < 25 && duree_permis >= 2 && nbre_accident <= 1) Alors
+        index_section = 3
+        ECRIRE "Votre tarif sera défini selon le barème de la section array_tarif[index_section]"
+        new_index_section = index_section -= 1
+        ECRIRE "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème array_tarif[new_index_section]"
+    Sinon Si(age < 25 && duree_permis >= 2 && nbre_accident > 1) Alors
+        ECRIRE "Votre profil ne nous permet pas de vous assurer"
+    Sinon Si(age >= 25 && duree_permis < 2 && nbre_accident <= 1) Alors
+        index_section = 3
+        ECRIRE "Votre tarif sera défini selon le barème de la section array_tarif[index_section]"
+        new_index_section = index_section -= 1
+        ECRIRE "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème array_tarif[new_index_section]"
+    Sinon Si(age >= 25 && duree_permis < 2 && nbre_accident > 1) Alors
+        ECRIRE "Votre profil ne nous permet pas de vous assurer"
+    Sinon Si(age >= 25 && duree_permis >= 2 && !accident) Alors
+        index_section = 1
+        ECRIRE "Votre tarif sera défini selon le barème de la section array_tarif[index_section]"
+        new_index_section = index_section -= 1
+        ECRIRE "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème array_tarif[new_index_section]"
+    Sinon Si(age >= 25 && duree_permis >= 2 && nbre_accident <= 1) Alors
+        index_section = 2
+        ECRIRE "Votre tarif sera défini selon le barème de la section array_tarif[index_section]"
+        new_index_section = index_section -= 1
+        ECRIRE "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème array_tarif[new_index_section]"
+    Sinon Si(age >= 25 && duree_permis >= 2 && nbre_accident > 1 && nbre_accident <= 2) Alors
+        index_section = 3
+        ECRIRE "Votre tarif sera défini selon le barème de la section array_tarif[index_section]"
+        new_index_section = index_section -= 1
+        ECRIRE "Dans cinq ans votre tarif sera plus avantageux, et sera dans le barème array_tarif[new_index_section]"
+    Sinon Si(age >= 25 && duree_permis >= 2 && nbre_accident >  2) Alors
+        ECRIRE "Votre profil ne nous permet pas de vous assurer"
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

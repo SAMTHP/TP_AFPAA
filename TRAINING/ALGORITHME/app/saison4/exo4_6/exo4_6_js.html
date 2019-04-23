@@ -1,0 +1,27 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 4.6 en JS
+
+DEBUT INSTRUCTION JS
+    document.getElementById("submit").onclick = function () {
+        // DECLARATION ET INITIALISATION DES VARIABLES QUI VONT STOCKER LES SCORES DES CANDIDATS
+        var candidat_1 = $_POST['score-1'];
+        var candidat_2 = $_POST['score-2'];
+        var candidat_3 = $_POST['score-3'];
+        var candidat_4 =  $_POST['score-4'];
+
+        if(candidat_1 >= 50){
+            document.getElementById('#result').innerText = "Le premier candidat a obtenu $candidat_1 % des voix et est donc élu dès le premier tour !";
+        } else if(candidat_1 < 12.5 ){
+            document.getElementById('#result').innerText = "Le premier candidat est battu car il a obtenu moins de 12.5 voix (Voix collectées : "+candidat_1+")";
+        } else if (candidat_1 > candidat_4 && candidat_1 > candidat_3 && candidat_1 > candidat_4 ){
+            document.getElementById('#result').innerText = "Le premier candidat est retenu pour le second tour et se trouve être le favoris";
+        } else{
+            document.getElementById('#result').innerText = "Le premier candidat est retenu pour le second tour et se trouve être dans une position défavorable";
+        }
+    }
+FIN INSTRUCTION JS
+
+        </textarea>
+</div>
