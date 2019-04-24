@@ -1,0 +1,20 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 5.1 en JS
+
+DEBUT INSTRUCTION JS
+    document.getElementById("submit").onclick = function () {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE
+        var choice = document.getElementById('choice').value;
+
+        if(choice < 1 || choice > 3){
+            document.getElementById('result').innerText = "Mauvais nombre, essayez encore !";
+        } else{
+            document.getElementById('result').innerText = "Bravo, vous avez trouvé un nombre valide !";
+        }
+    }
+FIN INSTRUCTION JS
+
+        </textarea>
+</div>
