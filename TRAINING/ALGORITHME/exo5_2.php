@@ -42,6 +42,6 @@ if($flag){
         $choice_2 = readline("Choisissez un nombre : \n");
         $e++;
     }
-    echo "Bravo, vous avez trouvé un nombre valide !\n";
+    echo "Bravo, vous avez trouvé un nombre valide au bout du $e ° coup(s)!\n";
     echo "\n";
 }

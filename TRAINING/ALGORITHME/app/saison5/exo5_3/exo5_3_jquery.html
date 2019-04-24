@@ -1,0 +1,32 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 5.3 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+    $("#submit").click(function () {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE
+        var choice = parseInt($('#choice').val());
+
+        // INITIALISATION DU COMPTEUR
+        var i = 1;
+
+        // INITIALISATION DE LA VARIABLE QUI VA STOCKER LES DIX NOMBRES
+        var show = "";
+
+        $('#sentence').text("Les dix prochains nombres sont : ");
+        
+        // GENERATION DES DIX NOMBRES SUIVANTS
+        while(i<=10){
+            choice += 1;
+            show += choice + " ";
+            i++;
+        }
+
+        // AFFICHAGE DES DIX NOMBRES SUIVANTS DANS LA VUE
+        $('#result').text(show);
+    })
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>

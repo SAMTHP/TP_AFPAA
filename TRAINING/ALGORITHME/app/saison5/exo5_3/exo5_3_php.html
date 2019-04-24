@@ -1,0 +1,24 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 5.3 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE
+    $choice = $_POST['choice'];
+    
+    $i = 1;
+    echo "Les dix prochains nombres sont : \n";
+
+    // AFFICHAGE DES DIX NOMBRES SUIVANTS LE NOMBRE SAISI
+    while($i<=10){
+        $choice += 1;
+        echo $choice." ";
+        $i++;
+    }
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

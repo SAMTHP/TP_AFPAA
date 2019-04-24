@@ -1,0 +1,31 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 5.7 en JS
+
+DEBUT INSTRUCTION JS
+    document.getElementById("submit").onclick = function () {
+        // ECRIRE "CHOISISSSEZ UN NOMBRE"
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE
+        //LIRE choixUtilisateur
+        var choice = parseInt(document.getElementById('choice').value);
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE RESULTAT
+        var result = 1;
+
+        // CALCUL DE LA SOMME DES ENTIERS
+        for(var i = 1;i<=choice;i++){
+            result *= i;
+        }
+
+        // AFFICHAGE DU RESULTAT
+        // ECRIRE "La factoriell de " & choice & " est :"
+        document.getElementById('sentence').innerText = "La factorielle de "+ choice +" :"; 
+        // ECRIRE result
+        document.getElementById('result').innerText = result;
+    }
+FIN INSTRUCTION JS
+
+        </textarea>
+</div>

@@ -1,0 +1,24 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 5.5 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+    $("#submit").click(function () {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE
+        // LIRE choixUtilisateur
+        var choice = parseInt($('#choice').val());
+
+        // ECRIRE "Table de choice : "
+        $('#sentence').text("Table de "+choice);
+
+        // AFFICHAGE DE LA TABLE DE MULTIPLICATION
+        for(var i=1; i <= 10; i++){
+            var result = choice * i;
+            $("#result-"+i).text(choice+" x "+i+" = "+result);
+        }
+    })
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>

@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link href="../../css/algo.css" rel="stylesheet">
       <script type="text/javascript" src="../../js/jquery_3_3_1.js" ></script>
-      <script type="text/javascript" src="../../js/saison5/exo5_1/season5_exo_1.js"></script>
+      <script type="text/javascript" src="../../js/saison5/exo5_5/season5_exo_5.js"></script>
       
     </head>
   <body>
@@ -21,11 +21,11 @@
         <div class="dropdown" >
         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EXERCICES</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">5.1</a>
+            <a class="dropdown-item" href="../exo5_1/index_exo5_1.php">5.1</a>
             <a class="dropdown-item" href="../exo5_2/index_exo5_2.php">5.2</a>
             <a class="dropdown-item" href="../exo5_3/index_exo5_3.php">5.3</a>
             <a class="dropdown-item" href="../exo5_4/index_exo5_4.php">5.4</a>
-            <a class="dropdown-item" href="../exo5_5/index_exo5_5.php">5.5</a>
+            <a class="dropdown-item" href="#">5.5</a>
             <a class="dropdown-item" href="../exo5_6/index_exo5_6.php">5.6</a>
             <a class="dropdown-item" href="../exo5_7/index_exo5_7.php">5.7</a>
             <a class="dropdown-item" href="../exo5_8/index_exo5_8.php">5.8</a>
@@ -43,8 +43,8 @@
         <div class="card" id="card" style="width: 25rem;">
           <img src="../../img/code.jpeg" class="card-img-top" alt="wallpaper" style="height: 200px">
           <div class="card-body" >
-              <h5 class="card-title">Exercice 5.1</h5>
-              <p class="card-text">Ecrire un algorithme qui demande à l’utilisateur un nombre compris entre 1 et 3 jusqu’à ce que la réponse convienne.</p>
+              <h5 class="card-title">Exercice 5.5</h5>
+              <p class="card-text">Ecrire un algorithme qui demande un nombre de départ, et qui ensuite écrit la table de multiplication de ce nombre.</p>
               <div style="display: flex; justify-content: center;">
                   <a href="#" class="btn btn-success " id="btn-pc">PSEUDO CODE</a>
               </div>

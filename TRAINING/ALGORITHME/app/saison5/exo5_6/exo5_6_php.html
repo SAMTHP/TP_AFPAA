@@ -1,0 +1,31 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 5.6 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // ECRIRE "CHOISISSSEZ UN NOMBRE"
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE
+    //LIRE choixUtilisateur
+    $choice = $_POST['choice'];
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE RESULTAT
+    $result = 0;
+
+    // CALCUL DE LA SOMME DES ENTIERS
+    for($i=1;$i <= $choice; $i++){
+        $result += $i;
+    }
+
+    // AFFICHAGE DU RESULTAT
+    // ECRIRE "La somme de sentiers de " & choice & ":"
+    echo "La somme des entiers de $choice : ".BR;
+    // ECRIRE result
+    echo  $result;
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>
