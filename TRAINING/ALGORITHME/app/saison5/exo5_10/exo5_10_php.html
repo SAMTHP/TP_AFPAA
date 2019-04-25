@@ -5,12 +5,20 @@ ALGORITHME EXO 5.10 en PHP
 
 DEBUT INSTRUCTION PHP
 
+    // CREATION D'UNE CONSTANTE POUR GENERER LES SAUTS DE LIGNE
+    define('BR',"<br>");
+
     function returnMoney($paiement,$sum){
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI STOCKE LES COUPURES
         $array_coin_value = [10,5,1];
+        
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LES COUPURES RETENUES
         $array_coin_given = [];
 
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA CALCULER LA DIFFERENCE ENTRE LE REGLEMENT ET LE MONTANT A REGLER
         $diff = $paiement - $sum;
 
+        // INSERTION DES COUPURES DANS LE TABLEAU PREVU A CET EFFET
         while($diff != 0){
             foreach($array_coin_value as $value){
                 while($value <= $diff){
@@ -23,10 +31,13 @@ DEBUT INSTRUCTION PHP
     }
 
     function showMoney($array_coin_money){
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA SOMME DES VALEURS DU TABLEAU QUI A RECUPERER LES COUPURES
         $diff = array_sum($array_coin_money);
 
-
+        ECRIRE "Montant rendu : diff €"
         echo "Montant rendu : $diff €".BR;
+
+        ECRIRE "Détails coupures :"
         echo "Détails coupures :".BR;
         foreach($array_coin_money as $coin){
             if($coin == 10 ){
@@ -39,52 +50,64 @@ DEBUT INSTRUCTION PHP
         }
     }
 
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA SERVIR DE DRAPEAU POUR L'AFFICHAGE OU NON DU FORMULAIRE DE SAISI
     $flag = true;
 
+    // TEST SI LE PATH DE L'URL EST VALIDE POUR L'EXECUTION DU CODE
     if(isset($_GET['show'])){
 
-        // Prices of products
+        // DECLARATION ET INITIALISATION DES VARIABLES QUI VONT SAUVEGARDER LES PRIX DES PRODUITS
         $price_apple = 2;
         $price_milk = 1;
         $price_iphone = 689;
         $price_pc = 869;
 
-        // Save quantities
+        // RECUPERATION DES QUANTITES RENSEIGNER PAR L'UTILISATEUR PAR PRODUITS
         $quantity_apple = intval($_POST['quantity-apple']);
         $quantity_milk = intval($_POST['quantity-milk']);
         $quantity_iphone = intval($_POST['quantity-iphone']);
         $quantity_pc = intval($_POST['quantity-pc']);
 
-        // Calculate price
+        // DECLARATION ET INITIALISATION DES LA VARIABLES QUI VONT SAUVEGARDER LES PRIX 
         $total_apple = $quantity_apple * $price_apple;
         $total_milk = $quantity_milk * $price_milk;
         $total_iphone = $quantity_iphone * $price_iphone;
         $total_pc = $quantity_pc * $price_pc;
 
-        // Total order
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA SAUVEGARDER LE TOTAL DE LA FACTURE
         $total_order = $total_apple + $total_milk + $total_iphone + $total_pc;
 
+        // AFFICHAGE DU MONTANT A REGLER
+        // ECRIRE "Vous devez régler total_order €"
         echo "Vous devez régler $total_order €";
     }
 
+    // TEST SI LE PATH DE L'URL EST VALIDE POUR L'EXECUTION DU CODE
     if(isset($_GET['price'])){
+        // RECUPERATION DES MONTANTS VIA L'URL APRES RECHARGEMENT DE LA PAGE
         $apple = $_GET['apple'];
         $milk = $_GET['milk'];
         $iphone = $_GET['iphone'];
         $pc = $_GET['pc'];
 
+        // CALCUL DU TOTAL DU MONTANT
         $sum = $apple + $milk + $iphone + $pc;
 
     }
 
+    // TEST SI L'ENVOI DU NOUVEAU FORMULAIRE A ETE ENVOYE
     if(isset($_POST['choice'])){
+        // PASSAGE DU DRAPEAU A FAUX POUR MASQUER LE FORMULAIRE
         $flag = false;
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE MONTANT DU REGLEMENT
+        // ECRIRE "Veuillez sairir le montant du reglement"
         $paiement = $_POST['choice'];
 
-        // Calculate money which are returned after paiement
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LES COUPURES A RENDRE VIA L'APPEL DE FONCTION
         $return_money = returnMoney($paiement,$sum);
 
-        // Showing money returned
+        // APPEL DE LA FONCTION QUI VA PERMETTRE L'AFFICHAGE DES COUPURES A RENDRE
         showMoney($return_money);
     }
 
