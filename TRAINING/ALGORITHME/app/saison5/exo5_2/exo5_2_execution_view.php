@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -22,14 +22,30 @@
             <div class="card" id="card" style="width: 25rem;">
                 <img src="../../img/code.jpeg" class="card-img-top" alt="wallpaper" style="height: 200px">
                 <div class="card-body" >
-                    <h5 class="card-title">RESULTAT</h5>
+                    <h5 class="card-title">Resultat</h5>
                     <p class="card-text">
                         <?php require_once "exo5_2_execution.php" ?>
                     </p>
-                    <?php if($flag): ?>
+                    <?php if(isset($flag) && $flag): ?>
                         <div style="display: flex; justify-content: center;">
                             <a href="index_exo5_2.php" class="btn btn-info " >RETENTEZ VOTRE CHANCE</a>
                         </div>
+                    <?php endif ?>
+                    <br>
+                    <?php if($form): ?>
+                        <form action="exo5_2_execution_view.php?rand=<?= $_GET['rand']; ?>" method="POST">
+                            <div class="form-group">
+                                <div class="row">
+                                    <p>&nbsp&nbsp&nbsp</p>
+                                    <label for="choice-2" >Choisissez un nombre (section b): </label>
+                                    <div>
+                                        <p>&nbsp</p>
+                                    </div>
+                                    <input type="number" class="form-control col-3" id="choice-2" name="choice-2" >
+                                </div>
+                                <button type="submit" class="btn btn-primary " id="submit">Valider</button>
+                            </div>
+                        </form>
                     <?php endif ?>
                     <br>
                     <div style="display: flex; justify-content: center;">
