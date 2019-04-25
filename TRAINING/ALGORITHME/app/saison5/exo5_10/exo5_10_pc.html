@@ -1,0 +1,95 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 5.10 en PSEUDO CODE
+
+    VARIABLES max, num en ENTIER
+    TABLEAU array_num(19) en ENTIER
+
+DEBUT INSTRUCTION
+    
+    Fonction returnMoney(paiement en ENTIER,sum en ENTIER) en ENTIER
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI STOCKE LES COUPURES
+        array_coin_value = [10,5,1]
+
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LES COUPURES RETENUES
+        array_coin_given = []
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA CALCULER LA DIFFERENCE ENTRE LE REGLEMENT ET LE MONTANT A REGLER
+        diff = paiement - sum
+
+        // INSERTION DES COUPURES DANS LE TABLEAU PREVU A CET EFFET
+        Tant que (diff != 0) Alors
+            PARCOURIR_TABLEAU(array_coin_value POSSEDE value) Faire
+                Tant que (value <= diff) Alors
+                    diff -= value
+                    array_push(array_coin_given, value)
+                Fin Tant que
+            Fin PARCOURIR_TABLEAU
+        Fin Tant que
+        RETOURNE array_coin_given
+    Fin Fonction
+
+    Fonction showMoney(array_coin_money en ENTIER) en STRING
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA SOMME DES VALEURS DU TABLEAU QUI A RECUPERER LES COUPURES
+        diff = SOMME_TABLEAU(array_coin_money)
+
+        ECRIRE "Montant rendu : diff €"
+        ECRIRE "Détails coupures :"
+        PARCOURIR_TABLEAU(array_coin_money POSSEDE coin) Faire
+            Si(coin == 10 ) Alors
+                ECRIRE "10 euros"
+            Sinon Si($coin == 5) Alors
+                ECRIRE "5 euros"
+            Sinon Si($coin == 1) Alors
+                ECRIRE "1 euro"
+            Fin Si
+        Fin PARCOURIR_TABLEAU
+    Fin Fonction
+    
+    DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA SERVIR DE DRAPEUR POUR L'AFFICHAGE OU NON DU FORMULAIRE DE SAISI
+    flag = true
+
+    // DECLARATION ET INITIALISATION DES VARIABLES QUI STOCKES LES PRIX DES PRODUITS
+    price_apple = 2
+    price_milk = 1
+    price_iphone = 689
+    price_pc = 869
+
+    // RECUPERATION DES QUANTITES RENSEIGNER PAR L'UTILISATEUR PAR PRODUITS
+    ECRIRE "ENTREZ LA QUANTITE"
+    LIRE choixUtilisateur
+    quantity_apple = choixUtilisateur
+    quantity_milk = choixUtilisateur
+    quantity_iphone = choixUtilisateur
+    quantity_pc = choixUtilisateur
+
+    // DECLARATION ET INITIALISATION DES LA VARIABLES QUI VONT SAUVEGARDER LES PRIX 
+    total_apple = quantity_apple * price_apple
+    total_milk = quantity_milk * price_milk
+    total_iphone = quantity_iphone * price_iphone
+    total_pc = quantity_pc * price_pc
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA SAUVEGARDER LE TOTAL DE LA FACTURE
+    total_order = total_apple + total_milk + total_iphone + total_pc
+
+    // PASSAGE DU DRAPEAU A FAUX POUR MASQUER LE FORMULAIRE
+    flag = false
+    
+    // AFFICHAGE DU MONTANT A REGLER
+    ECRIRE "Vous devez régler total_order €"
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERE LE MONTANT DU REGLEMENT SAISI PAR L'UTILISATEUR
+    ECRIRE "Veuillez sairir le montant du reglement"
+    paiement = choixUtilisateur
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LES COUPURES A RENDRE VIA L'APPEL DE FONCTION
+    return_money = returnMoney(paiement,total_order)
+
+    // APPEL DE LA FONCTION QUI VA PERMETTRE L'AFFICHAGE DES COUPURES A RENDRE
+    showMoney(return_money)
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

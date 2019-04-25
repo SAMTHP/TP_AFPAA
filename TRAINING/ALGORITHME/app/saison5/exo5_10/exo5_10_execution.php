@@ -78,10 +78,10 @@ if(isset($_POST['choice'])){
     $flag = false;
     $paiement = $_POST['choice'];
 
-// Calculate of coins which are returned after paiement
+    // Calculate money which are returned after paiement
     $return_money = returnMoney($paiement,$sum);
 
-// Showing of coins
+    // Showing money returned
     showMoney($return_money);
 }
 
