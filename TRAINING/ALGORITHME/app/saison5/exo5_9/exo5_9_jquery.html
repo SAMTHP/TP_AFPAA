@@ -1,0 +1,60 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 5.9 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LES NOMBRES
+    var array_num = [];
+
+    $("#submit").click(function () {
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE
+        // ECRIRE "Entrez un nombre"
+        var num = $("#choice").val();
+
+        // TEST SUR LE CHOIX UTILISATEUR
+        if(num != 0){
+            array_num.push(num);
+        } else {
+            $('#form').hide();
+
+            // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RENSEIGNER LA VALEUR MAX
+            var max = 0;
+
+            // BOUCLE QUI VA COMPARER LES VALEURS DU TABLEAU POUR TROUVER LA VALEUR MAX
+            for(var i=0; i<array_num.length;i++){
+                if(i > 0 && (array_num[i] > array_num[i-1]) ){
+                    if(max > array_num[i]){
+                        max = max;
+                    } else {
+                        max = array_num[i];
+                    }
+                }else if(i > 0 && array_num[i-1] > array_num[i]){
+                    if(max > array_num[i-1]){
+                        max = max;
+                    } else {
+                        max = array_num[i-1];
+                    }
+                }
+            }
+
+            // AFFICHAGE DE LA VALEUR MAX
+            // ECRIRE "La valeur la plus haute que vous avez renseigné est " & max & "."
+            $("#result").text("La valeur la plus haute que vous avez renseigné est "+max+".");
+
+            // AFFICHAGE DE LA POSITION DE LA VALEUR MAX
+            array_num.forEach(function(value, key){
+                if(value == max){
+                    // ECRIRE "Ce nombre a été saisi à la " & pos & "° position."
+                    pos = key + 1;
+                    $("#result-pos").text("Ce nombre a été saisi à la "+ pos +"° position.");
+                }
+            })
+        }
+    })
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>
