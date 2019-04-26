@@ -1,0 +1,43 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.7 en PSEUDO CODE
+
+    TABLEAU array_notes en ENTIER
+    VARIABLES sum, moyenne en ENTIER
+
+DEBUT INSTRUCTION
+
+    ECRIRE "ENTREZ VOS NOTES DANS LE TABLEAU"
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LES NOTES
+    array_notes = [
+        "PHP" => choixUtilisateur,
+        "JS" => choixUtilisateur,
+        "JQUERY" => choixUtilisateur,
+        "HTML" => choixUtilisateur,
+        "CSS" => choixUtilisateur,
+        "SQL" => choixUtilisateur,
+        "UML" => choixUtilisateur,
+        "REACT" => choixUtilisateur,
+        "NODE" => choixUtilisateur
+    ]
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA SOMME DES NOTES
+    sum = 0
+
+    // CALCUL DE LA SOMME DES NOTES
+    PARCOURIR_TABLEAU(array_notes POSSEDE key => value) Faire
+        sum += array_notes[key]
+    Fin PARCOURIR_TABLEAU
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA moyenne
+    moyenne = sum / LONGUEUR_TABLEAU(array_notes)
+    moyenne = ARRONDIR(moyenne, 2 chiffres après la virgules, vers l'unité supérieur)
+
+    ECRIRE "Votre moyenne est de " & moyenne & "/20"
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>
