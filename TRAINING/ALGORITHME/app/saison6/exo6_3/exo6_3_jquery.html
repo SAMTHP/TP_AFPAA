@@ -1,0 +1,30 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.3 en JQUERY
+
+DEBUT INSTRUCTION JS
+
+    ECRIRE "ENTREZ VOS NOTES DANS LE TABLEAU"
+
+    $("#submit").click(function () {
+        // DECLARATION ET INITIALISATION DE L'OBJET QUI VA STOCKER LES NOTES
+        var array_notes = {
+            PHP: parseInt(document.getElementById('php').value),
+            JS: parseInt(document.getElementById('js').value),
+            JQUERY: parseInt(document.getElementById('jquery').value),
+            HTML: parseInt(document.getElementById('html').value),
+            CSS: parseInt(document.getElementById('css').value),
+            SQL: parseInt(document.getElementById('sql').value),
+            UML: parseInt(document.getElementById('uml').value),
+            REACT: parseInt(document.getElementById('react').value),
+            NODE: parseInt(document.getElementById('node').value)
+        };
+
+        // AFFICHAGE DU TABLEAU DANS LA VUE
+        $('#result').text(Object.entries(array_notes));
+    })
+FIN INSTRUCTION JS
+
+        </textarea>
+</div>
