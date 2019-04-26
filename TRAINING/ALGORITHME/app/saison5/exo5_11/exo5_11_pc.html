@@ -1,0 +1,55 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 5.11 en PSEUDO CODE
+
+    VARIABLE n,p,nf,pf,n_less_pf,x,y en ENTIER
+
+DEBUT INSTRUCTION
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE DE CHEVAUX PARTANTS
+    ECRIRE "Choisissez le nombre de chevaux partants"
+    LIRE choixUtilisateur
+    n = choixUtilisateur
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE DE CHEVAUX JOUES
+    ECRIRE "Choisissez le nombre de chevaux joués"
+    LIRE choixUtilisateur
+    p = choixUtilisateur
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI SERA LA FACTORIELLE DE N
+    nf = 1;
+
+    // CALCUL DE LA FACTORIELLE DE N
+    Pour (i=1;i<=n;i++) Alors
+        n *= i
+    Fin Pour
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI SERA LA FACTORIELLE DE P
+    pf = 1;
+
+    // CALCUL DE LA FACTORIELLE DE P
+    Pour (i=1;i<=p;i++) Alors
+        p *= i
+    Fin Pour
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI SERA LA FACTORIELLE DE N - P
+    n_less_pf = 1;
+
+    // CALCUL DE LA FACTORIELLE DE N - P
+    Pour (i=1;i<=(n-p);i++) Alors
+        n_less_pf *= i
+    Fin Pour
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE X
+    x = nf / n_less_p
+    y = nf / (pf * n_less_pf)
+
+    // AFFICHAGE DU RESULTAT
+    ECRIRE "Dans l'ordre :  une chance sur " & x & " de gagner"
+    ECRIRE "Dans le désordre :  une chance sur " & y & " de gagner"
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

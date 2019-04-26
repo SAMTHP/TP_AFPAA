@@ -1,0 +1,58 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 5.11 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // CREATION D'UNE CONSTANTE POUR GENERER LES SAUTS DE LIGNE
+    define('BR',"<br>");
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE DE CHEVAUX PARTANTS
+    ECRIRE "Choisissez le nombre de chevaux partants"
+    LIRE choixUtilisateur
+    $n = $_POST['n'];
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE DE CHEVAUX JOUES
+    ECRIRE "Choisissez le nombre de chevaux joués"
+    LIRE choixUtilisateur
+    $p = $_POST['p'];
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI SERA LA FACTORIELLE DE N
+    $nf = 1;
+
+    // CALCUL DE LA FACTORIELLE DE N
+    for($i=1; $i <=$n; $i++){
+        $nf *= $i;
+    }
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI SERA LA FACTORIELLE DE P
+    $pf = 1;
+
+    // CALCUL DE LA FACTORIELLE DE P
+    for($i=1; $i <=$p; $i++){
+        $pf *= $i;
+    }
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI SERA LA FACTORIELLE DE N - P
+    $n_less_pf = 1;
+
+    // CALCUL DE LA FACTORIELLE DE N - P
+    for($i=1; $i <=($n-$p); $i++){
+        $n_less_pf *= $i;
+    }
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE X
+    $x = $nf / $n_less_pf;
+    $y = $nf / ($pf * $n_less_pf);
+
+    // AFFICHAGE DU RESULTAT
+    ECRIRE "Dans l'ordre :  une chance sur " & x & " de gagner"
+    echo "Dans l'ordre :  une chance sur $x de gagner".BR;
+    ECRIRE "Dans le désordre :  une chance sur " & y & " de gagner"
+    echo "Dans le désordre : une chance sur $y de gagner".BR;
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

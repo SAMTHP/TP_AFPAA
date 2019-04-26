@@ -88,7 +88,7 @@ document.getElementById("submit-2").onclick = function () {
     var paiement = document.getElementById('choice').value;
     
     if(paiement < total_order){
-        document.getElementById('sentence').innerText = "Veuillez renseigner un montant supérieur à <strong>"+total_order+" €</STRONG>";
+        document.getElementById('sentence').innerHTML = "Veuillez renseigner un montant supérieur à <strong>"+total_order+" €</STRONG>";
     } else {
         var return_money = returnMoney(paiement,total_order);
         showMoney(return_money);

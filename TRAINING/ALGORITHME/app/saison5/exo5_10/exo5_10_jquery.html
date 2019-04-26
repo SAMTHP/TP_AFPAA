@@ -1,0 +1,130 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 5.10 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+
+    function returnMoney(paiement,sum){
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI STOCKE LES COUPURES
+        var array_coin_value = [10,5,1];
+
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LES COUPURES RETENUES
+        var array_coin_given = [];
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA CALCULER LA DIFFERENCE ENTRE LE REGLEMENT ET LE MONTANT A REGLER
+        var diff = paiement - sum;
+
+        // INSERTION DES COUPURES DANS LE TABLEAU PREVU A CET EFFET
+        while(diff != 0){
+            array_coin_value.forEach(function(value){
+                while(value <= diff){
+                    diff -= value;
+                    array_coin_given.push(value);
+                }
+            })
+        }
+        return array_coin_given;
+    }
+
+    function showMoney(array_coin_money){
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA SOMME DES VALEURS DU TABLEAU QUI VA RECUPERER LES COUPURES
+        diff = 0;
+
+        // INCREMENTATION DES VALEURS DU TABLEAU CONTENANT LES COUPURES A RENDRE DANS LA VARIABLE NOUVELLEMENT CREEE
+        array_coin_money.forEach(function(value){
+            diff += value;
+        })
+
+        ECRIRE "Montant rendu : diff €"
+        $('#sentence').text("Montant rendu : "+diff+" €");
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA AFFICHER TOUTES LES COUPURES A RENDRE
+        var coupure = "";
+
+        // INCREMENTATION DES COUPURES A RENDRE DANS LA VARIABLE COUPURE
+        array_coin_money.forEach(function(coin){
+            if(coin == 10 ){
+                coupure += "10 euros, ";
+            }else if(coin == 5){
+                coupure += "5 euros, ";
+            }else if(coin == 1){
+                coupure += "1 euro, ";
+            }
+        })
+
+        ECRIRE "Détails coupures :"
+        $('#sentence-coupure').text("Détails coupures : "+coupure);
+    }
+
+     // DECLARATION ET INITIALISATION DES VARIABLES QUI VONT SAUVEGARDER LES PRIX DES PRODUITS
+    var price_apple = 2;
+    var price_milk = 1;
+    var price_iphone = 689;
+    var price_pc = 869;
+
+    $('#pay').hide();
+
+    $("#submit-1").click(function () {
+
+        // RECUPERATION DES QUANTITES RENSEIGNER PAR L'UTILISATEUR PAR PRODUITS
+        var quantity_apple = parseInt($('#quantity-apple').val());
+        var quantity_milk = parseInt($('#quantity-milk').val());
+        var quantity_iphone = parseInt($('#quantity-iphone').val());
+        var quantity_pc = parseInt($('#quantity-pc').val());
+
+        // DECLARATION ET INITIALISATION DES LA VARIABLES QUI VONT SAUVEGARDER LES PRIX
+        var total_apple = quantity_apple * price_apple;
+        var total_milk = quantity_milk * price_milk;
+        var total_iphone = quantity_iphone * price_iphone;
+        var total_pc = quantity_pc * price_pc;
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA SAUVEGARDER LE TOTAL DE LA FACTURE
+        var total_order = total_apple + total_milk + total_iphone + total_pc;
+
+        $('#pay').show();
+
+        // AFFICHAGE DU MONTANT A REGLER
+        $('#you-pay').text("Vous devez régler "+total_order+" €");
+
+    }
+
+    document.getElementById("submit-2").onclick = function () {
+
+        // RECUPERATION DES QUANTITES RENSEIGNER PAR L'UTILISATEUR PAR PRODUITS
+        var quantity_apple = parseInt($('#quantity-apple').val());
+        var quantity_milk = parseInt($('#quantity-milk').val());
+        var quantity_iphone = parseInt($('#quantity-iphone').val());
+        var quantity_pc = parseInt($('#quantity-pc').val());
+
+        // DECLARATION ET INITIALISATION DES LA VARIABLES QUI VONT SAUVEGARDER LES PRIX
+        var total_apple = quantity_apple * price_apple;
+        var total_milk = quantity_milk * price_milk;
+        var total_iphone = quantity_iphone * price_iphone;
+        var total_pc = quantity_pc * price_pc;
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA SAUVEGARDER LE TOTAL DE LA FACTURE
+        var total_order = total_apple + total_milk + total_iphone + total_pc;
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE MONTANT DU REGLEMENT
+        // ECRIRE "Veuillez sairir le montant du reglement"
+        var paiement = $('#choice').val();
+
+        // TEST SI LE MONTANT EST INFERIEUR AU REGLEMENT
+        if(paiement < total_order){
+            // ECRIRE "Veuillez renseigner un montant supérieur à total_order €";
+            $('#sentence').html("Veuillez renseigner un montant supérieur à <strong>"+total_order+" €</STRONG>");
+        } else {
+            // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LES COUPURES A RENDRE VIA L'APPEL DE FONCTION
+            var return_money = returnMoney(paiement,total_order);
+
+            // APPEL DE LA FONCTION QUI VA PERMETTRE L'AFFICHAGE DES COUPURES A RENDRE
+            showMoney(return_money);
+        }
+    }
+
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>
