@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link href="../../css/algo.css" rel="stylesheet">
       <script type="text/javascript" src="../../js/jquery_3_3_1.js" ></script>
-      <script type="text/javascript" src="../../js/saison6/exo6_3/season6_exo_3.js"></script>
+      <script type="text/javascript" src="../../js/saison6/exo6_10/season6_exo_10.js"></script>
       
     </head>
   <body>
@@ -21,10 +21,10 @@
         <div class="dropdown" >
         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EXERCICES</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">6.3</a>
-              <a class="dropdown-item" href="../exo6_7/index_exo6_7.php">6.7</a>
+              <a class="dropdown-item" href="../exo6_3/index_exo6_3.php">6.3</a>
+              <a class="dropdown-item" href="../exo6_10/index_exo6_10.php">6.7</a>
               <a class="dropdown-item" href="../exo6_8/index_exo6_8.php">6.8</a>
-              <a class="dropdown-item" href="../exo6_10/index_exo6_10.php">6.10</a>
+              <a class="dropdown-item" href="#">6.10</a>
               <a class="dropdown-item" href="../exo6_11/index_exo6_11.php">6.11</a>
               <a class="dropdown-item" href="../exo6_12/index_exo6_12.php">6.12</a>
               <a class="dropdown-item" href="../exo6_13/index_exo6_13.php">6.13</a>
@@ -41,8 +41,9 @@
         <div class="card" id="card" style="width: 25rem;">
           <img src="../../img/code.jpeg" class="card-img-top" alt="wallpaper" style="height: 200px">
           <div class="card-body" >
-              <h5 class="card-title">Exercice 6.3</h5>
-              <p class="card-text">Ecrire un algorithme qui déclare un tableau de 9 notes, dont on fait ensuite saisir les valeurs par l’utilisateur.
+              <h5 class="card-title">Exercice 6.10</h5>
+              <p class="card-text">Ecrivez un algorithme constituant un tableau, à partir de deux tableaux de même longueur préalablement saisis.<br>
+              Le nouveau tableau sera la somme des éléments des deux tableaux de départ.  
               </p>
               <div style="display: flex; justify-content: center;">
                   <a href="#" class="btn btn-success " id="btn-pc">PSEUDO CODE</a>

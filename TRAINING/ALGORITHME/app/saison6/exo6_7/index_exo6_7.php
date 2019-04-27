@@ -24,11 +24,10 @@
               <a class="dropdown-item" href="../exo6_3/index_exo6_3.php">6.3</a>
               <a class="dropdown-item" href="#">6.7</a>
               <a class="dropdown-item" href="../exo6_8/index_exo6_8.php">6.8</a>
-              <a class="dropdown-item" href="../exo6_8/index_exo6_8.php">6.9</a>
-              <a class="dropdown-item" href="../exo6_9/index_exo6_9.php">6.10</a>
-              <a class="dropdown-item" href="../exo6_10/index_exo6_10.php">6.11</a>
-              <a class="dropdown-item" href="../exo6_11/index_exo6_11.php">6.12</a>
-              <a class="dropdown-item" href="../exo6_13/index_exo6_12.php">6.13</a>
+              <a class="dropdown-item" href="../exo6_10/index_exo6_10.php">6.10</a>
+              <a class="dropdown-item" href="../exo6_11/index_exo6_11.php">6.11</a>
+              <a class="dropdown-item" href="../exo6_12/index_exo6_12.php">6.12</a>
+              <a class="dropdown-item" href="../exo6_13/index_exo6_13.php">6.13</a>
               <a class="dropdown-item" href="../exo6_14/index_exo6_14.php">6.14</a>
               <a class="dropdown-item" href="../exo6_15/index_exo6_15.php">6.15</a>
           </div>

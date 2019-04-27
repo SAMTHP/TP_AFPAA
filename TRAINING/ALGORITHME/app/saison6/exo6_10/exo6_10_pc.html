@@ -1,0 +1,32 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.10 en PSEUDO CODE
+
+    TABLEAU array_1,array_2,array_3 en ENTIER
+
+DEBUT INSTRUCTION
+
+        // DECLARATION ET INITIALISATION DES TABLEAUX
+        array_1 = []
+        array_2 = []
+        array_3 = []
+
+        // REMPLISSAGE DYNAMIQUE DES DEUX TABLEAUX
+        Pour (i=0;i < 9;i++) Faire
+            INSERTION_TABLEAU(array_1, choixUtilisateur)
+            INSERTION_TABLEAU(array_2, choixUtilisateur)
+        Fin Pour
+
+        // REMPLISSAGE DYNAMIQUE DU TABLEAU 3 AVEC LES SOMMES DES DEUX TABLEAUX
+        Pour(i=0;i < 9;i++) Faire
+            array_3[i] = array_1[i] + array_2[i]
+        Fin Pour
+
+        ECRIRE array_3
+    
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>
