@@ -1,0 +1,49 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.8 en PSEUDO CODE
+
+    TABLEAU array_nums en ENTIER
+    VARIABLES total_number, num, positif,negatif en ENTIER
+
+DEBUT INSTRUCTION
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES NOMBRES
+    array_nums = []
+    
+    ECRIRE "Comnbien de nombre voulez-vous entrez ?"
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE CHOIX UTILISATEUR CONCERNANT LE QUANTITE DE NOMBRE A SAISIR
+    total_number = choixUtilisateur
+
+    // INSERTATION DES CHOIX UTILISATEUR DANS LE TABLEAU VIA UNE BOUCLE POUR
+    Pour(i=0;i < total_number;i++) Faire
+        ECRIRE "Saisir le " & i & "° nombre"
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE NOMBRE SAISI
+        num = choixUtilisateur
+        INSERTION_TABLEAU(array_nums, num)
+    Fin Pour
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RECUPERER LE NOMBRE DE VALEUR POSITIVES
+    positif = 0
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RECUPERER LE NOMBRE DE VALEUR NEGATIVES
+    negatif = 0
+    
+    // INCREMENTATION DES VARIABLES POSITIF ET NEGATIF
+    PARCOURIR_TABLEAU(array_nums POSSEDE num) Faire
+        // TEST SI NUM EST NEGATIF OU POSITIF
+        Si(num < 0) Alors
+            negatif += 1
+        Sinon
+            positif += 1
+        Fin Si
+    Fin PARCOURIR_TABLEAU
+    
+    ECRIRE "Vous avez entré " & negatif & " valeur(s) négative(s)"
+    ECRIRE "Vous avez entré " & positif & " valeur(s) positive(s)"
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>
