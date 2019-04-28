@@ -1,0 +1,70 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.8 en JS
+
+DEBUT INSTRUCTION JS
+    // OCCULTATION DU FORMULAIRE DES NOMBRES A SAISIR
+    document.getElementById('form-submit').style.display = "none";
+
+    document.getElementById("submit").onclick = function () {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RECUPEREA LE TOTAL DE NOMBRE A SAISIR
+        var total = parseInt(document.getElementById('choice').value);
+
+        // CREATION DYNAMIQUE DES INPUT POUR LA SAISI DES NOMBRES
+        for(var i = 0; i < total; i++){
+            var newInput = document.createElement('div');
+            newInput.id = 'num-'+i;
+            document.getElementById('form').appendChild(newInput);
+        }
+
+        // INSERTION DYNAMIQUE DES INPUT DANS LA VUE
+        for(var i = 0; i < total; i++){
+            var range = i + 1;
+            document.getElementById('num-'+i).innerHTML = "<table class='table table-dark'><tr><th scope='row'>"+range+"° nombre :</th><td><input type='number' class='form-control' id='number-"+i+"'></td><input type='hidden' class='form-control' id='total' value='"+total+"'></tr></table>";
+        }
+
+        // AFFICHAGE DU FORMULAIRE DES SAISI DES NOMBRES
+        document.getElementById('form-submit').style.display = "block"
+        
+    }
+
+
+    document.getElementById("submit-form").onclick = function () {
+
+        // DECLARATION ET INITIALISATION DES DE LA VARIABLE QUI RECUPERE LE TOTAL DES NOMBRES SAISIS
+        var total = document.getElementById('total').value;
+        
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES NOMBRES
+        var array_nums = [];
+
+        // INSERTATION DES CHOIX UTILISATEUR DANS LE TABLEAU VIA UNE BOUCLE POUR
+        for( var i=0;i < total;i++){
+            array_nums.push(parseInt(document.getElementById('number-'+i).value));
+        }
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RECUPERER LE NOMBRE DE VALEUR POSITIVES
+        var positif = 0;
+        
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RECUPERER LE NOMBRE DE VALEUR NEGATIVES
+        var negatif = 0;
+
+        // INCREMENTATION DES VARIABLES POSITIF ET NEGATIF
+        array_nums.forEach(function(num){
+            if(num < 0){
+                negatif += 1;
+            }else{
+                positif += 1;
+            }
+        })
+
+        // ECRIRE "Vous avez entré " & negatif & " valeur(s) négative(s)"
+        document.getElementById('result-negatif').innerText = "Vous avez entré "+negatif+" valeur(s) négative(s)";
+
+        // ECRIRE "Vous avez entré " & positif & " valeur(s) positive(s)"
+        document.getElementById('result-positif').innerText = "Vous avez entré "+positif+" valeur(s) positive(s)";
+
+    }
+FIN INSTRUCTION JS
+        </textarea>
+</div>
