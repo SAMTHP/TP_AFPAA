@@ -25,27 +25,23 @@ document.getElementById("submit").onclick = function () {
 document.getElementById("submit-form").onclick = function () {
 
     var total = document.getElementById('total').value;
-    console.log(total);
+
     var array_nums = [];
 
     for( var i=0;i<total;i++){
-        console.log(document.getElementById('number-'+i));
-        array_nums.push(parseInt(document.getElementById('number-'+i).value));
+        array_nums.push(parseInt(document.getElementById('number-'+i).value)+1);
     }
 
-    console.log(array_nums);
-    var positif = 0;
-    var negatif = 0;
+    for(var i = 0; i < total; i++){
+        var newInput = document.createElement('div');
+        newInput.id = 'int-'+i;
+        document.getElementById('result').appendChild(newInput);
 
-    array_nums.forEach(function(num){
-        if(num < 0){
-            negatif += 1;
-        }else{
-            positif += 1;
-        }
-    })
+    }
 
-    document.getElementById('result-negatif').innerText = "Vous avez entré "+negatif+" valeur(s) négative(s)";
-    document.getElementById('result-positif').innerText = "Vous avez entré "+positif+" valeur(s) positive(s)";
+    for(var i = 0; i < total; i++){
+        var range = i + 1;
+        document.getElementById('int-'+i).innerHTML = "<table class='table table-dark'><tr><th scope='row'>"+range+"° nombre :</th><td>"+array_nums[i]+"</td></tr></table>";
+    }
 
 }

@@ -1,0 +1,52 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.12 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LES NOMBRES
+    $array_num = [];
+
+    // BOUCLE QUI VA INCREMENTER LES CHOIX UTILISATEURS ET INSERER LES NOMBRES DANS LE TABLEAU
+    for($i=0;$i<$_POST['total'];$i++){
+        array_push($array_num, intval($_POST['number-'.$i]));
+    }
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RENSEIGNER LA VALEUR MAX
+    $max = 0;
+
+    // BOUCLE QUI VA COMPARER LES VALEURS DU TABLEAU POUR TROUVER LA VALEUR MAX
+    for($i=0;$i < count($array_num);$i++){
+        if($i > 0 && ($array_num[$i] > $array_num[$i-1]) ){
+            if($max > $array_num[$i]){
+                $max = $max;
+            } else {
+                $max = $array_num[$i];
+            }
+        }elseif($i > 0 && $array_num[$i-1] > $array_num[$i]){
+            if($max > $array_num[$i-1]){
+                $max = $max;
+            } else {
+                $max = $array_num[$i-1];
+            }
+        }
+    }
+
+    // AFFICHAGE DE LA VALEUR MAX
+    // ECRIRE "La valeur la plus haute que vous avez renseigné est " & max & "."
+    echo "La valeur la plus haute que vous avez renseigné est ".$max.".";
+
+    // AFFICHAGE DE LA POSITION DE LA VALEUR MAX
+    foreach($array_num as $key => $value){
+        if($value == $max){
+            $pos = $key + 1;
+            // ECRIRE "Ce nombre a été saisi à la " & pos & "° position."
+            echo "Ce nombre a été saisi à la ". $pos ."° position.";
+        }
+    }
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

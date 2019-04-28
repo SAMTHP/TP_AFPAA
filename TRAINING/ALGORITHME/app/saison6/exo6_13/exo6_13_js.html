@@ -1,7 +1,7 @@
 <div class="form-group php" style="display: flex; flex-direction: column;" >
     <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
     <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
-ALGORITHME EXO 6.8 en JS
+ALGORITHME EXO 6.13 en JS
 
 DEBUT INSTRUCTION JS
     // OCCULTATION DU FORMULAIRE DES NOMBRES A SAISIR
@@ -36,33 +36,44 @@ DEBUT INSTRUCTION JS
         var total = document.getElementById('total').value;
         
         // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES NOMBRES
-        var array_nums = [];
+        var array_num = [];
 
         // INSERTATION DES CHOIX UTILISATEUR DANS LE TABLEAU VIA UNE BOUCLE POUR
         for( var i=0;i < total;i++){
-            array_nums.push(parseInt(document.getElementById('number-'+i).value));
+            array_num.push(parseInt(document.getElementById('number-'+i).value));
         }
 
-        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RECUPERER LE NOMBRE DE VALEUR POSITIVES
-        var positif = 0;
-        
-        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RECUPERER LE NOMBRE DE VALEUR NEGATIVES
-        var negatif = 0;
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RENSEIGNER LA VALEUR MAX
+        var max = 0;
 
-        // INCREMENTATION DES VARIABLES POSITIF ET NEGATIF
-        array_nums.forEach(function(num){
-            if(num < 0){
-                negatif += 1;
-            }else{
-                positif += 1;
+        // BOUCLE QUI VA COMPARER LES VALEURS DU TABLEAU POUR TROUVER LA VALEUR MAX
+        for(var i=0; i < array_num.length;i++){
+            if(i > 0 && (array_num[i] > array_num[i-1]) ){
+                if(max > array_num[i]){
+                    max = max;
+                } else {
+                    max = array_num[i];
+                }
+            }else if(i > 0 && array_num[i-1] > array_num[i]){
+                if(max > array_num[i-1]){
+                    max = max;
+                } else {
+                    max = array_num[i-1];
+                }
+            }
+        }
+
+        // AFFICHAGE DE LA VALEUR MAX
+        // ECRIRE "La valeur la plus haute que vous avez renseigné est " & max & "."
+        document.getElementById("result-max").innerText = "La valeur la plus haute que vous avez renseigné est "+max+".";
+
+        // AFFICHAGE DE LA POSITION DE LA VALEUR MAX
+        array_num.forEach(function(value, key){
+            if(value == max){
+                pos = key + 1;
+                document.getElementById("result-position").innerText = "Ce nombre a été saisi à la "+ pos +"° position.";
             }
         })
-
-        // ECRIRE "Vous avez entré " & negatif & " valeur(s) négative(s)"
-        document.getElementById('result-negatif').innerText = "Vous avez entré "+negatif+" valeur(s) négative(s)";
-
-        // ECRIRE "Vous avez entré " & positif & " valeur(s) positive(s)"
-        document.getElementById('result-positif').innerText = "Vous avez entré "+positif+" valeur(s) positive(s)";
 
     }
 FIN INSTRUCTION JS

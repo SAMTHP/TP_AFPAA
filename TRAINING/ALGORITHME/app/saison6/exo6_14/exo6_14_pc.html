@@ -1,0 +1,39 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.14 en PSEUDO CODE
+
+    TABLEAU array_notes en ENTIER
+    VARIABLES moyenne_classe, diff en ENTIER
+
+DEBUT INSTRUCTION
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA MOYENNE DE LA CLASSE
+    moyenne_classe = 14
+    
+    ECRIRE "ENTREZ VOS NOTES DANS LE TABLEAU"
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LES NOTES
+    array_notes = [
+        "PHP" => choixUtilisateur,
+        "JS" => choixUtilisateur,
+        "JQUERY" => choixUtilisateur,
+        "HTML" => choixUtilisateur,
+        "CSS" => choixUtilisateur,
+        "SQL" => choixUtilisateur,
+        "UML" => choixUtilisateur,
+        "REACT" => choixUtilisateur,
+        "NODE" => choixUtilisateur
+    ]
+
+    // AFFICHAGE DES NOTES SUPERIEUR A LA MOYENNE DE LA CLASSE
+    PARCOURIR_TABLEAU(array_notes POSSEDE key => value) Faire
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA DIFFERENCE
+        diff = value - moyenne_classe
+        ECRIRE "Votre note en " & $key & " est de " & value & ", et est donc supérieur à la moyenne de la classe avec " & diff & " points en plus !";
+    Fin PARCOURIR_TABLEAU
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

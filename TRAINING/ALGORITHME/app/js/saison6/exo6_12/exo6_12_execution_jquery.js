@@ -7,7 +7,6 @@ $("#submit").click(function () {
     for(var i = 0; i < total; i++){
         var newInput = $("<div id='num-"+i+"'></div>");
         newInput.appendTo($('#form'));
-
     }
 
     for(var i = 0; i < total; i++){
@@ -16,10 +15,8 @@ $("#submit").click(function () {
     }
 
     $('#form-submit').show();
-
     
 })
-
 
 $("#submit-form").click(function () {
 
@@ -28,21 +25,17 @@ $("#submit-form").click(function () {
     var array_nums = [];
 
     for( var i=0;i<total;i++){
-        array_nums.push(parseInt($('#number-'+i).val()));
+        array_nums.push(parseInt($('#number-'+i).val())+1);
     }
 
-    var positif = 0;
-    var negatif = 0;
+    for(var i = 0; i < total; i++){
+        var newInput = $("<div id='int-"+i+"'></div>");
+        newInput.appendTo('#result');
+    }
 
-    array_nums.forEach(function(num){
-        if(num < 0){
-            negatif += 1;
-        }else{
-            positif += 1;
-        }
-    })
-
-    $('#result-negatif').text("Vous avez entré "+negatif+" valeur(s) négative(s)");
-    $('#result-positif').text("Vous avez entré "+positif+" valeur(s) positive(s)");
+    for(var i = 0; i < total; i++){
+        var range = i + 1;
+        $('#int-'+i).html("<table class='table table-dark'><tr><th scope='row'>"+range+"° nombre :</th><td>"+array_nums[i]+"</td></tr></table>");
+    }
 
 })

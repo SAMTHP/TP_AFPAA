@@ -1,0 +1,61 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.12 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+
+// OCCULTATION DU FORMULAIRE DES NOMBRES A SAISIR
+$('#form-submit').hide();
+
+$("#submit").click(function () {
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RECUPEREA LE TOTAL DE NOMBRE A SAISIR
+    var total = parseInt($('#choice').val());
+
+    // CREATION DYNAMIQUE DES INPUT POUR LA SAISI DES NOMBRES
+    for(var i = 0; i < total; i++){
+        var newInput = $("<div id='num-"+i+"'></div>");
+        newInput.appendTo($('#form'));
+    }
+
+    // INSERTION DYNAMIQUE DES INPUT DANS LA VUE
+    for(var i = 0; i < total; i++){
+        var range = i + 1;
+        $('#num-'+i).html("<table class='table table-dark'><tr><th scope='row'>"+range+"° nombre :</th><td><input type='number' class='form-control' id='number-"+i+"'></td><input type='hidden' class='form-control' id='total' value='"+total+"'></tr></table>");
+    }
+
+    // AFFICHAGE DU FORMULAIRE DES SAISI DES NOMBRES
+    $('#form-submit').show();
+    
+})
+
+$("#submit-form").click(function () {
+
+    // DECLARATION ET INITIALISATION DES DE LA VARIABLE QUI RECUPERE LE TOTAL DES NOMBRES SAISIS
+    var total = $('#total').val();
+    
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES NOMBRES
+    var array_nums = [];
+
+    // INSERTATION DES CHOIX UTILISATEUR DANS LE TABLEAU VIA UNE BOUCLE POUR
+    for( var i=0;i < total;i++){
+        array_nums.push(parseInt($('#number-'+i).val())+1);
+    }
+
+    // CREATION DYNAMIQUE DES DIVS QUI AFFICHERONT LE RESULTAT DANS LA VUE
+    for(var i = 0; i < total; i++){
+        var newInput = $("<div id='int-"+i+"'></div>");
+        newInput.appendTo('#result');
+    }
+
+    // INSERTION DYNAMIQUE DES NOUVELLES VALEURS INCREMENTES DANS LA VUE
+    for(var i = 0; i < total; i++){
+        var range = i + 1;
+        $('#int-'+i).html("<table class='table table-dark'><tr><th scope='row'>"+range+"° nombre :</th><td>"+array_nums[i]+"</td></tr></table>");
+    }
+
+}
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>

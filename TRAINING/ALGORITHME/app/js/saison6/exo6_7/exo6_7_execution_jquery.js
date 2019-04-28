@@ -1,14 +1,14 @@
 $("#submit").click(function () {
     var array_notes = {
-        PHP: parseInt(document.getElementById('php').value),
-        JS: parseInt(document.getElementById('js').value),
-        JQUERY: parseInt(document.getElementById('jquery').value),
-        HTML: parseInt(document.getElementById('html').value),
-        CSS: parseInt(document.getElementById('css').value),
-        SQL: parseInt(document.getElementById('sql').value),
-        UML: parseInt(document.getElementById('uml').value),
-        REACT: parseInt(document.getElementById('react').value),
-        NODE: parseInt(document.getElementById('node').value)
+        PHP: parseInt($('#php').val()),
+        JS: parseInt($('#js').val()),
+        JQUERY: parseInt($('#jquery').val()),
+        HTML: parseInt($('#html').val()),
+        CSS: parseInt($('#css').val()),
+        SQL: parseInt($('#sql').val()),
+        UML: parseInt($('#uml').val()),
+        REACT: parseInt($('#react').val()),
+        NODE: parseInt($('#node').val())
     };
 
     var array_notes_convert = Object.values(array_notes);
