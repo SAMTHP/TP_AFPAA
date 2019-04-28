@@ -1,0 +1,44 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.11 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+
+    $("#submit").click(function () {
+
+        // DECLARATION ET INITIALISATION DES TABLEAUX
+        var array_1 = [];
+        var array_2 = [];
+
+        // REMPLISSAGE DYNAMIQUE DU TABLEAU 1
+        for(var i=1;i<=4;i++){
+            array_1.push( parseInt($('#tab1_'+i).val()));
+        }
+
+        // REMPLISSAGE DYNAMIQUE DU TABLEAU 2
+        for(var i=1;i<=2;i++){
+            array_2.push( parseInt($('#tab2_'+i).val()));
+        }
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RENVERRA LE TOON
+        var toon = 0;
+
+        // INCREMENTATION DYNAMIQUE DU TOON
+        array_2.forEach(function(num){
+            array_1.forEach(function(value){
+                toon += num * value;
+            })
+        })
+
+        // ECRIRE "Le toon sera :"
+        $("#title").text("Le toon sera de :");
+        // ECRIRE toon
+        $("#result").text(toon);
+
+    })
+
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>

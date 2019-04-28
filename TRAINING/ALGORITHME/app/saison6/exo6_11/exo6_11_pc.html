@@ -1,0 +1,39 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.11 en PSEUDO CODE
+
+    TABLEAU array_1,array_2 en ENTIER
+    VARIABLE toon en ENTIER
+
+DEBUT INSTRUCTION
+
+        // DECLARATION ET INITIALISATION DES TABLEAUX
+        array_1 = []
+        array_2 = []
+
+        // REMPLISSAGE DYNAMIQUE DES DEUX TABLEAUX
+        Pour (i=1;i <= 4;i++) Faire
+            INSERTION_TABLEAU(array_1, choixUtilisateur1[i])
+        Si(EXIST choixUtilisateur2[i])
+            INSERTION_TABLEAU(array_2, choixUtilisateur2[i])
+        Fin Pour
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RENVERRA LE TOON
+        toon = 0
+
+        // INCREMENTATION DYNAMIQUE DU TOON
+        PARCOURIR_TABLEAU(array_2 POSSEDE num) Faire
+            PARCOURIR_TABLEAU(array_1 POSSEDE value) Faire
+                toon += num * value
+            Fin PARCOURIR_TABLEAU
+        Fin PARCOURIR_TABLEAU
+
+
+        ECRIRE "Le toon sera :"
+        ECRIRE toon
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>
