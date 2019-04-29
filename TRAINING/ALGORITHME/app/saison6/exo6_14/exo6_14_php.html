@@ -27,8 +27,11 @@ DEBUT INSTRUCTION PHP
     PARCOURIR_TABLEAU(array_notes POSSEDE key => value) Faire
         // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA DIFFERENCE
         $diff = $value - $moyenne_classe;
-        // ECRIRE "Votre note en " & $key & " est de " & value & ", et est donc supérieur à la moyenne de la classe avec " & diff & " points en plus !";
-        echo "Votre note en <strong>$key</strong> est de <strong>$value</strong>, et est donc supérieur à la moyenne de la classe avec ".$diff." points en plus !<br><hr>";
+        if($value > $moyenne_classe){
+            // ECRIRE "Votre note en " & $key & " est de " & value & ", et est donc supérieur à la moyenne de la classe avec " & diff & " points en plus !";
+            echo "Votre note en <strong>$key</strong> est de <strong>$value</strong>, et est donc supérieur à la moyenne de la classe avec ".$diff." points en plus !<br><hr>";
+        }
+        
     Fin PARCOURIR_TABLEAU
 
 FIN INSTRUCTION PHP

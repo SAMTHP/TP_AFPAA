@@ -19,7 +19,7 @@ document.getElementById('submit').onclick = function () {
     }
 
     var x = nf / n_less_pf;
-    var y = nf / (pf * n_less_pf);
+    var y = x / pf;
 
     document.getElementById('x').innerText = "Dans l'ordre :  une chance sur " + x + " de gagner";
     document.getElementById('y').innerText = "Dans le désordre :  une chance sur " + y + " de gagner";

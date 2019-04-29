@@ -1,0 +1,67 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.15 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE TAUX D'INTERET
+    $tx = 1.0275;
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE MONTANT DE DEPART
+    // ECRIRE "Quel est votre montant de départ ?"
+    $money = $_POST['begin-money'];
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER L'ANNEE CHOISIE
+    // ECRIRE "Choisissez l'année du montant épargné : "
+    $choice_year = $_POST['year'];
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LES DIFFERENTS MONTANTS EPARGNES
+    $array_saving = [
+        "1" => 0,"2" => 0,"3" => 0,"4" => 0,"5" => 0,
+        "6" => 0,"7" => 0,"8" => 0,"9" => 0,"10" => 0,
+        "11" => 0,"12" => 0,"13" => 0,"14" => 0,"15" => 0,
+        "16" => 0,"17" => 0,"18" => 0,"19" => 0,"20" => 0
+    ];
+
+    // FONCTION QUI VA REMPLIR LE TABLEAUX AVEC LES DIFFERENTS MONTANTS PAR ANNEE EPARGNEE
+    function generateSaving($tx,$money,$array_saving){
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LES NOUVEAUX MONTANTS
+        $new_money = $money;
+
+        // AFFECTATION DYNAMIQUE DU TABLEAU DU PLAN D'EPARGNER
+        for($i=0;$i < 20;$i++){
+            $new_money *= $tx;
+            $array_saving[$i+1] = $new_money;
+        }
+
+        return $array_saving;
+    }
+
+    // FONCTION QUI VA AFFICHER LE MONTANT EPARGNE SELON L'ANNEE CHOISIE
+    function showSaving($array_saving,$choice_year){
+        // DECLARAITON ET INITIALISATION DE LA VARIABLE QUI VA AFFICHER LE MONTANT DE L'ANNEE CHOISIE
+        $show = 0;
+
+        // AFFECTION DE LA VARIABLE SHOW PAR COMPARAISON DE L'ANNEE CHOISIE ET DE L'ANNEE PRESENTE DANS LE TABLEAU
+        foreach($array_saving as $year => $money){
+            if($choice_year == $year){
+                $show = $money;
+            }
+        }
+
+        // ECRIRE "Lors de la fin de la " & choice_year & "" ° année, vous aurez accumulé " & show & " € "
+        echo "Lors de la fin de la $choice_year ° année, vous aurez accumulé $show € ";
+    }
+
+    // DECLARAITON DU TABLEAU QUI VA RECUPERER LE TABLEAU RETOURNE PAR L'APPEL DE FONCTION
+    $array = generateSaving($tx,$money,$array_saving);
+
+    // APPEL DE LA FONCTION QUI AFFICHE LE RESULTAT DE LA REQUETE
+    showSaving($array,$choice_year);
+
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

@@ -18,7 +18,7 @@ for($i=1; $i <=($n-$p); $i++){
 }
 
 $x = $nf / $n_less_pf;
-$y = $nf / ($pf * $n_less_pf);
+$y = $x / $pf;
 
 
 echo "\n";

@@ -1,0 +1,48 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.1 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+
+document.getElementById("submit").onclick = function () {
+        
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES NOMBRES
+    var array_nums = [];
+    
+    // AFFECTATION DYNAMIQUE DU TABLEAU
+    for(var i=1;i<=9;i++){
+        array_nums.push(parseInt(document.getElementById('choice-'+i).value));
+    }
+    
+    // DECLARATION ET INITIALISATION du FLAG QUI PERMETTRA DE VALIDER SI LES NOMBRES SONT CONSECUTIFS
+    flag = false;
+
+    // ANALYSE DYNAMIQUE DES NOMBRES POUR SAVOIR SI ILS SONT CONSECUTIFS
+    for(var i=0;i < 9;i++){
+        if(i != 8){
+            if(array_nums[i+1] == array_nums[i] + 1 ){
+                flag = true;
+            } else{
+                flag = false;
+                break;
+            }
+        }
+    }
+    
+    // TEST SI LE DRAPEAU VALIDE LA CONSECUTIVITE DES NOMBRES
+    if(flag){
+        ECRIRE "Les éléments du tableaux sont tous consécutifs avec un interval régulier à + 1."
+        document.getElementById('result').innerText = "Les éléments du tableaux sont tous consécutifs avec un interval régulier à + 1.";
+    } else {
+        Ecrire "Les éléments du tableaux ne sont pas consécutifs."
+        document.getElementById('result').innerText = "Les éléments du tableaux ne sont pas consécutifs.";
+    }
+    
+}
+
+}
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>

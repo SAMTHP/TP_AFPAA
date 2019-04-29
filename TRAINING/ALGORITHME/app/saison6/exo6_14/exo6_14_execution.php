@@ -16,7 +16,9 @@ $array_notes = [
 
 foreach($array_notes as $key => $value){
     $diff = $value - $moyenne_classe;
-	echo "Votre note en <strong>$key</strong> est de <strong>$value</strong>, et est donc supérieur à la moyenne de la classe avec ".$diff." points en plus !<br><hr>";
+    if($value > $moyenne_classe){
+        echo "Votre note en <strong>$key</strong> est de <strong>$value</strong>, et est donc supérieur à la moyenne de la classe avec ".$diff." points en plus !<br><hr>";
+    }
 }
 
 

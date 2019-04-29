@@ -19,7 +19,7 @@ $("#submit").click(function () {
     }
 
     var x = nf / n_less_pf;
-    var y = nf / (pf * n_less_pf);
+    var y = x / pf;
 
     $('#x').text("Dans l'ordre :  une chance sur " + x + " de gagner");
     $('#y').text("Dans le désordre :  une chance sur " + y + " de gagner");

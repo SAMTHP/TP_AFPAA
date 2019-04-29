@@ -1,0 +1,71 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 6.15 en JS
+
+DEBUT INSTRUCTION JS
+
+    document.getElementById('form').style.display = "none";
+    
+    document.getElementById("submit").onclick = function () {
+        
+        document.getElementById('form').style.display = "block";
+        
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE TAUX D'INTERET
+        var tx = 1.0275;
+        
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE MONTANT DE DEPART
+        // ECRIRE "Quel est votre montant de départ ?"
+        var money = parseInt(document.getElementById('begin-money').value);
+
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOCKER LES DIFFERENTS MONTANTS EPARGNES
+        var array_saving = [];
+
+        // FONCTION QUI VA REMPLIR LE TABLEAUX AVEC LES DIFFERENTS MONTANTS PAR ANNEE EPARGNEE
+        function generateSaving(tx,money,array_saving){
+            // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LES NOUVEAUX MONTANTS
+            new_money = money;
+
+            // AFFECTATION DYNAMIQUE DU TABLEAU DU PLAN D'EPARGNER
+            for(var i=0;i < 20;i++){
+                new_money *= tx;
+                array_saving[i+1] = new_money;
+            }
+
+            return array_saving;
+        }
+
+        // DECLARAITON DU TABLEAU QUI VA RECUPERER LE TABLEAU RETOURNE PAR L'APPEL DE FONCTION
+        var array = generateSaving(tx,money,array_saving);
+
+        document.getElementById("submit-year").onclick = function () {
+            
+            // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER L'ANNEE CHOISIE
+            // ECRIRE "Choisissez l'année du montant épargné : "
+            var choice_year = document.getElementById('year').value;
+
+            // FONCTION QUI VA AFFICHER LE MONTANT EPARGNE SELON L'ANNEE CHOISIE
+            function showSaving(array,choice_year){
+                // DECLARAITON ET INITIALISATION DE LA VARIABLE QUI VA AFFICHER LE MONTANT DE L'ANNEE CHOISIE
+                var show = 0;
+
+                // AFFECTION DE LA VARIABLE SHOW PAR COMPARAISON DE L'ANNEE CHOISIE ET DE L'ANNEE PRESENTE DANS LE TABLEAU
+                array.forEach(function(money,year){
+                    if(choice_year == year){
+                        show = money;
+                    }
+                })
+            
+                // ECRIRE "Lors de la fin de la " & choice_year & "" ° année, vous aurez accumulé " & show & " € "
+                document.getElementById('result').innerText = "Lors de la fin de la "+choice_year+" ° année, vous aurez accumulé "+show+" € ";
+            }
+            
+            // APPEL DE LA FONCTION QUI AFFICHE LE RESULTAT DE LA REQUETE
+            showSaving(array,choice_year);
+            
+        }
+
+    }
+FIN INSTRUCTION JS
+        </textarea>
+</div>

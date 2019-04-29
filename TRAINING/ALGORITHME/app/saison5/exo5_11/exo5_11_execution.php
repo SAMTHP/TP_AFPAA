@@ -20,7 +20,7 @@ for($i=1; $i <=($n-$p); $i++){
 }
 
 $x = $nf / $n_less_pf;
-$y = $nf / ($pf * $n_less_pf);
+$y = $x/ $pf;
 
 echo "Dans l'ordre :  une chance sur $x de gagner".BR;
 echo "Dans le désordre : une chance sur $y de gagner".BR;

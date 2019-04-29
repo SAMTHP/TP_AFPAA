@@ -1,0 +1,46 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.1 en PSEUDO CODE
+
+    TABLEAU array_nums en ENTIER
+    VARIABLE flag en BOOLEEN
+
+DEBUT INSTRUCTION
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES NOMBRES
+    array_nums = []
+    
+    // AFFECTATION DYNAMIQUE DU TABLEAU
+    Pour(i=1;i<=9;i++){
+        ECRIRE "ENTREZ VOTRE " & i & "° nombre"
+        INSERTION_TABLEAU(array_nums, choixUtilisateur&i);
+    }
+    
+
+    // DECLARATION ET INITIALISATION du FLAG QUI PERMETTRA DE VALIDER SI LES NOMBRES SONT CONSECUTIFS
+    flag = false
+
+    // ANALYSE DYNAMIQUE DES NOMBRES POUR SAVOIR SI ILS SONT CONSECUTIFS
+    Pour(i=0;i < 9;i++) Faire
+        Si(i != 8) Alors
+            Si(array_nums[i+1] == array_nums[i] + 1 ) Alors
+                flag = true
+            Sinon
+                flag = false
+                break
+            Fin Si
+        Fin Si
+    Fin Pour
+    
+    // TEST SI LE DRAPEAU VALIDE LA CONSECUTIVITE DES NOMBRES
+    Si(flag) Alors
+        ECRIRE "Les éléments du tableaux sont tous consécutifs avec un interval régulier à + 1."
+    Sinon
+        Ecrire "Les éléments du tableaux ne sont pas consécutifs."
+    Fin Si
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>
