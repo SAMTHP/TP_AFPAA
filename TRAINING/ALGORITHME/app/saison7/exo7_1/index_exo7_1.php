@@ -9,7 +9,6 @@
       <link href="../../css/algo.css" rel="stylesheet">
       <script type="text/javascript" src="../../js/jquery_3_3_1.js" ></script>
       <script type="text/javascript" src="../../js/saison7/exo7_1/season7_exo_1.js"></script>
-      
     </head>
   <body>
       <!-- NAVBAR -->
