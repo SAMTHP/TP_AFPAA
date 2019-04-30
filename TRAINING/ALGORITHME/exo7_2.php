@@ -1,6 +1,6 @@
 <?php
 
-$array = [15,14,13,12,11,10,9,8,7,6];
+$array = [6,7,85,100,12,45,88,99,123];
 
 // TRI PAR INSERTION :
 
@@ -11,7 +11,7 @@ for($i=0;$i<count($array);$i++){
     // ON EXAMINE TOUS LES ELEMENTS SUIVANTS
     for($j=$i+1;$j<count($array);$j++){
             // TEST SI L'ELEMENT SUIVANT EST INFERIEUR AU POINT DE DEPART 
-            if($array[$j] < $array[$posmini]){
+            if($array[$j] > $array[$posmini]){
                 // ALORS ON RECUPERE L'INDEX QUI CORRESPOND A L'ELEMENT INFERIEUR
                 $posmini = $j;
             }
@@ -32,7 +32,7 @@ echo "TRI PAR INSERTION :\n";
 print_r($array);
 echo "\n";
 
-$array2 = [15,14,13,12,11,10,9,8,7,6];
+$array2 = [6,7,85,100,12,45,88,99,123];
 
 // TRI A BULLE :
 
@@ -41,7 +41,7 @@ $flag = true;
 while($flag){
     $flag = false;
     for($i=0;$i<count($array2)-1;$i++){
-            if($array2[$i] > $array2[$i+1]){
+            if($array2[$i] < $array2[$i+1]){
                 $temp2 = $array2[$i];
                 $array2[$i] = $array2[$i+1];
                 $array2[$i+1] = $temp2;
@@ -52,4 +52,3 @@ while($flag){
 
 echo "TRI A BULLE:\n";
 print_r($array2);
-echo count($array2);

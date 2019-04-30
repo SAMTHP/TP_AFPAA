@@ -1,6 +1,14 @@
 <?php
 
-$array = [15,14,13,12,11,10,9,8,7,6];
+$array = [];
+$array2 = [];
+
+for($i=0;$i<10;$i++){
+	array_push($array, $_POST['index-'.$i]);
+	array_push($array2, $_POST['index-'.$i]);
+}
+
+
 
 // TRI PAR INSERTION :
 
@@ -10,8 +18,8 @@ for($i=0;$i<count($array);$i++){
     $posmini = $i;
     // ON EXAMINE TOUS LES ELEMENTS SUIVANTS
     for($j=$i+1;$j<count($array);$j++){
-            // TEST SI L'ELEMENT SUIVANT EST INFERIEUR AU POINT DE DEPART 
-            if($array[$j] < $array[$posmini]){
+            // TEST SI L'ELEMENT SUIVANT EST SUPERIEUR AU POINT DE DEPART 
+            if($array[$j] > $array[$posmini]){
                 // ALORS ON RECUPERE L'INDEX QUI CORRESPOND A L'ELEMENT INFERIEUR
                 $posmini = $j;
             }
@@ -19,20 +27,18 @@ for($i=0;$i<count($array);$i++){
     
     // A CET ENDROIT ON SAIT MAINTENANT Où EST LE PLUS PETIT ELEMENT
     // IL NE RESTE PLUS QU'A AFFICHER LA PERMUTATION
-
-    // TEMP RECUPERE LA VALEUR INFERIEUR
+    
+    // TEMP RECUPERE LA VALEUR SUPERIEUR
     $temp = $array[$posmini];
-    // ON PERMUTE L'ELEMENT SUPERIEUR DANS SON NOUVEL EMPLACEMENT
-    $array[$posmini] = $array[$i];
+    
     // ON PERMUTE L'ELEMENT INFERIEUR DANS SON NOUVEL EMPLACEMENT
+    $array[$posmini] = $array[$i];
+    
+    // ON PERMUTE L'ELEMENT SUPERIEUR DANS SON NOUVEL EMPLACEMENT
     $array[$i] = $temp;
+
     // ON A PLACE CORRECTEMENT L'ELEMENT NUMERO I, ON PASSE A PRESENT AU SUIVANT
 }
-echo "TRI PAR INSERTION :\n";
-print_r($array);
-echo "\n";
-
-$array2 = [15,14,13,12,11,10,9,8,7,6];
 
 // TRI A BULLE :
 
@@ -41,7 +47,7 @@ $flag = true;
 while($flag){
     $flag = false;
     for($i=0;$i<count($array2)-1;$i++){
-            if($array2[$i] > $array2[$i+1]){
+            if($array2[$i] < $array2[$i+1]){
                 $temp2 = $array2[$i];
                 $array2[$i] = $array2[$i+1];
                 $array2[$i+1] = $temp2;
@@ -49,7 +55,3 @@ while($flag){
             }
     }
 }
-
-echo "TRI A BULLE:\n";
-print_r($array2);
-echo count($array2);

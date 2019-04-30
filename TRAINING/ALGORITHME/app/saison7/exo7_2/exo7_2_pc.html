@@ -1,0 +1,88 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.2 en PSEUDO CODE
+
+    TABLEAU array, array2 en ENTIER
+    VARIABLES posmini,temp,temp2 en BOOLEEN
+    VARIABLE flag en BOOLEEN
+
+DEBUT INSTRUCTION
+
+    // DECLARATION ET INITIALISATION DES TABLEAUX QUI VONT STOKER LES NOMBRES
+    array = []
+    array2 = []
+    
+    // AFFECTATION DYNAMIQUE DES TABLEAUX
+    Pour(i=0;i < 10;i++){
+        ECRIRE "ENTREZ VOTRE " & i & "° nombre"
+        INSERTION_TABLEAU(array1, choixUtilisateur&i)
+        INSERTION_TABLEAU(array2, choixUtilisateur&i)
+    Fin Pour
+
+    // TRI PAR INSERTION
+    
+    // BOUCLE PRINCIPALE : LE POINT DE DEPART SE DECALE A CHAQUE TOUR
+    Pour (i=0;i < LONGUEUR_TABLEAU(array);i++) Faire
+
+        // ON CONSIDERE PROVISOIREMENT QUE ARRAY[I] est le plus petit élément
+        posmini = i
+
+        // ON EXAMINE TOUS LES ELEMENTS SUIVANTS
+        Pour(j=i+1;j < LONGUEUR_TABLEAU(array);j++) Faire
+                // TEST SI L'ELEMENT SUIVANT EST SUPERIEUR AU POINT DE DEPART 
+                Si (array[j] > array[posmini]) Alors
+                    // ALORS ON RECUPERE L'INDEX QUI CORRESPOND A L'ELEMENT INFERIEUR
+                    posmini = j
+                Fin Si
+        Fin Pour
+        
+        // A CET ENDROIT ON SAIT MAINTENANT Où EST LE PLUS PETIT ELEMENT
+        // IL NE RESTE PLUS QU'A AFFICHER LA PERMUTATION
+        
+        // TEMP RECUPERE LA VALEUR SUPERIEUR
+        temp = array[posmini]
+        
+        // ON PERMUTE L'ELEMENT INFERIEUR DANS SON NOUVEL EMPLACEMENT
+        array[posmini] = array[i]
+        
+        // ON PERMUTE L'ELEMENT SUPERIEUR DANS SON NOUVEL EMPLACEMENT
+        array[i] = temp
+
+        // ON A PLACE CORRECTEMENT L'ELEMENT NUMERO I, ON PASSE A PRESENT AU SUIVANT
+    Fin Pour
+
+    // TRI A BULLE :
+
+    // DECLARATION ET INITIALISATION DU FLAG A VRAI
+    flag = true
+
+    // TANT QUE LE DRAPEAU EST VRAI
+    Tant que (flag) Faire
+        // PASSAGE DU DRAPEAU A FAUX
+        flag = false
+
+        Pour (i=0;i < LONGUEUR_TABLEAU(array2)-1;i++) Faire
+
+            // TEST SI L'ELEMENT INITIAL EST INFERIEUR A L'ELEMENT SUIVANT
+            Si (array2[i] < array2[i+1]) Alors
+
+                // TEMP2 RECUPERE LA VALEUR INFERIEUR
+                temp2 = array2[i]
+
+                // ON PERMUTE L'ELEMENT SUPERIEUR DANS SON NOUVEL EMPLACEMENT
+                array2[i] = array2[i+1]
+
+                // ON PERMUTE L'ELEMENT INFERIEUR DANS SON NOUVEL EMPLACEMENT
+                array2[i+1] = temp2
+
+                // PASSAGE DU DRAPEAU A VRAI
+                flag = true
+            Fin Si
+        Fin Pour
+    Fin Tant que
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

@@ -1,0 +1,84 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="area_id" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.2 en PHP
+
+DEBUT INSTRUCTION PHP
+    
+    // DECLARATION ET INITIALISATION DES TABLEAUX QUI VONT STOKER LES NOMBRES
+    $array = [];
+    $array2 = [];
+
+    // AFFECTATION DYNAMIQUE DES TABLEAUX
+    for($i=0;$i < 10;$i++){
+        array_push($array, $_POST['index-'.$i]);
+        array_push($array2, $_POST['index-'.$i]);
+    }
+
+    // TRI PAR INSERTION
+
+    // BOUCLE PRINCIPALE : LE POINT DE DEPART SE DECALE A CHAQUE TOUR
+    for($i=0;$i < count($array);$i++){
+
+        // ON CONSIDERE PROVISOIREMENT QUE ARRAY[I] est le plus petit élément
+        $posmini = $i;
+
+        // ON EXAMINE TOUS LES ELEMENTS SUIVANTS
+        for($j=$i+1;$j < count($array);$j++){
+                // TEST SI L'ELEMENT SUIVANT EST SUEPERIEUR AU POINT DE DEPART 
+                if($array[$j] > $array[$posmini]){
+                    // ALORS ON RECUPERE L'INDEX QUI CORRESPOND A L'ELEMENT INFERIEUR
+                    $posmini = $j;
+                }
+        }
+        
+        // A CET ENDROIT ON SAIT MAINTENANT Où EST LE PLUS PETIT ELEMENT
+        // IL NE RESTE PLUS QU'A AFFICHER LA PERMUTATION
+        
+        // TEMP RECUPERE LA VALEUR SUEPRIEUR
+        $temp = $array[$posmini];
+        
+        // ON PERMUTE L'ELEMENT INFERIEUR DANS SON NOUVEL EMPLACEMENT
+        $array[$posmini] = $array[$i];
+        
+        // ON PERMUTE L'ELEMENT SUPERIEUR DANS SON NOUVEL EMPLACEMENT
+        $array[$i] = $temp;
+
+        // ON A PLACE CORRECTEMENT L'ELEMENT NUMERO I, ON PASSE A PRESENT AU SUIVANT
+    }
+
+    // TRI A BULLE :
+
+    // DECLARATION ET INITIALISATION DU FLAG A VRAI
+    $flag = true;
+
+    // TANT QUE LE DRAPEAU EST VRAI
+    while($flag){
+        
+        // PASSAGE DU DRAPEAU A FAUX
+        $flag = false;
+
+        for($i=0;$i < count($array2)-1;$i++){
+
+            // TEST SI L'ELEMENT INITIAL EST INFERIEUR A L'ELEMENT SUIVANT
+            if($array2[$i] < $array2[$i+1]){
+
+                // TEMP2 RECUPERE LA VALEUR INFERIEUR
+                $temp2 = $array2[$i];
+
+                // ON PERMUTE L'ELEMENT SUPERIEUR DANS SON NOUVEL EMPLACEMENT
+                $array2[$i] = $array2[$i+1];
+
+                // ON PERMUTE L'ELEMENT INFERIEUR DANS SON NOUVEL EMPLACEMENT
+                $array2[$i+1] = $temp2;
+
+                // PASSAGE DU DRAPEAU A VRAI
+                $flag = true;
+            }
+        }
+    }
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>
