@@ -13,7 +13,6 @@
   <body>
       <!-- NAVBAR -->
       <?php require "../../commun/nav_season_2.html" ?>
-      <hr>
 
       <!-- Choix des exos-->
       <div style="display: flex; justify-content: center;">

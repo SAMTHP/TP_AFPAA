@@ -1,0 +1,58 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.3 en JS
+
+DEBUT INSTRUCTION JS
+
+    document.getElementById("result").style.display = "none";
+
+    document.getElementById("submit").onclick = function () {
+
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI VONT STOKER LES NOMBRES
+        var array = [];
+
+        // AFFECTATION DYNAMIQUE DU TABLEAU
+        for(var i=0;i < 10;i++){
+            array.push(document.getElementById('index-'+i).value);
+        }
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE DERNIER INDEX
+        var last_index = (array.length-1);
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE PREMIER INDEX
+        var first_index = 0;
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA CALCULER LA MOITIE DE LA LONGUEUR DU TABLEAU
+        var middle = array.length / 2;
+        
+        // PERMUTATION DYNAMIQUE DES VALEURS DU TABLEAU
+        array.forEach(function (num){
+            // TEST SI FIRST_INDEX ET INFERIEUR A MIDDLE
+            if(first_index < middle){
+                // TEMP VA RECUPERER LE DERNIER ELEMENT
+                temp = array[last_index];
+
+                // ON REMPLACE LE DERNIER ELEMENT DU TABLEAU PAR LE PREMIER
+                array[last_index] = num;
+
+                // ON REMPLACE LE PREMIER ELEMENT DU TABLEAU PAR LE DERNIER
+                array[first_index] = temp;
+
+                last_index--;
+                first_index++;
+            }
+        })
+
+        for(var i=0;i < 10;i++){
+            document.getElementById("i-"+i).innerText = array[i];
+        }
+
+        document.getElementById("result").style.display = "block";
+
+    }
+
+        
+FIN INSTRUCTION JS
+        </textarea>
+</div>

@@ -4,20 +4,38 @@
 ALGORITHME EXO 7.3 en PSEUDO CODE
 
     TABLEAU array(9) en ENTIER
-    VARIABLE index en ENTIER
+    VARIABLE last_index, first_index, middle, temp en ENTIER
 
 DEBUT INSTRUCTION
 
-    // DECLARATION ET INITIALISATION DU TABLEAU QUI VONT STOKER LES NOMBRES
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES ELEMENTS
     array = ["a","b","c","d"]
     
-    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER L'INDEX
-    index = LONGUEUR_TABLEAU(array)-1
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE DERNIER INDEX
+    last_index = LONGUEUR_TABLEAU(array)-1
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE PREMIER INDEX
+    first_index = 0
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA CALCULER LA MOITIE DE LA LONGUEUR DU TABLEAU
+    middle = LONGUEUR_TABLEAU(array) / 2
 
     // PERMUTATION DYNAMIQUE DES VALEURS DU TABLEAU
     PARCOURIR_TABLEAU(array POSSEDE value) Faire
-        array[index] = value
-        index--
+        // TEST SI FIRST_INDEX ET INFERIEUR A MIDDLE
+        Si (first_index < last_index) Alors
+            // TEMP VA RECUPERER LE DERNIER ELEMENT
+            temp =  array[last_index]
+            
+            // ON REMPLACE LE DERNIER ELEMENT DU TABLEAU PAR LE PREMIER
+            array[last_index] = value
+
+            // ON REMPLACE LE PREMIER ELEMENT DU TABLEAU PAR LE DERNIER
+            array[first_index] = temp
+            
+            last_index--
+            first_index++
+        Fin Si
     Fin PARCOURIR_TABLEAU
 
     // AFFICHAGE DU TABLEAU

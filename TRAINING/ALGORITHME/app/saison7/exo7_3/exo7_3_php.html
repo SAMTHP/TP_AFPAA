@@ -13,15 +13,32 @@ DEBUT INSTRUCTION PHP
         array_push($array, $_POST['index-'.$i]);
     }
 
-    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER L'INDEX
-    $index = count($array)-1;
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE DERNIER INDEX
+    $last_index = count($array)-1;
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE PREMIER INDEX
+    $first_index = 0;
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA CALCULER LA MOITIE DE LA LONGUEUR DU TABLEAU
+    $middle = count($array) / 2;
 
     // PERMUTATION DYNAMIQUE DES VALEURS DU TABLEAU
     foreach($array as $value){
-        $array[$index] = $value;
-        $index--;
-    }
+        // TEST SI FIRST_INDEX ET INFERIEUR A MIDDLE
+        if($first_index < $middle){
+            // TEMP VA RECUPERER LE DERNIER ELEMENT
+            $temp =  $array[$last_index];
 
+            // ON REMPLACE LE DERNIER ELEMENT DU TABLEAU PAR LE PREMIER
+            $array[$last_index] = $value;
+
+            // ON REMPLACE LE PREMIER ELEMENT DU TABLEAU PAR LE DERNIER
+            $array[$first_index] = $temp;
+            
+            $last_index--;
+            $first_index++;
+        }
+    }
 
 FIN INSTRUCTION PHP
 

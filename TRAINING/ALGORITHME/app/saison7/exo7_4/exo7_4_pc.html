@@ -1,0 +1,45 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.4 en PSEUDO CODE
+
+    TABLEAU tab(3) en ENTIER
+    VARIABLE element, flag, message en ENTIER
+
+DEBUT INSTRUCTION
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES ELEMENTS
+    tab = ["126","159","355","678"]
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE CHOIX UTILISATEUR
+    ECRIRE "Choisissez l'élément à supprimer :"
+    LIRE choixUtilisateur
+    element = choixUtilisateur
+
+    // DECLARATION ET INITIALISATION DU DRAPAEU A FALSE
+    flag = false
+    
+    // RECHERCHE DYNAMIQUE DE L'ELEMENT
+    Pour (i=0;i < count(tab);i++) Faire
+        // TEST SI L'ELEMENT EST PRESENT DANS LE TABLEAU
+        if(tab[i] == element) Alors
+            // SUPRESSION DE L'ELEMENT
+            unset(tab[i])
+            // PASSAGE DU DRAPEAU A FALSE
+            flag = true
+        Fin Si
+    Fin Pour
+    
+    // TEST SI LE DRAPEAU EST A TRUE
+    Si (flag) Alors
+        ECRIRE tab
+    Sinon
+        // DECLARATION ET INITIALISATION DE LA VARIABLE MESSAGE QUI AFFICHERA LE MESSAGE D'ERREUR
+        message = "La valeur que vous avez demandé n'existe pas"
+        ECRIRE message
+    Fin Si
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

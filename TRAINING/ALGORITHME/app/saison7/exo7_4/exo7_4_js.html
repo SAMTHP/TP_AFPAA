@@ -1,0 +1,69 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.4 en JS
+
+DEBUT INSTRUCTION JS
+
+document.getElementById("result").style.display = "none";
+
+document.getElementById("submit").onclick = function () {
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VONT STOKER LES NOMBRES
+    var tab = ["126","159","355","678"];
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE CHOIX UTILISATEUR
+    // ECRIRE "Choisissez l'élément à supprimer :"
+    // LIRE choixUtilisateur
+    var element = document.getElementById('element').value;
+
+    // DECLARATION ET INITIALISATION DU DRAPAEU A FALSE
+    var flag = false;
+
+    // RECHERCHE DYNAMIQUE DE L'ELEMENT
+    for(var i=0;i < tab.length;i++){
+        // TEST SI L'ELEMENT EST PRESENT DANS LE TABLEAU
+        if(tab[i] == element){
+            // SUPRESSION DE L'ELEMENT
+            tab.splice(i,1);
+            // PASSAGE DU DRAPEAU A FALSE
+            flag = true;
+        }
+    }
+    
+    // CREATION DYNAMIQUE DES BLOCK <TR> POUR L'AFFICHAGE DU NOUVEAU TABLEAU
+    for(var i = 0; i < tab.length;i++){
+        var newElement = document.createElement('tr');
+        newElement.id = 'elem-'+i;
+        document.getElementById('show').appendChild(newElement);
+    }
+
+    // RECUPERATION DES INDEX DU TABLEAU
+    var indexTab = tab.keys();
+
+    // INITIALISATION DU COMPTEUR A O POUR LE REMPLISSAGE DYNAMIQUE DU TABLEAU DANS LA VUE
+    var e = 0;
+
+    // REMPLISSAGE DYNAMIQUE DE LA VUE
+    for(let val of indexTab){
+        document.getElementById('elem-'+e).innerHTML = "<th scope='row'>"+val+"</th><td>"+tab[e]+"</td>";
+        e++;
+    }
+
+    // TEST SI LE DRAPEAU EST A TRUE
+    if(flag){
+        // AFFICHAGE DU BLOCK DANS LA VUE
+        document.getElementById("result").style.display = "block";
+    } else {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE MESSAGE QUI AFFICHERA LE MESSAGE D'ERREUR
+        var message = "La valeur que vous avez demandé n'existe pas";
+        // AFFICHAGE DU MESSAGE D'ERREUR DANS LA VUE
+        document.getElementById('error').innerHTML = "<strong>"+message+"</strong>";
+    }
+   
+}
+
+        
+FIN INSTRUCTION JS
+        </textarea>
+</div>

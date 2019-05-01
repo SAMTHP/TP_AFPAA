@@ -1,5 +1,4 @@
 <h2>EXECUTION EN PHP</h2>
-<h4>Saisissez vos notes : </h4>
 <form action="exo7_3_execution_view.php" method="POST">
     <div class="form-group">
         <table class="table table-dark col-4">

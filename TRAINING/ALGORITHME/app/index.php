@@ -12,8 +12,10 @@
     </head>
   <body>
       <!-- NAVBAR -->
-      <?php require "commun/nav.html" ?>
-      <hr>
+      <div id="nav">
+        <?php require "commun/nav.html" ?>
+      </div>
+      <br><br><br><br>
       <div style="display: flex; justify-content: center;">
           <h1 style="color:lightblue">EXERCICES D'ALGORITHME</h1>
       </div>

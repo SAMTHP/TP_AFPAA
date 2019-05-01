@@ -1,0 +1,69 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.4 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+
+    $("#result").hide();
+
+    $("#submit").click(function () {
+
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI VONT STOKER LES NOMBRES
+        var tab = ["126","159","355","678"];
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE CHOIX UTILISATEUR
+        // ECRIRE "Choisissez l'élément à supprimer :"
+        // LIRE choixUtilisateur
+        var element = $('#element').val();
+
+        // DECLARATION ET INITIALISATION DU DRAPAEU A FALSE
+        var flag = false;
+
+        // RECHERCHE DYNAMIQUE DE L'ELEMENT
+        for(var i=0;i < tab.length;i++){
+            // TEST SI L'ELEMENT EST PRESENT DANS LE TABLEAU
+            if(tab[i] == element){
+                // SUPRESSION DE L'ELEMENT
+                tab.splice(i,1);
+                // PASSAGE DU DRAPEAU A FALSE
+                flag = true;
+            }
+        }
+        
+        // CREATION DYNAMIQUE DES BLOCK <TR> POUR L'AFFICHAGE DU NOUVEAU TABLEAU
+        for(var i = 0; i < tab.length;i++){
+            var newElement = $("<tr id='elem-"+i+"'></tr>");
+            newElement.appendTo($('#show'));
+        }
+
+        // RECUPERATION DES INDEX DU TABLEAU
+        var indexTab = tab.keys();
+
+        // INITIALISATION DU COMPTEUR A O POUR LE REMPLISSAGE DYNAMIQUE DU TABLEAU DANS LA VUE
+        var e = 0;
+
+        // REMPLISSAGE DYNAMIQUE DE LA VUE
+        for(let val of indexTab){
+            $('#elem-'+e).html("<th scope='row'>"+val+"</th><td>"+tab[e]+"</td>");
+            e++;
+        }
+
+        // TEST SI LE DRAPEAU EST A TRUE
+        if(flag){
+            // AFFICHAGE DU BLOCK DANS LA VUE
+            $("#result").show();
+        } else {
+            // DECLARATION ET INITIALISATION DE LA VARIABLE MESSAGE QUI AFFICHERA LE MESSAGE D'ERREUR
+            var message = "La valeur que vous avez demandé n'existe pas";
+            // AFFICHAGE DU MESSAGE D'ERREUR DANS LA VUE
+            $('#error').html("<strong>"+message+"</strong>");
+        }
+    
+    }
+
+
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>
