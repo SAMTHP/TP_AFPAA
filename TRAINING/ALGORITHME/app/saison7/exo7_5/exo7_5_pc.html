@@ -1,0 +1,68 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.5 en PSEUDO CODE
+
+    TABLEAU tab(1342) en ENTIER
+    VARIABLE choice en STRING
+    VARIABLES min, max, middle,count en ENTIER
+
+DEBUT INSTRUCTION
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES ELEMENTS PREALABLEMENT TRIE
+    tab = ["..","..",".."]
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE CHOIX UTILISATEUR
+    ECRIRE "Tapez le mot à trouver :"
+    LIRE choixUtilisateur
+    choice = choixUtilisateur
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE REPRESENTANT L'INDEX DE DEPART DU TABLEAU
+    min = 0
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE REPRESENTANT L'INDEX DE FIN DU 
+    max = LONGUEUR_TABLEAU(tab)-1
+
+    // VARIABLE REPRESENTANT L'INDEX DU MILLIEU DU TABLEAU
+    middle = (LONGUEUR_TABLEAU(tab)-1)/2;
+
+    // FONCTION QUI RETOURNE LE RESULTAT DE LA RECHERCHE DU MOT
+    Fonction dichotomousSearch(choice en STRING,tab en TABLEAU,min en ENTIER,max en ENTIER,middle en ENTIER) en STRING
+        
+        // DECLARATION ET INITIALISATION DU COMPTEUR QUI RENVERRA LE NOMBRE D'EXECUTION
+        count = 1
+        
+        // BOUCLE TANQUE QUE LA CONDITION N'EST PAS VALIDE
+        Tant que(choice != tab[middle] && min != max) Alors
+                    // TEST SI LE MOT A CHERCHER EST ANTERIEUR AU MILLIEU DU DICTIONNAIRE 
+                    Si(choice < tab[middle]) Alors
+                        // REAFFECTION DE L'INDEX DE FIN
+                        max = middle -1
+                        // REAFFECTION DE L'INDEX DU MILLIEU
+                        middle = ARRONDIR((min + max)/2)
+                    Sinon Si(choice > tab[middle]) Alors // TEST SI LE MOT A CHERCHER EST SUPERIEUR AU MILLIEU DU DICTIONNAIRE 
+                        // REAFFECTATION DE L'INDEX DE DEBUT
+                        min = middle + 1
+                        // REAFFECTION DE L'INDEX DU MILLIEU
+                        middle = ARRONDIR(($min + $max)/2)
+                    Fin Si
+                    // INCREMENTATION DU COMPTEUR
+                    count++
+        Fin Tant que
+
+        // TEST SI LE MOT EST PRESENT DANS LE DICTIONNAIRE
+        Si(tab[middle] == choice) Alors
+            ECRIRE "Le mot se trouve dans le dictionnaire (Compteur = " & count & " || Index :: " & middle & " || Mot trouvé :: " & tab[middle] & ")"
+        Sinon
+            ECRIRE "Le mot ne se trouve pas dans le dictionnaire (Compteur = " & count & ")"
+        Fin Si
+    Fin Fonction
+
+// APPEL DE LA FONCTION
+dichotomousSearch(choice,aOfWords,min,max,middle)
+    
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

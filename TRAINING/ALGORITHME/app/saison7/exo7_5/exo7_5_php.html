@@ -1,0 +1,65 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="area_id" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.5 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // RECUPERATION DU DICTIONNAIRE
+    $aOfWords = [..........];
+
+    // RECUPERATION DU MOT A CHERCHER
+    // ECRIRE "Tapez le mot à trouver :"
+    // LIRE choixUtilisateur
+    $choice = strtolower($_POST['word']);
+
+    // VARIABLE REPRESENTANT L'INDEX DE DEPART DU TABLEAU
+    $min = 0;
+
+    // VARIABLE REPRESENTANT L'INDEX DE FIN DU TABLEAU
+    $max = count($aOfWords)-1;
+
+    // VARIABLE REPRESENTANT L'INDEX DU MILLIEU DU TABLEAU
+    $middle = (count($aOfWords)-1)/2;
+
+    // FONCTION QUI RETOURNE LE RESULTAT DE LA RECHERCHE DU MOT
+    function dichotomousSearch($choice,$tab,$min,$max,$middle){
+        
+        // INITIALISATION DU COMPTEUR QUI RENVERRA LE NOMBRE D'EXECUTION
+        $count = 1;
+        
+        // BOUCLE TANQUE QUE LA CONDITION N'EST PAS VALIDE
+        while($choice != $tab[$middle] && $min != $max){
+                    // TEST SI LE MOT A CHERCHER EST ANTERIEUR AU MILLIEU DU DICTIONNAIRE 
+                    if($choice < $tab[$middle]){
+                        // REAFFECTION DE L'INDEX DE FIN
+                        $max = $middle -1;
+                        // REAFFECTION DE L'INDEX DU MILLIEU
+                        $middle = round(($min + $max)/2,0,PHP_ROUND_HALF_DOWN);
+                    } elseif($choice > $tab[$middle]){ // TEST SI LE MOT A CHERCHER EST SUPERIEUR AU MILLIEU DU DICTIONNAIRE 
+                        // REAFFECTATION DE L'INDEX DE DEBUT
+                        $min = $middle +1;
+                        // REAFFECTION DE L'INDEX DU MILLIEU
+                        $middle = round(($min + $max)/2,0,PHP_ROUND_HALF_DOWN);
+                    } 
+                    // INCREMENTATION DU COMPTEUR
+                    $count++;
+        }
+
+        // TEST SI LE MOT EST PRESENT DANS LE DICTIONNAIRE
+        if($tab[$middle] == $choice){
+            // ECRIRE "Le mot se trouve dans le dictionnaire (Compteur = " & count & " || Index :: " & middle & " || Mot trouvé :: " & tab[middle] & ")"
+            echo "Le mot se trouve dans le dictionnaire (Compteur = $count || Index :: $middle || Mot trouvé :: $tab[$middle])";
+        }else{
+            // ECRIRE "Le mot ne se trouve pas dans le dictionnaire (Compteur = " & count & ")"
+            echo "Le mot ne se trouve pas dans le dictionnaire (Compteur = $count )";
+        }
+    }
+
+    // APPEL DE LA FONCTION
+    dichotomousSearch($choice,$aOfWords,$min,$max,$middle);
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>
