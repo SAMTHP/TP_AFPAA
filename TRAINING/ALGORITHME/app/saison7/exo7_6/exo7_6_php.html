@@ -1,0 +1,44 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="area_id" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.6 en PHP
+
+DEBUT INSTRUCTION PHP
+    
+    // DEFINITION D'UNE CONSTANTE POUR FACILITER LE SAUT DE LIGNE
+    define('BR',"<br>");
+    
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES NOMBRES
+    $tab = [];
+
+    // AFFECTATION DYNAMIQUE DU TABLEAU
+    for($i=1;$i<=6;$i++){
+        array_push($tab,$_POST['num-'.$i]);
+    }
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA VALEUR MINIMALE
+    $min = $tab[0];
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA VALEUR MAXIMALE
+    $max = $tab[0];
+
+    // BOUCLE POUR CONNAITRE LA VALEUR MIN ET MAX
+    for($i=0;$i < count($tab)-1;$i++){
+        // TEST SI TAB[i] ET INFERIEUR A MIN
+        if($tab[$i] < $min){
+            $min = $tab[$i];
+        } elseif($tab[$i] > $max){ // TEST SI TAB[i] ET SUPERIEUR A MAX
+            $max = $tab[$i];
+        }
+    }
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA CALCULER LE PLUS GRAND ECART
+    $gap = $max - $min;
+
+    // AFFICHAGE DE DU RESULTAT
+    echo "Valeur max : $max ".BR."Valeur min : $min ".BR."Ecart le plus grand : $gap";
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

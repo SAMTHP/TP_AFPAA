@@ -1,0 +1,45 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.6 en PSEUDO CODE
+
+    TABLEAU tab(5) en ENTIER
+    VARIABLES min, max, gap en ENTIER
+
+DEBUT INSTRUCTION
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES NOMBRES
+    tab = []
+
+    // AFFECTATION DYNAMIQUE DU TABLEAU
+    Pour(i=1;i<=6;i++){
+        LIRE choixUtilisateur+i
+        INSERTION_TABLEAU(tab, choixUtilisateur+i)
+    }
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA VALEUR MINIMALE
+    min = tab[0]
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA VALEUR MAXIMALE
+    max = tab[0]
+    
+    // BOUCLE POUR CONNAITRE LA VALEUR MIN ET MAX
+    Pour(i=0;i < LONGUEUR_TABLEAU(tab)-1;i++) Faire
+        // TEST SI TAB[i] ET INFERIEUR A MIN
+        Si(tab[i] < min) Alors
+            min = tab[i]
+        Sinon Si(tab[i] > max) Alors // TEST SI TAB[i] ET SUPERIEUR A MAX
+            max = tab[i]
+        Fin Si
+    Fin Pour
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA CALCULER LE PLUS GRAND ECART
+    gap = max - min
+
+    // AFFICHAGE DE DU RESULTAT
+    ECIRE "Valeur max : " & max & ", Valeur min : " & min & ", Ecart le plus grand : " & gap"
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>
