@@ -15,20 +15,15 @@
       <?php require "../commun/nav_season.html" ?>
 
       <div style="display: flex; justify-content: center;">
-          <h1 style="color:lightblue">SAISON 7</h1>
+          <h1 style="color:lightblue">SAISON 8</h1>
       </div>
       <!-- Choix des exos-->
       <div style="display: flex; justify-content: center;">
         <div class="dropdown" >
         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EXERCICES</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="exo7_1/index_exo7_1.php">7.1</a>
-              <a class="dropdown-item" href="exo7_2/index_exo7_2.php">7.2</a>
-              <a class="dropdown-item" href="exo7_3/index_exo7_3.php">7.3</a>
-              <a class="dropdown-item" href="exo7_4/index_exo7_4.php">7.4</a>
-              <a class="dropdown-item" href="exo7_5/index_exo7_5.php">7.5</a>
-              <a class="dropdown-item" href="exo7_6/index_exo7_6.php">7.6</a>
-              <a class="dropdown-item" href="exo7_7/index_exo7_7.php">7.7</a>
+              <a class="dropdown-item" href="exo8_6/index_exo8_6.php">8.6</a>
+              <a class="dropdown-item" href="exo8_7/index_exo8_7.php">8.7</a>
           </div>
         </div>
       </div>

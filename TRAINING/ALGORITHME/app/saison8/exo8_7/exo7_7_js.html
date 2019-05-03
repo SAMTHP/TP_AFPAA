@@ -1,0 +1,125 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.7 en JS
+
+DEBUT INSTRUCTION JS
+    // OCCULTATION DU BOUTON DE VALIDATION DE LA SAISI DES NOMBRES
+    document.getElementById('form-submit').style.display = "none";
+
+    document.getElementById("submit").onclick = function () {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RECUPEREA LES TOTAUX DES NOMBRES A SAISIR POUR LES DEUX TABLEAUX
+        var total_1 = parseInt(document.getElementById('tab-1').value);
+        var total_2 = parseInt(document.getElementById('tab-2').value);
+
+        // CREATION DYNAMIQUE DES INPUT POUR LA SAISI DES NOMBRES DU TABLEAU 1
+        for(var i = 0; i < total_1; i++){
+            var newInput_1 = document.createElement('div');
+            newInput_1.id = 'tab-1-num-'+i;
+            document.getElementById('form-1').appendChild(newInput_1);
+        }
+
+        // CREATION DYNAMIQUE DES INPUT POUR LA SAISI DES NOMBRES DU TABLEAU 2
+        for(var i = 0; i < total_2; i++){
+            var newInput_2 = document.createElement('div');
+            newInput_2.id = 'tab-2-num-'+i;
+            document.getElementById('form-2').appendChild(newInput_2);
+        }
+
+        // INSERTION DYNAMIQUE DES INPUT DANS LA VUE DU TABLEAU 1
+        for(var i = 0; i < total_1; i++){
+            var range = i + 1;
+            document.getElementById('tab-1-num-'+i).innerHTML = "<table class='table table-dark'><tr><th scope='row'>"+range+"° nombre :</th><td><input type='number' class='form-control' id='tab-1-number-"+i+"'></td><input type='hidden' class='form-control' id='total-1' value='"+total_1+"'></tr></table>";
+        }
+
+        // INSERTION DYNAMIQUE DES INPUT DANS LA VUE DU TABLEAU 2
+        for(var i = 0; i < total_2; i++){
+            var range = i + 1;
+            document.getElementById('tab-2-num-'+i).innerHTML = "<table class='table table-dark'><tr><th scope='row'>"+range+"° nombre :</th><td><input type='number' class='form-control' id='tab-2-number-"+i+"'></td><input type='hidden' class='form-control' id='total-2' value='"+total_2+"'></tr></table>";
+        }
+
+        // CREATION DES TITRES POUR LES DEUX TABLEAUX
+        document.getElementById('title-tab-1').innerHTML = "<h5> TABLEAU 1 : </h5>";
+        document.getElementById('title-tab-2').innerHTML = "<h5> TABLEAU 2 : </h5>";
+
+        // DU BOUTON DE VALIDATION DE LA SAISI DES NOMBRES
+        document.getElementById('form-submit').style.display = "block"
+        
+    }
+
+
+    document.getElementById("submit-form").onclick = function () {
+
+        // RECUPERATION DES TOTAUX DES DEUX TABLEAUX
+        var total_1 = parseInt(document.getElementById('total-1').value);
+        var total_2 = parseInt(document.getElementById('total-2').value);
+        
+        // DECLARATION ET INITIALISATION DES TABLEAUX
+        var a1 = [];
+        var a2 = [];
+        var a3 = [];
+
+        // INSERTATION DYNAMIQUE DES CHOIX UTILISATEUR DANS LE TABLEAU 1 VIA UNE BOUCLE POUR
+        for( var i=0;i < total_1;i++){
+            a1.push(parseInt(document.getElementById('tab-1-number-'+i).value));
+        }
+
+        // INSERTATION DYNAMIQUE DES CHOIX UTILISATEUR DANS LE TABLEAU 2 VIA UNE BOUCLE POUR
+        for( var i=0;i < total_2;i++){
+            a2.push(parseInt(document.getElementById('tab-2-number-'+i).value));
+        }
+        
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA LONGUEUR DU TABLEAU 1
+        var c1 = a1.length;
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA LONGUEUR DU TABLEAU 2
+        var c2 = a2.length;
+
+        // DECLARATION ET INITIALISATION A 0 DE LA VARIABLE QUI VA RECUPERER LA PLUS GRANDE LONGUEUR APRES LE TEST
+        var max = 0;
+
+        // TEST POUR SAVOIR QUELLE EST LA PLUS GRANDE LONGUEUR
+        if(c1 > c2){
+            max = c1;
+        }else {
+            max = c2;
+        }
+
+        // AFFECTATION DYNAMIQUE DU TABLEAU 3
+        for(var i=0; i < max; i++){
+            if(i < c1){
+                a3[i] = a1[i];
+            }
+            if(i < c2){
+                a3[(i + c2)-1] = a2[i];
+            }
+        }
+        
+        // CREATION D'UNE FONCTION QUI SIMULER UN PSEUDO VAR DUMP
+        function dump(obj) {
+            var out = '';
+            for (var i in obj) {
+                out += " ["+i+"]" + " => " + obj[i] + "\n";
+            }
+        
+            var pre = document.createElement('pre');
+            pre.innerHTML = out;
+            document.getElementById('result').appendChild(pre)
+        }
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA LONGUEUR DU TABLEAU 3
+        var total_index = a3.length;
+
+        // CREATION DU TITRE DU TABLEAU 3
+        document.getElementById('title-tab-3').innerHTML = "<h5> TABLEAU 3 : </h5>";
+        
+        // AFFICHAGE DE L'EN-TETE DU VAR-DUMP
+        document.getElementById('dump').innerHTML = "<i>array (size="+total_index+")</i>";
+
+        // APPEL DE LA FONCTION POUR L'AFFICHAGE DU TABLEAU 3
+        dump(a3);
+
+    }
+FIN INSTRUCTION JS
+        </textarea>
+</div>

@@ -1,0 +1,57 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.7 en PHP
+
+DEBUT INSTRUCTION PHP
+    
+    // DECLARATION ET INITIALISATION DES TABLEAUX 1 ET 2
+    $a1 = [];
+    $a2 = [];
+    
+    // INSERTATION DES CHOIX UTILISATEUR DANS LE TABLEAU 1 VIA UNE BOUCLE POUR
+    for($i=0;$i<$_POST['total-1'];$i++){
+        array_push($a1, $_POST['tab-1-num-'.$i]);
+    }
+    
+    // INSERTATION DES CHOIX UTILISATEUR DANS LE TABLEAU 2 VIA UNE BOUCLE POUR
+    for($i=0;$i<$_POST['total-2'];$i++){
+        array_push($a1, $_POST['tab-2-num-'.$i]);
+    }
+    
+    // DECLARATION ET INITIALISATION DU TABLEAU 3
+    $a3 = [];
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA LONGUEUR DU TABLEAU 1
+    $c1 = count($a1);
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA LONGUEUR DU TABLEAU 2
+    $c2 = count($a2);
+    
+    // DECLARATION ET INITIALISATION A 0 DE LA VARIABLE QUI VA RECUPERER LA PLUS GRANDE LONGUEUR APRES LE TEST
+    $max = 0;
+    
+    // TEST POUR SAVOIR QUELLE EST LA PLUS GRANDE LONGUEUR
+    if($c1 > $c2){
+        $max = $c1;
+    }else {
+        $max = $c2;
+    }
+    
+    // AFFECTATION DYNAMIQUE DU TABLEAU 3
+    for($i=0; $i < $max; $i++){
+        if($i < $c1){
+            $a3[$i] = $a1[$i];
+        }
+        if($i < $c2){
+            $a3[($i + $c2)-1] = $a2[$i];
+        }
+    }
+    
+    // AFFICHAGE DU TABLEAU 3
+    var_dump($a3);
+    
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

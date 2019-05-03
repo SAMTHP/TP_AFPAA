@@ -1,5 +1,5 @@
 <h2>EXECUTION EN PHP</h2>
-<h4>Saisissez vos notes : </h4>
+
 <form action="exo6_8_execution_view.php" method="POST">
     <div class="form-group">
         <div class="row">

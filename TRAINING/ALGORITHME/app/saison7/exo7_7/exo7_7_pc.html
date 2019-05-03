@@ -1,0 +1,81 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.7 en PSEUDO CODE
+
+    TABLEAU a1(1..n), a2(1...n), a3(1..n) en ENTIER
+    VARIABLES total_number_1, total_number_2 c1, c2, max en ENTIER
+
+DEBUT INSTRUCTION
+
+    // DECLARATION ET INITIALISATION DES TABLEAUX 1 ET 2
+    a1 = []
+    a2 = []
+
+    ECRIRE "Comnbien de nombre voulez-vous entrez pour le tableau 1 ?"
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE CHOIX UTILISATEUR POUR LE TABLEAU 1
+    total_number_1 = choixUtilisateur
+
+    ECRIRE "Comnbien de nombre voulez-vous entrez pour le tableau 1 ?"
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE CHOIX UTILISATEUR POUR LE TABLEAU 2
+    total_number_2 = choixUtilisateur
+
+    // INSERTATION DES CHOIX UTILISATEUR DANS LE TABLEAU 1 VIA UNE BOUCLE POUR
+    Pour(i=0;i < total_number_1;i++) Faire
+        ECRIRE "Saisir le " & i & "° nombre"
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE NOMBRE SAISI
+        LIRE choixUtilisateur+i
+        num = choixUtilisateur+i
+        INSERTION_TABLEAU(array_nums, num)
+    Fin Pour
+
+    // INSERTATION DES CHOIX UTILISATEUR DANS LE TABLEAU 1 VIA UNE BOUCLE POUR
+    Pour(i=0;i < total_number_1;i++) Faire
+        ECRIRE "Saisir le " & i & "° nombre"
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE NOMBRE SAISI
+        LIRE choixUtilisateur+i
+        num = choixUtilisateur+i
+        INSERTION_TABLEAU(array_nums, num)
+    Fin Pour
+    
+    // DECLARATION ET INITIALISATION DU TABLEAU 3
+    a3 = []
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA LONGUEUR DU TABLEAU 1
+    c1 = LONGUEUR_TABLEAU(a1)
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA LONGUEUR DU TABLEAU 1
+    c2 = LONGUEUR_TABLEAU(a2)
+
+    // DECLARATION ET INITIALISATION A 0 DE LA VARIABLE QUI VA RECUPERER LA PLUS GRANDE LONGUEUR APRES LE TEST
+    max = 0
+
+    // TEST POUR SAVOIR QUELLE EST LA PLUS GRANDE LONGUEUR
+    Si (c1 > c2) Alors
+        max = c1
+    Sinon
+        max = c2
+    Fin Si
+
+    // AFFECTATION DYNAMIQUE DU TABLEAU 3
+    Pour(i=0; i < max; i++) Alors
+        // TEST SI I EST INFERIEUR A C1
+        Si(i < c1) Alors
+            a3[i] = a1[i]
+        Fin Si
+        // TEST SI I EST INFERIEUR A C2
+        Si(i < c2) Alors
+            a3[(i + c2)-1] = a2[i]
+        Fin Si
+    Fin Pour
+
+    // AFFICHAGE DU TABLEAU 3
+    ECIRE a3
+
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

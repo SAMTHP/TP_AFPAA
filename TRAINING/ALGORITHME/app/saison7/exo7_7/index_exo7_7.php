@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link href="../../css/algo.css" rel="stylesheet">
       <script type="text/javascript" src="../../js/jquery_3_3_1.js" ></script>
-      <script type="text/javascript" src="../../js/saison7/exo7_1/season7_exo_1.js"></script>
+      <script type="text/javascript" src="../../js/saison7/exo7_7/season7_exo_7.js"></script>
     </head>
   <body>
       <!-- NAVBAR -->
@@ -19,13 +19,13 @@
         <div class="dropdown" >
         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EXERCICES</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">7.1</a>
+              <a class="dropdown-item" href="../exo7_1/index_exo7_1.php">7.1</a>
               <a class="dropdown-item" href="../exo7_2/index_exo7_2.php">7.2</a>
               <a class="dropdown-item" href="../exo7_3/index_exo7_3.php">7.3</a>
               <a class="dropdown-item" href="../exo7_4/index_exo7_4.php">7.4</a>
               <a class="dropdown-item" href="../exo7_5/index_exo7_5.php">7.5</a>
               <a class="dropdown-item" href="../exo7_6/index_exo7_6.php">7.6</a>
-              <a class="dropdown-item" href="../exo7_7/index_exo7_7.php">7.7</a>
+              <a class="dropdown-item" href="#">7.7</a>
           </div>
         </div>
       </div>
@@ -37,9 +37,8 @@
         <div class="card" id="card" style="width: 25rem;">
           <img src="../../img/code.jpeg" class="card-img-top" alt="wallpaper" style="height: 200px">
           <div class="card-body" >
-              <h5 class="card-title">Exercice 7.1</h5>
-              <p class="card-text">Ecrivez un algorithme qui permette de saisir un nombre quelconque de valeurs, et qui les range au fur et à mesure dans un tableau.<br>
-               Le programme, une fois la saisie terminée, doit dire si les éléments du tableau sont tous consécutifs ou non.
+              <h5 class="card-title">Exercice 7.7</h5>
+              <p class="card-text">Écrivez un algorithme qui fusionne deux tableaux dans un troisième, qui devra être trié.  
               <div style="display: flex; justify-content: center;">
                   <a href="#" class="btn btn-success " id="btn-pc">PSEUDO CODE</a>
               </div>
