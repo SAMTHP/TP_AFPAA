@@ -1,0 +1,48 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/jquery.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 7.6 en JQUERY
+
+DEBUT INSTRUCTION JQUERY
+
+    $("#submit").click(function () {
+
+        // DECLARATION ET INITIALISATION DU TABLEAU QUI VA STOKER LES NOMBRES
+        var tab = [];
+
+        // AFFECTATION DYNAMIQUE DU TABLEAU
+        for(var i=1;i<=6;i++){
+            tab.push(parseInt($('#num-'+i).val()));
+        }
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA VALEUR MINIMALE
+        var min = tab[0];
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA VALEUR MAXIMALE
+        var max = tab[0];
+
+        // BOUCLE POUR CONNAITRE LA VALEUR MIN ET MAX
+        for(var i=0;i<(tab.length)-1;i++){
+            // TEST SI TAB[i] ET INFERIEUR A MIN
+            if(tab[i] < min){
+                min = tab[i];
+            } else if(tab[i] > max){ // TEST SI TAB[i] ET SUPERIEUR A MAX
+                max = tab[i];
+            }
+        }
+
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA CALCULER LE PLUS GRAND ECART
+        var gap = max - min;
+
+        // AFFICHAGE DE DU RESULTAT
+        $('#max').text("Valeur max : "+max);
+        $('#min').text("Valeur min : "+min);
+        $('#gap').text("Ecart le plus grand : "+gap);
+
+    }
+
+
+FIN INSTRUCTION JQUERY
+
+        </textarea>
+</div>
