@@ -1,0 +1,212 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 8.7 en PSEUDO CODE
+
+    TABLEAU damier(7,7) en ENTIER
+    VARIABLES X, y en STRING
+    VARIABLE flag en BOOLEAN
+
+DEBUT INSTRUCTION
+
+    /***  INITIALISATION DU BOARD ***/
+
+    // DECLARATION ET INITIALISATION DU TABLEAU DU DAMIER
+    damier = [
+        "1" => [
+            "1" => 0,
+            "2" => 0,
+            "3" => 0,
+            "4" => 0,
+            "5" => 0,
+            "6" => 0,
+            "7" => 0,
+            "8" =>0
+        ],
+        "2" => [
+            "1" => 0,
+            "2" => 0,
+            "3" => 0,
+            "4" => 0,
+            "5" => 0,
+            "6" => 0,
+            "7" => 0,
+            "8" =>0
+        ],
+        "3" => [
+            "1" => 0,
+            "2" => 0,
+            "3" => 0,
+            "4" => 0,
+            "5" => 0,
+            "6" => 0,
+            "7" => 0,
+            "8" =>0
+        ],
+        "4" => [
+            "1" => 0,
+            "2" => 0,
+            "3" => 0,
+            "4" => 0,
+            "5" => 0,
+            "6" => 0,
+            "7" => 0,
+            "8" =>0
+        ],
+        "5" => [
+            "1" => 0,
+            "2" => 0,
+            "3" => 0,
+            "4" => 0,
+            "5" => 0,
+            "6" => 0,
+            "7" => 0,
+            "8" =>0
+        ],
+        "6" => [
+            "1" => 0,
+            "2" => 0,
+            "3" => 0,
+            "4" => 0,
+            "5" => 0,
+            "6" => 0,
+            "7" => 0,
+            "8" =>0
+        ],
+        "7" => [
+            "1" => 0,
+            "2" => 0,
+            "3" => 0,
+            "4" => 0,
+            "5" => 0,
+            "6" => 0,
+            "7" => 0,
+            "8" => 0
+        ],
+        "8" => [
+            "1" => 0,
+            "2" => 0,
+            "3" => 0,
+            "4" => 0,
+            "5" => 0,
+            "6" => 0,
+            "7" => 0,
+            "8" => 0 
+        ]
+    ]
+
+    /***  DEMMARAGE DU JEU ***/
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LES ABSCISSES
+    LIRE choixUtilisateur_x
+    x = choixUtilisateur_x
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LES ORDONNES
+    LIRE choixUtilisateur_y
+    y = choixUtilisateur_y
+
+    // AFFECTATION DU TABLEAU EN FONCTION DU CHOIX UTILISATEUR
+    damier[x][y] = "🔘"
+
+    /***  GESTION DES ERREURS  ***/
+
+    // DECLARATION ET INITIALISATION DU DRAPEAU A FAUX
+    flag = false
+
+    /***  COMMANDES DU DAMIER ***/
+
+    // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
+    Si (EXISTE(POST['left-top'])) Alors
+        // TEST SI LA CASE EST VALIDE
+        Si(EXISTE(damier[x-1][y-1])) Alors
+            // ETAPE 1 : RESET DE LA CASE PRECEDENTE
+            damier[x][y] = ""
+
+            // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
+            x -= 1
+            y -= 1
+
+            // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
+            damier[x][y] = "🔘"
+
+            // ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
+            flag = false
+        Sinon
+            // AFFICHAGE DE L'ERREUR
+            flag = true
+        Fin Si
+    Sinon Si (EXISTE(POST['right-top'])) Alors // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
+        // TEST SI LA CASE EST VALIDE
+        Si (EXISTE(damier[x+1][y-1])) Alors
+            // ETAPE 1 : RESET DE LA CASE PRECEDENTE
+            damier[x][y] = ""
+            
+            // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
+            x += 1
+            y -= 1
+
+            // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
+            damier[x][y] = "🔘"
+
+            // ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
+            flag = false
+        Sinon
+            // AFFICHAGE DE L'ERREUR
+            flag = true
+        Fin Si
+    Sinon Si(isset(POST['left-bottom'])) Alors // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
+        // TEST SI LA CASE EST VALIDE
+        Si(EXISTE(damier[x-1][y+1])) Alors
+            // ETAPE 1 : RESET DE LA CASE PRECEDENTE
+            damier[x][y] = ""
+            
+            // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
+            x -= 1
+            y += 1
+
+            // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
+            damier[x][y] = "🔘"
+
+            // ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
+            flag = false
+        Sinon
+            // AFFICHAGE DE L'ERREUR
+            flag = true
+        Fin Si
+    Sinon Si(EXISTE(POST['right-bottom'])) Alors // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
+        // TEST SI LA CASE EST VALIDE
+        Si(EXISTE(damier[x+1][y+1])) Alors
+            // ETAPE 1 : RESET DE LA CASE PRECEDENTE
+            damier[x][y] = ""
+            
+            // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
+            x += 1
+            y += 1
+
+            // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
+            damier[x][y] = "🔘"
+
+            // ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
+            flag = false
+        Sinon
+            // AFFICHAGE DE L'ERREUR
+            flag = true
+        Fin Si
+    Fin Si
+
+    /***  GESTION DES ERREURS  ***/
+
+    // INITIALISATION DE LA VARIABLE QUI VA AFFICHER L'ERREUR
+    msg =""
+
+    // TEST SI LE DRAPEAU DE L'ERREUR ACTIF
+    Si (flag) Alors
+        // AFFICHAGE ET AFFECTATION DE LA VARIABLE POUR LE MESSAGE D'ERREUR
+        msg = "Vous ne pouvez pas sortir du damier ! 🤣🤣🤣"
+    }
+
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

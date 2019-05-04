@@ -1,6 +1,10 @@
 <?php
+
+/***  INITIALISATION DU BOARD ***/
+
+// DECLARATION ET INITIALISATION DU TABLEAU DU DAMIER
 $damier = [
-    "a" => [
+    "1" => [
         "1" => 0,
         "2" => 0,
         "3" => 0,
@@ -10,7 +14,7 @@ $damier = [
         "7" => 0,
         "8" =>0
     ],
-    "b" => [
+    "2" => [
         "1" => 0,
         "2" => 0,
         "3" => 0,
@@ -20,7 +24,7 @@ $damier = [
         "7" => 0,
         "8" =>0
     ],
-    "c" => [
+    "3" => [
         "1" => 0,
         "2" => 0,
         "3" => 0,
@@ -30,7 +34,7 @@ $damier = [
         "7" => 0,
         "8" =>0
     ],
-    "d" => [
+    "4" => [
         "1" => 0,
         "2" => 0,
         "3" => 0,
@@ -40,7 +44,7 @@ $damier = [
         "7" => 0,
         "8" =>0
     ],
-    "e" => [
+    "5" => [
         "1" => 0,
         "2" => 0,
         "3" => 0,
@@ -50,7 +54,7 @@ $damier = [
         "7" => 0,
         "8" =>0
     ],
-    "f" => [
+    "6" => [
         "1" => 0,
         "2" => 0,
         "3" => 0,
@@ -60,7 +64,7 @@ $damier = [
         "7" => 0,
         "8" =>0
     ],
-    "g" => [
+    "7" => [
         "1" => 0,
         "2" => 0,
         "3" => 0,
@@ -70,7 +74,7 @@ $damier = [
         "7" => 0,
         "8" => 0
     ],
-    "h" => [
+    "8" => [
         "1" => 0,
         "2" => 0,
         "3" => 0,
@@ -82,33 +86,110 @@ $damier = [
     ]
 ];
 
+/***  DEMMARAGE DU JEU ***/
+
+// DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LES ABSCISSES
 $x = $_POST['x'];
+
+// DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LES ORDONNES
 $y = $_POST['y'];
+
+// AFFECTATION DU TABLEAU EN FONCTION DU CHOIX UTILISATEUR
 $damier[$x][$y] = "🔘" ;
 
+/***  GESTION DES ERREURS  ***/
+
+// DECLARATION ET INITIALISATION DU DRAPEAU A FAUX
 $flag = false;
 
+/***  COMMANDES DU DAMIER ***/
 
-$a = [];
-$b = [];
-$c = [];
-$d = [];
-$e = [];
-$f = [];
-$g = [];
-$h = [];
+// ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
+if(isset($_POST['left-top'])){
+	// TEST SI LA CASE EST VALIDE
+	if(isset($damier[$x-1][$y-1])){
+		// ETAPE 1 : RESET DE LA CASE PRECEDENTE
+		$damier[$x][$y] = "" ;
 
-for($i=0;$i<count($damier);$i++){
-    for($j=1;$j<=count($damier);$j++){
-		$a[$i] = &$damier["a"]["$j"];
-		echo $damier["a"]["$j"];
-        $b[$i] = &$damier["b"]["$j"];
-        $c[$i] = &$damier["c"]["$j"];
-        $d[$i] = &$damier["d"]["$j"];
-        $e[$i] = &$damier["e"]["$j"];
-        $f[$i] = &$damier["f"]["$j"];
-        $g[$i] = &$damier["g"]["$j"];
-        $h[$i] = &$damier["h"]["$j"];
-    }
+		// ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
+		$x -= 1;
+		$y -= 1;
+
+		// ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
+		$damier[$x][$y] = "🔘" ;
+
+		// ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
+		$flag = false;
+	} else {
+		// AFFICHAGE DE L'ERREUR
+		$flag = true;
+	}
+}elseif(isset($_POST['right-top'])){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
+	// TEST SI LA CASE EST VALIDE
+	if(isset($damier[$x+1][$y-1])){
+		// ETAPE 1 : RESET DE LA CASE PRECEDENTE
+		$damier[$x][$y] = "" ;
+		
+		// ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
+		$x += 1;
+		$y -= 1;
+
+		// ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
+		$damier[$x][$y] = "🔘" ;
+
+		// ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
+		$flag = false;
+	} else {
+		// AFFICHAGE DE L'ERREUR
+		$flag = true;
+	}
+}elseif(isset($_POST['left-bottom'])){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
+	// TEST SI LA CASE EST VALIDE
+	if(isset($damier[$x-1][$y+1])){
+		// ETAPE 1 : RESET DE LA CASE PRECEDENTE
+		$damier[$x][$y] = "" ;
+		
+		// ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
+		$x -= 1;
+		$y += 1;
+
+		// ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
+		$damier[$x][$y] = "🔘" ;
+
+		// ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
+		$flag = false;
+	} else {
+		// AFFICHAGE DE L'ERREUR
+		$flag = true;
+	}
+}elseif(isset($_POST['right-bottom'])){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
+	// TEST SI LA CASE EST VALIDE
+	if(isset($damier[$x+1][$y+1])){
+		// ETAPE 1 : RESET DE LA CASE PRECEDENTE
+		$damier[$x][$y] = "" ;
+		
+		// ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
+		$x += 1;
+		$y += 1;
+
+		// ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
+		$damier[$x][$y] = "🔘" ;
+
+		// ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
+		$flag = false;
+	} else {
+		// AFFICHAGE DE L'ERREUR
+		$flag = true;
+	}
 }
-print_r($a);
+
+/***  GESTION DES ERREURS  ***/
+
+// INITIALISATION DE LA VARIABLE QUI VA AFFICHER L'ERREUR
+$msg ="";
+
+// TEST SI LE DRAPEAU DE L'ERREUR ACTIF
+if($flag){
+	// AFFICHAGE ET AFFECTATION DE LA VARIABLE POUR LE MESSAGE D'ERREUR
+	$msg = "Vous ne pouvez pas sortir du damier ! 🤣🤣🤣";
+}

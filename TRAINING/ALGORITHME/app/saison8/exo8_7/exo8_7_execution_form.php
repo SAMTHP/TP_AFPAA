@@ -5,9 +5,9 @@
         <h5>Choisissez votre case :</h5>
         <div class="row" >
             <label for="choice" class="col-1">Colonne</label>
-            <input type="text" class="form-control col-1" id="x" name="x">
+            <input type="number" class="form-control col-1" id="x" name="x" min="1" max="8">
             <label for="choice" class="col-1">Ligne</label>
-            <input type="number" class="form-control col-1" id="y" name="y" min="1" max="7">
+            <input type="number" class="form-control col-1" id="y" name="y" min="1" max="8">
             <div class="col-1"></div>
         </div>
         <br>

@@ -1,0 +1,177 @@
+<h2>EXECUTION EN JS</h2>
+<div class="form-group">
+        <h5>Choisissez votre case :</h5>
+        <div class="row" >
+            <label for="choice" class="col-1">Colonne</label>
+            <input type="number" class="form-control col-1" id="x" name="x" min="1" max="8">
+            <label for="choice" class="col-1">Ligne</label>
+            <input type="number" class="form-control col-1" id="y" name="y" min="1" max="8">
+            <div class="col-1"></div>
+            <button type="submit" class="btn btn-primary col-2" id="x-y">Valider</button>
+        </div>
+        <br>
+        <div id="command">
+                <div class="head container" style="width:40%;box-shadow: 0px 2px 6px 4px gray">
+                    <div>
+                        <h3 class="text-center">DAMIER</h3>
+                    </div>
+                    <p class="card-text">
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <button type="submit" class="btn btn-secondary btn-lg col-2" id="left-top" name="left-top"><img src="https://img.icons8.com/metro/32/000000/up-left-arrow.png"></button>
+                                <span>&nbsp</span>
+                                <button type="submit" class="btn btn-secondary btn-lg col-2" id="right-top" name="right-top"><img src="https://img.icons8.com/metro/32/000000/up-right-arrow.png"></button>
+                                <div class="col-4"></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <button type="submit" class="btn btn-secondary btn-lg col-2" id="left-bottom" name="left-bottom"><img src="https://img.icons8.com/metro/32/000000/down-left-arrow.png"></button>
+                                <span>&nbsp</span>
+                                <button type="submit" class="btn btn-secondary btn-lg col-2" id="right-bottom" name="right-bottom"><img src="https://img.icons8.com/metro/32/000000/down-right-arrow.png"></button>
+                                <div class="col-4"></div></div>
+                                <input type="hidden" id="x" name="x" value="<?= $x; ?>">
+                                <input type="hidden" id="y" name="y" value="<?= $y; ?>">
+                                <br>
+                                <div class="text-center" id="error"></div>
+                            </div>
+                    </p>
+                </div>
+        </div>
+        <br>
+        <div class="row container" >
+                <table class="table table-borderless" style="box-shadow: 0px 5px 3px gray;">
+                    <thead>
+                        <tr class="text-center">
+                            <th class="table-active" scope="col"></th>
+                            <th class="table-active" scope="col">1</th>
+                            <th class="table-active" scope="col">2</th>
+                            <th class="table-active" scope="col">3</th>
+                            <th class="table-active" scope="col">4</th>
+                            <th class="table-active" scope="col">5</th>
+                            <th class="table-active" scope="col">6</th>
+                            <th class="table-active" scope="col">7</th>
+                            <th class="table-active" scope="col">8</th>
+                            <th class="table-active" scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <th class="table-active" scope="row">1</th>
+                            <td id="1-1" style="background-color: #994d00"></td>
+                            <td id="2-1" ></td>
+                            <td id="3-1" style="background-color: #994d00"></td>
+                            <td id="4-1" ></td>
+                            <td id="5-1" style="background-color: #994d00"></td>
+                            <td id="6-1" ></td>
+                            <td id="7-1" style="background-color: #994d00"></td>
+                            <td id="8-1" ></td>
+                            <th class="table-active" scope="row">1</th>
+                        </tr>
+                        <tr class="text-center">
+                            <th class="table-active" scope="row">2</th>
+                            <td id="1-2" ></td>
+                            <td id="2-2" style="background-color: #994d00"></td>
+                            <td id="3-2" ></td>
+                            <td id="4-2" style="background-color: #994d00"></td>
+                            <td id="5-2" ></td>
+                            <td id="6-2" style="background-color: #994d00"></td>
+                            <td id="7-2" ></td>
+                            <td id="8-2" style="background-color: #994d00"></td>
+                            <th class="table-active" scope="row">2</th>
+                        </tr>
+                        <tr class="text-center">
+                            <th class="table-active" scope="row">3</th>
+                            <td id="1-3" style="background-color: #994d00"></td>
+                            <td id="2-3" ></td>
+                            <td id="3-3" style="background-color: #994d00"></td>
+                            <td id="4-3" ></td>
+                            <td id="5-3" style="background-color: #994d00"></td>
+                            <td id="6-3" ></td>
+                            <td id="7-3" style="background-color: #994d00"></td>
+                            <td id="8-3" ></td>
+                            <th class="table-active" scope="row">3</th>
+                        </tr>
+                        <tr class="text-center">
+                            <th class="table-active" scope="row">4</th>
+                            <td id="1-4" ></td>
+                            <td id="2-4" style="background-color: #994d00"></td>
+                            <td id="3-4" ></td>
+                            <td id="4-4" style="background-color: #994d00"></td>
+                            <td id="5-4" ></td>
+                            <td id="6-4" style="background-color: #994d00"></td>
+                            <td id="7-4" ></td>
+                            <td id="8-4" style="background-color: #994d00"></td>
+                            <th class="table-active" scope="row">4</th>
+                        </tr >
+                        <tr class="text-center">
+                            <th class="table-active" scope="row">5</th>
+                            <td id="1-5" style="background-color: #994d00"></td>
+                            <td id="2-5" ></td>
+                            <td id="3-5" style="background-color: #994d00"></td>
+                            <td id="4-5" ></td>
+                            <td id="5-5" style="background-color: #994d00"></td>
+                            <td id="6-5" ></td>
+                            <td id="7-5" style="background-color: #994d00"></td>
+                            <td id="8-5" ></td>
+                            <th class="table-active" scope="row">5</th>
+                        </tr>
+                        <tr class="text-center">
+                            <th class="table-active" scope="row">6</th>
+                            <td id="1-6" ></td>
+                            <td id="2-6" style="background-color: #994d00"></td>
+                            <td id="3-6" ></td>
+                            <td id="4-6" style="background-color: #994d00"></td>
+                            <td id="5-6" ></td>
+                            <td id="6-6" style="background-color: #994d00"></td>
+                            <td id="7-6" ></td>
+                            <td id="8-6"  style="background-color: #994d00"></td>
+                            <th class="table-active" scope="row">6</th>
+                        </tr>
+                        <tr class="text-center">
+                            <th class="table-active" scope="row">7</th>
+                            <td id="1-7" style="background-color: #994d00"></td>
+                            <td id="2-7" ></td>
+                            <td id="3-7" style="background-color: #994d00"></td>
+                            <td id="4-7" ></td>
+                            <td id="5-7" style="background-color: #994d00"></td>
+                            <td id="6-7" ></td>
+                            <td id="7-7" style="background-color: #994d00"></td>
+                            <td id="8-7" ></td>
+                            <th class="table-active" scope="row">7</th>
+                        </tr>
+                        <tr class="text-center">
+                            <th class="table-active" scope="row">8</th>
+                            <td id="1-8" ></td>
+                            <td id="2-8" style="background-color: #994d00"></td>
+                            <td id="3-8" ></td>
+                            <td id="4-8" style="background-color: #994d00"></td>
+                            <td id="5-8" ></td>
+                            <td id="6-8" style="background-color: #994d00"></td>
+                            <td id="7-8" ></td>
+                            <td id="8-8" style="background-color: #994d00"></td>
+                            <th class="table-active" scope="row">8</th>
+                        </tr>
+                        <tr class="text-center">
+                            <th class="table-active" scope="col"></th>
+                            <th class="table-active" scope="col">1</th>
+                            <th class="table-active" scope="col">2</th>
+                            <th class="table-active" scope="col">3</th>
+                            <th class="table-active" scope="col">4</th>
+                            <th class="table-active" scope="col">5</th>
+                            <th class="table-active" scope="col">6</th>
+                            <th class="table-active" scope="col">7</th>
+                            <th class="table-active" scope="col">8</th>
+                            <th class="table-active" scope="col"></th>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    
+</div>
+<br>
+
+
+
+<script type="text/javascript" src="../../js/saison8/exo8_7/exo8_7_execution.js"></script>

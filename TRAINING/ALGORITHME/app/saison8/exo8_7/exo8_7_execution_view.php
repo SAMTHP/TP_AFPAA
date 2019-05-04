@@ -14,176 +14,179 @@
   <body>
       <!-- NAVBAR -->
       <?php require "../../commun/nav_season_2.html" ?>
-      <hr>
 
       <!-- Affichage des résultats -->
-
-      <div class="jumbotron " style="display: flex; justify-content: center;">
-            <div class="card" id="card" style="width: 25rem;">
-                <img src="../../img/code.jpeg" class="card-img-top" alt="wallpaper" style="height: 200px">
-                <div class="card-body" >
-                    <h5 class="card-title">RESULTAT</h5>
-                    <p class="card-text">
-                        <div>
-                            <div class="row">
-                                <div class="col-4"></div>
-                                <button type="submit" class="btn btn-primary col-2" id="left-top" name="left-top">↖</button>
-                                <button type="submit" class="btn btn-primary col-2" id="right-top" name="right-top">↗</button>
-                                <div class="col-4"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4"></div>
-                                <button type="submit" class="btn btn-primary col-2" id="left-bottom" name="left-bottom">↙</button>
-                                <button type="submit" class="btn btn-primary col-2" id="right-bottom" name="right-bottom">↘</button>
-                                <div class="col-4"></div>
-                            </div>
-                        </div>
-                        <input type="hidden" id="x" value="<?= $_POST['x']; ?>">
-                        <input type="hidden" id="y" value="<?= $_POST['y']; ?>">
-                    </p>
-                    <br>
-                    <div style="display: flex; justify-content: center;">
-                        <a href="../index_global_saison7.php" class="btn btn-warning " >RETOUR</a>
+      <?php require "exo8_7_execution.php" ?>
+            <div class="form-group">
+                <div class="head container" style="width:40%;box-shadow: 0px 2px 6px 4px gray">
+                    <div>
+                        <h3 class="text-center">DAMIER</h3>
                     </div>
+                    <p class="card-text">
+                        <form action="exo8_7_execution_view.php" method="POST">
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <button type="submit" class="btn btn-secondary btn-lg col-2" id="left-top" name="left-top"><img src="https://img.icons8.com/metro/32/000000/up-left-arrow.png"></button>
+                                <span>&nbsp</span>
+                                <button type="submit" class="btn btn-secondary btn-lg col-2" id="right-top" name="right-top"><img src="https://img.icons8.com/metro/32/000000/up-right-arrow.png"></button>
+                                <div class="col-4"></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <button type="submit" class="btn btn-secondary btn-lg col-2" id="left-bottom" name="left-bottom"><img src="https://img.icons8.com/metro/32/000000/down-left-arrow.png"></button>
+                                <span>&nbsp</span>
+                                <button type="submit" class="btn btn-secondary btn-lg col-2" id="right-bottom" name="right-bottom"><img src="https://img.icons8.com/metro/32/000000/down-right-arrow.png"></button>
+                                <div class="col-4"></div></div>
+                                <input type="hidden" id="x" name="x" value="<?= $x; ?>">
+                                <input type="hidden" id="y" name="y" value="<?= $y; ?>">
+                                <br>
+                                <div class="text-center">
+                                    <?php if($flag){echo $msg;} ?>
+                                </div>
+                            </div>
+                        </form>
+                    </p>
                 </div>
             </div>
-        </div>
-        <br>
-            <div class="form-group">
-            <h5>DAMMIER</h5>
+            
+            
             <br>
-            <?php require "exo8_7_execution.php" ?>
-            <div class="row" >
+            
+            <div class="container" >
                     <table class="table table-borderless" style="box-shadow: 0px 5px 3px gray;">
                         <thead>
                             <tr class="text-center">
                                 <th class="table-active" class="table-active" scope="col"></th>
-                                <th class="table-active" scope="col">A</th>
-                                <th class="table-active" scope="col">B</th>
-                                <th class="table-active" scope="col">C</th>
-                                <th class="table-active" scope="col">D</th>
-                                <th class="table-active" scope="col">E</th>
-                                <th class="table-active" scope="col">F</th>
-                                <th class="table-active" scope="col">G</th>
-                                <th class="table-active" scope="col">H</th>
+                                <th class="table-active" scope="col">1</th>
+                                <th class="table-active" scope="col">2</th>
+                                <th class="table-active" scope="col">3</th>
+                                <th class="table-active" scope="col">4</th>
+                                <th class="table-active" scope="col">5</th>
+                                <th class="table-active" scope="col">6</th>
+                                <th class="table-active" scope="col">7</th>
+                                <th class="table-active" scope="col">8</th>
                                 <th class="table-active" scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">1</th>
-                                <td style="background-color: #994d00"><?php if($a[0] != 0){echo $a[0]; } ?></td>
-                                <td><?php if($b[0] != 0){echo $b[0];} ?></td>
-                                <td style="background-color: #994d00"><?php if($c[0] != 0){echo $c[0] ;} ?></td>
-                                <td><?php if($d[0] != 0){echo $d[0];} ?></td>
-                                <td style="background-color: #994d00"><?php if($e[0] != 0){echo $e[0];} ?></td>
-                                <td><?php if($f[0] != 0){echo $f[0] ;} ?></td>
-                                <td style="background-color: #994d00"><?php if($g[0] != 0){echo $g[0] ;} ?></td>
-                                <td><?php if($h[0] != 0){echo $h[0] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["1"]["1"] === "🔘"){echo $damier["1"]["1"] ; } ?></td>
+                                <td><?php if($damier["2"]["1"] === "🔘"){echo $damier["2"]["1"];} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["3"]["1"] === "🔘"){echo $damier["3"]["1"] ;} ?></td>
+                                <td><?php if($damier["4"]["1"] === "🔘"){echo $damier["4"]["1"];} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["5"]["1"] === "🔘"){echo $damier["5"]["1"];} ?></td>
+                                <td><?php if($damier["6"]["1"] === "🔘"){echo $damier["6"]["1"] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["7"]["1"] === "🔘"){echo $damier["7"]["1"] ;} ?></td>
+                                <td><?php if($damier["8"]["1"] === "🔘"){echo $damier["8"]["1"] ;} ?></td>
                                 <th class="table-active" scope="row">1</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">2</th>
-                                <td><?php if($a[1] != 0){echo $a[1] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($b[1] != 0){echo $b[1] ;}?></td>
-                                <td><?php if($c[1] != 0){echo $c[1] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($d[1] != 0){echo $d[1] ;}?></td>
-                                <td><?php if($e[1] != 0){echo $e[1] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($f[1] != 0){echo $f[1] ;}?></td>
-                                <td><?php if($g[1] != 0){echo $g[1] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($h[1] != 0){echo $h[1] ;}?></td>
+                                <td><?php if($damier["1"]["2"] === "🔘"){echo $damier["1"]["2"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["2"]["2"] === "🔘"){echo $damier["2"]["2"] ;}?></td>
+                                <td><?php if($damier["3"]["2"] === "🔘"){echo $damier["3"]["2"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["4"]["2"] === "🔘"){echo $damier["4"]["2"] ;}?></td>
+                                <td><?php if($damier["5"]["2"] === "🔘"){echo $damier["5"]["2"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["6"]["2"] === "🔘"){echo $damier["6"]["2"] ;}?></td>
+                                <td><?php if($damier["7"]["2"] === "🔘"){echo $damier["7"]["2"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["8"]["2"] === "🔘"){echo $damier["8"]["2"] ;}?></td>
                                 <th class="table-active" scope="row">2</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">3</th>
-                                <td style="background-color: #994d00"><?php if($a[2] != 0){echo $a[2] ;} ?></td>
-                                <td><?php if($b[2] != 0){echo $b[2] ;} ?></td>
-                                <td style="background-color: #994d00"><?php if($c[2] != 0){echo $c[2] ;} ?></td>
-                                <td><?php if($d[2] != 0){echo $d[2] ;} ?></td>
-                                <td style="background-color: #994d00"><?php if($e[2] != 0){echo $e[2] ;} ?></td>
-                                <td><?php if($f[2] != 0){echo $f[2] ;} ?></td>
-                                <td style="background-color: #994d00"><?php if($g[2] != 0){echo $g[2] ;} ?></td>
-                                <td><?php if($h[2] != 0){echo $h[2] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["1"]["3"] === "🔘"){echo $damier["1"]["3"] ;} ?></td>
+                                <td><?php if($damier["2"]["3"] === "🔘"){echo $damier["2"]["3"] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["3"]["3"] === "🔘"){echo $damier["3"]["3"] ;} ?></td>
+                                <td><?php if($damier["4"]["3"] === "🔘"){echo $damier["4"]["3"] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["5"]["3"] === "🔘"){echo $damier["5"]["3"] ;} ?></td>
+                                <td><?php if($damier["6"]["3"] === "🔘"){echo $damier["6"]["3"] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["7"]["3"] === "🔘"){echo $damier["7"]["3"] ;} ?></td>
+                                <td><?php if($damier["8"]["3"] === "🔘"){echo $damier["8"]["3"] ;} ?></td>
                                 <th class="table-active" scope="row">3</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">4</th>
-                                <td><?php if($a[3] != 0){echo $a[3] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($b[3] != 0){echo $b[3] ;}?></td>
-                                <td><?php if($c[3] != 0){echo $c[3] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($d[3] != 0){echo $d[3] ;}?></td>
-                                <td><?php if($e[3] != 0){echo $e[3] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($f[3] != 0){echo $f[3] ;}?></td>
-                                <td><?php if($g[3] != 0){echo $g[3] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($h[3] != 0){echo $h[3] ;}?></td>
+                                <td><?php if($damier["1"]["4"] === "🔘"){echo $damier["1"]["4"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["2"]["4"] === "🔘"){echo $damier["2"]["4"] ;}?></td>
+                                <td><?php if($damier["3"]["4"] === "🔘"){echo $damier["3"]["4"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["4"]["4"] === "🔘"){echo $damier["4"]["4"] ;}?></td>
+                                <td><?php if($damier["5"]["4"] === "🔘"){echo $damier["5"]["4"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["6"]["4"] === "🔘"){echo $damier["6"]["4"] ;}?></td>
+                                <td><?php if($damier["7"]["4"] === "🔘"){echo $damier["7"]["4"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["8"]["4"] === "🔘"){echo $damier["8"]["4"] ;}?></td>
                                 <th class="table-active" scope="row">4</th>
                             </tr >
                             <tr class="text-center">
                                 <th class="table-active" scope="row">5</th>
-                                <td style="background-color: #994d00"><?php if($a[4] != 0){echo $a[4] ;} ?></td>
-                                <td><?php if($b[4] != 0){echo $b[4] ;} ?></td>
-                                <td style="background-color: #994d00"><?php if($c[4] != 0){echo $c[4] ;} ?></td>
-                                <td><?php if($d[4] != 0){echo $d[4] ;} ?></td>
-                                <td style="background-color: #994d00"><?php if($e[4] != 0){echo $e[4] ;} ?></td>
-                                <td><?php if($f[4] != 0){echo $f[4] ;} ?></td>
-                                <td style="background-color: #994d00"><?php if($g[4] != 0){echo $g[4] ;} ?></td>
-                                <td><?php if($h[4] != 0){echo $h[4] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["1"]["5"] === "🔘"){echo $damier["1"]["5"] ;} ?></td>
+                                <td><?php if($damier["2"]["5"] === "🔘"){echo $damier["2"]["5"] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["3"]["5"] === "🔘"){echo $damier["3"]["5"] ;} ?></td>
+                                <td><?php if($damier["4"]["5"] === "🔘"){echo $damier["4"]["5"] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["5"]["5"] === "🔘"){echo $damier["5"]["5"] ;} ?></td>
+                                <td><?php if($damier["6"]["5"] === "🔘"){echo $damier["6"]["5"] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["7"]["5"] === "🔘"){echo $damier["7"]["5"] ;} ?></td>
+                                <td><?php if($damier["8"]["5"] === "🔘"){echo $damier["8"]["5"] ;} ?></td>
                                 <th class="table-active" scope="row">5</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">6</th>
-                                <td><?php if($a[5] != 0){echo $a[5] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($b[5] != 0){echo $b[5] ;}?></td>
-                                <td><?php if($c[5] != 0){echo $c[5] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($d[5] != 0){echo $d[5] ;}?></td>
-                                <td><?php if($e[5] != 0){echo $e[5] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($f[5] != 0){echo $f[5]; }?></td>
-                                <td><?php if($g[5] != 0){echo $g[5] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($h[5] != 0){echo $h[5] ;}?></td>
+                                <td><?php if($damier["1"]["6"] === "🔘"){echo $damier["1"]["6"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["2"]["6"] === "🔘"){echo $damier["2"]["6"] ;}?></td>
+                                <td><?php if($damier["3"]["6"] === "🔘"){echo $damier["3"]["6"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["4"]["6"] === "🔘"){echo $damier["4"]["6"] ;}?></td>
+                                <td><?php if($damier["5"]["6"] === "🔘"){echo $damier["5"]["6"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["6"]["6"] === "🔘"){echo $damier["6"]["6"]; }?></td>
+                                <td><?php if($damier["7"]["6"] === "🔘"){echo $damier["7"]["6"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["8"]["6"] === "🔘"){echo $damier["8"]["6"] ;}?></td>
                                 <th class="table-active" scope="row">6</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">7</th>
-                                <td style="background-color: #994d00"><?php if($a[6] != 0){echo $a[6] ;} ?></td>
-                                <td><?php if($b[6] != 0){echo $b[6] ;} ?></td>
-                                <td style="background-color: #994d00"><?php if($c[6] != 0){echo $c[6] ;} ?></td>
-                                <td><?php if($d[6] != 0){echo $d[6] ;} ?></td>
-                                <td style="background-color: #994d00"><?php if($e[6] != 0){echo $e[6] ;} ?></td>
-                                <td><?php if($f[6] != 0){echo $f[6] ;} ?></td>
-                                <td style="background-color: #994d00"><?php if($g[6] != 0){echo $g[6] ;} ?></td>
-                                <td><?php if($h[6] != 0){echo $h[6];  } ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["1"]["7"] === "🔘"){echo $damier["1"]["7"] ;} ?></td>
+                                <td><?php if($damier["2"]["7"] === "🔘"){echo $damier["2"]["7"] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["3"]["7"] === "🔘"){echo $damier["3"]["7"] ;} ?></td>
+                                <td><?php if($damier["4"]["7"] === "🔘"){echo $damier["4"]["7"] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["5"]["7"] === "🔘"){echo $damier["5"]["7"] ;} ?></td>
+                                <td><?php if($damier["6"]["7"] === "🔘"){echo $damier["6"]["7"] ;} ?></td>
+                                <td style="background-color: #994d00"><?php if($damier["7"]["7"] === "🔘"){echo $damier["7"]["7"] ;} ?></td>
+                                <td><?php if($damier["8"]["7"] === "🔘"){echo $damier["8"]["7"];  } ?></td>
                                 <th class="table-active" scope="row">7</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">8</th>
-                                <td><?php if($a[7] != 0){echo $a[7] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($b[7] != 0){echo $b[7] ;}?></td>
-                                <td><?php if($c[7] != 0){echo $c[7] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($d[7] != 0){echo $d[7] ;}?></td>
-                                <td><?php if($e[7] != 0){echo $e[7] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($f[7] != 0){echo $f[7] ;}?></td>
-                                <td><?php if($g[7] != 0){echo $g[7] ;}?></td>
-                                <td style="background-color: #994d00"><?php if($h[7] != 0){echo $h[7] ;}?></td>
+                                <td><?php if($damier["1"]["8"] === "🔘"){echo $damier["1"]["8"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["2"]["8"] === "🔘"){echo $damier["2"]["8"] ;}?></td>
+                                <td><?php if($damier["3"]["8"] === "🔘"){echo $damier["3"]["8"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["4"]["8"] === "🔘"){echo $damier["4"]["8"] ;}?></td>
+                                <td><?php if($damier["5"]["8"] === "🔘"){echo $damier["5"]["8"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["6"]["8"] === "🔘"){echo $damier["6"]["8"] ;}?></td>
+                                <td><?php if($damier["7"]["8"] === "🔘"){echo $damier["7"]["8"] ;}?></td>
+                                <td style="background-color: #994d00"><?php if($damier["8"]["8"] === "🔘"){echo $damier["8"]["8"] ;}?></td>
                                 <th class="table-active" scope="row">8</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="col"></th>
-                                <th class="table-active" scope="col">A</th>
-                                <th class="table-active" scope="col">B</th>
-                                <th class="table-active" scope="col">C</th>
-                                <th class="table-active" scope="col">D</th>
-                                <th class="table-active" scope="col">E</th>
-                                <th class="table-active" scope="col">F</th>
-                                <th class="table-active" scope="col">G</th>
-                                <th class="table-active" scope="col">H</th>
+                                <th class="table-active" scope="col">1</th>
+                                <th class="table-active" scope="col">2</th>
+                                <th class="table-active" scope="col">3</th>
+                                <th class="table-active" scope="col">4</th>
+                                <th class="table-active" scope="col">5</th>
+                                <th class="table-active" scope="col">6</th>
+                                <th class="table-active" scope="col">7</th>
+                                <th class="table-active" scope="col">8</th>
                                 <th class="table-active" scope="col"></th>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <?php echo "DRAPEAU : $flag <br>";?>
-            <?= print_r($damier)?>
+
+            <div style="display: flex; justify-content: center;">
+                <a href="../index_global_saison7.php" class="btn btn-warning " >RETOUR</a>
+            </div>
+            <br>
 
       <!-- Footer -->
       <?php require_once "../../commun/footer_season_2.html"?>
