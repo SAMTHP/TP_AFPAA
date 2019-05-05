@@ -36,7 +36,7 @@ document.getElementById("x-y").onclick = function () {
             7: 0,
             8: 0
         },
-        3: {
+        4: {
             1: 0,
             2: 0,
             3: 0,
@@ -104,19 +104,21 @@ document.getElementById("x-y").onclick = function () {
 
     // DECLARATION ET INITIALISATION DU DRAPEAU A FAUX
     var flag = false;
-
+    console.log(document.getElementById((x-1)+"-"+(y-1)));
     /***  COMMANDES DU DAMIER ***/
 
     // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
     document.getElementById('left-top').onclick = function(){
         // TEST SI LA CASE EST VALIDE
-        if(damier[x-1][y-1] != "undefined"){
+        if(document.getElementById((x-1)+"-"+(y-1)) != null){
             // ETAPE 1 : RESET DE LA CASE PRECEDENTE
             damier[x][y] = "" ;
+            document.getElementById(x+"-"+y).innerText =  damier[x][y];
 
             // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
             x -= 1;
             y -= 1;
+            console.log(x,y);
 
             // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
             damier[x][y] = "🔘" ;
@@ -124,21 +126,23 @@ document.getElementById("x-y").onclick = function () {
 
             // ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
             flag = false;
-        } else {
+        } else if(document.getElementById((x-1)+"-"+(y-1)) == null) {
             // AFFICHAGE DE L'ERREUR
             flag = true;
         }
     }
+
     document.getElementById('right-top').onclick = function(){
         // TEST SI LA CASE EST VALIDE
-        if(damier[x+1][y-1] != "undefined"){
+        if(document.getElementById((x+1)+"-"+(y-1))){
             // ETAPE 1 : RESET DE LA CASE PRECEDENTE
             damier[x][y] = "" ;
-            
+            document.getElementById(x+"-"+y).innerText =  damier[x][y];
+
             // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
             x += 1;
             y -= 1;
-
+            console.log(x,y);
             // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
             damier[x][y] = "🔘" ;
             document.getElementById(x+"-"+y).innerText =  damier[x][y];
@@ -150,16 +154,18 @@ document.getElementById("x-y").onclick = function () {
             flag = true;
         }
     }
+
     document.getElementById('left-bottom').onclick = function(){
         // TEST SI LA CASE EST VALIDE
-        if(damier[x-1][y+1] != "undefined"){
+        if(document.getElementById((x-1)+"-"+(y+1))){
             // ETAPE 1 : RESET DE LA CASE PRECEDENTE
             damier[x][y] = "" ;
-            
+            document.getElementById(x+"-"+y).innerText =  damier[x][y];
+
             // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
             x -= 1;
             y += 1;
-
+            console.log(x,y);
             // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
             damier[x][y] = "🔘" ;
             document.getElementById(x+"-"+y).innerText =  damier[x][y];
@@ -171,16 +177,18 @@ document.getElementById("x-y").onclick = function () {
             flag = true;
         }
     }
+
     document.getElementById('right-bottom').onclick = function(){
         // TEST SI LA CASE EST VALIDE
-        if(damier[x+1][y+1]){
+        if(document.getElementById((x+1)+"-"+(y+1))){
             // ETAPE 1 : RESET DE LA CASE PRECEDENTE
             damier[x][y] = "" ;
-            
+            document.getElementById(x+"-"+y).innerText =  damier[x][y];
+
             // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
             x += 1;
             y += 1;
-
+            console.log(x,y);
             // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
             damier[x][y] = "🔘" ;
             document.getElementById(x+"-"+y).innerText =  damier[x][y];
