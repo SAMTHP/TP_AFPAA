@@ -16,14 +16,14 @@
                     <thead>
                         <tr class="text-center">
                             <th class="table-active" class="table-active" scope="col"></th>
-                            <th class="table-active" class="table-active" scope="col">A</th>
-                            <th class="table-active" scope="col">B</th>
-                            <th class="table-active" scope="col">C</th>
-                            <th class="table-active" scope="col">D</th>
-                            <th class="table-active" scope="col">E</th>
-                            <th class="table-active" scope="col">F</th>
-                            <th class="table-active" scope="col">G</th>
-                            <th class="table-active" scope="col">H</th>
+                            <th class="table-active" scope="col">1</th>
+                            <th class="table-active" scope="col">2</th>
+                            <th class="table-active" scope="col">3</th>
+                            <th class="table-active" scope="col">4</th>
+                            <th class="table-active" scope="col">5</th>
+                            <th class="table-active" scope="col">6</th>
+                            <th class="table-active" scope="col">7</th>
+                            <th class="table-active" scope="col">8</th>
                             <th class="table-active" scope="col"></th>
                         </tr>
                     </thead>
@@ -126,14 +126,14 @@
                         </tr>
                         <tr class="text-center">
                             <th class="table-active" scope="col"></th>
-                            <th class="table-active" scope="col">A</th>
-                            <th class="table-active" scope="col">B</th>
-                            <th class="table-active" scope="col">C</th>
-                            <th class="table-active" scope="col">D</th>
-                            <th class="table-active" scope="col">E</th>
-                            <th class="table-active" scope="col">F</th>
-                            <th class="table-active" scope="col">G</th>
-                            <th class="table-active" scope="col">H</th>
+                            <th class="table-active" scope="col">1</th>
+                            <th class="table-active" scope="col">2</th>
+                            <th class="table-active" scope="col">3</th>
+                            <th class="table-active" scope="col">4</th>
+                            <th class="table-active" scope="col">5</th>
+                            <th class="table-active" scope="col">6</th>
+                            <th class="table-active" scope="col">7</th>
+                            <th class="table-active" scope="col">8</th>
                             <th class="table-active" scope="col"></th>
                         </tr>
                     </tbody>

@@ -1,6 +1,6 @@
-document.getElementById('command').style.display = "none";
+$('#command').hide();
 
-document.getElementById("x-y").onclick = function () {
+$("#x-y").click(function () {
 
     /***  INITIALISATION DU BOARD ***/
 
@@ -91,14 +91,14 @@ document.getElementById("x-y").onclick = function () {
     /***  DEMMARAGE DU JEU ***/
 
     // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LES ABSCISSES
-    var x = parseInt(document.getElementById('x').value);
+    var x = parseInt($('#x').val());
 
     // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LES ORDONNES
-    var y = parseInt(document.getElementById('y').value);
+    var y = parseInt($('#y').val());
 
     // AFFECTATION DU TABLEAU EN FONCTION DU CHOIX UTILISATEUR
     damier[x][y] = "🔘" ;
-    document.getElementById(x+"-"+y).innerText =  damier[x][y];
+    $("#"+x+"-"+y).text(damier[x][y]);
 
     // DECLARATION ET INITIALISATION DU DRAPEAU A FAUX
     var flag = false;
@@ -106,12 +106,12 @@ document.getElementById("x-y").onclick = function () {
     /***  COMMANDES DU DAMIER ***/
 
     // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
-    document.getElementById('left-top').onclick = function(){
+    $('#left-top').click(function(){
         // TEST SI LA CASE EST VALIDE
-        if(document.getElementById((x-1)+"-"+(y-1)) != null){
+        if($("#"+(x-1)+"-"+(y-1)).length != 0){
             // ETAPE 1 : RESET DE LA CASE PRECEDENTE
             damier[x][y] = "" ;
-            document.getElementById(x+"-"+y).innerText =  damier[x][y];
+            $("#"+x+"-"+y).text(damier[x][y]);
 
             // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
             x -= 1;
@@ -119,11 +119,11 @@ document.getElementById("x-y").onclick = function () {
 
             // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
             damier[x][y] = "🔘" ;
-            document.getElementById(x+"-"+y).innerText =  damier[x][y];
+            $("#"+x+"-"+y).text(damier[x][y]);
 
             // ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
             flag = false;
-            document.getElementById('error').innerText = "";
+            $('#error').text("");
         } else {
             // AFFICHAGE DE L'ERREUR
             flag = true;
@@ -131,16 +131,16 @@ document.getElementById("x-y").onclick = function () {
             var msg ="";
             // AFFICHAGE ET AFFECTATION DE LA VARIABLE POUR LE MESSAGE D'ERREUR
             msg = "Vous ne pouvez pas sortir du damier ! 🤣🤣🤣";
-            document.getElementById('error').innerText = msg;
+            $('#error').text(msg);
         }
-    }
+    })
 
-    document.getElementById('right-top').onclick = function(){
+    $('#right-top').click(function(){
         // TEST SI LA CASE EST VALIDE
-        if(document.getElementById((x+1)+"-"+(y-1))){
+        if($("#"+(x+1)+"-"+(y-1)).length != 0){
             // ETAPE 1 : RESET DE LA CASE PRECEDENTE
             damier[x][y] = "" ;
-            document.getElementById(x+"-"+y).innerText =  damier[x][y];
+            $("#"+x+"-"+y).text(damier[x][y]);
 
             // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
             x += 1;
@@ -148,11 +148,11 @@ document.getElementById("x-y").onclick = function () {
 
             // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
             damier[x][y] = "🔘" ;
-            document.getElementById(x+"-"+y).innerText =  damier[x][y];
+            $("#"+x+"-"+y).text(damier[x][y]);
 
             // ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
             flag = false;
-            document.getElementById('error').innerText = "";
+            $('#error').text("");
         } else {
             // AFFICHAGE DE L'ERREUR
             flag = true;
@@ -160,16 +160,16 @@ document.getElementById("x-y").onclick = function () {
             var msg ="";
             // AFFICHAGE ET AFFECTATION DE LA VARIABLE POUR LE MESSAGE D'ERREUR
             msg = "Vous ne pouvez pas sortir du damier ! 🤣🤣🤣";
-            document.getElementById('error').innerText = msg;
+            $('#error').text(msg);
         }
-    }
+    })
 
-    document.getElementById('left-bottom').onclick = function(){
+    $('#left-bottom').click(function(){
         // TEST SI LA CASE EST VALIDE
-        if(document.getElementById((x-1)+"-"+(y+1))){
+        if($("#"+(x-1)+"-"+(y+1)).length != 0){
             // ETAPE 1 : RESET DE LA CASE PRECEDENTE
             damier[x][y] = "" ;
-            document.getElementById(x+"-"+y).innerText =  damier[x][y];
+            $("#"+x+"-"+y).text(damier[x][y]);
 
             // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
             x -= 1;
@@ -177,11 +177,11 @@ document.getElementById("x-y").onclick = function () {
 
             // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
             damier[x][y] = "🔘" ;
-            document.getElementById(x+"-"+y).innerText =  damier[x][y];
+            $("#"+x+"-"+y).text(damier[x][y]);
 
             // ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
             flag = false;
-            document.getElementById('error').innerText = "";
+            $('#error').text("");
         } else {
             // AFFICHAGE DE L'ERREUR
             flag = true;
@@ -189,16 +189,16 @@ document.getElementById("x-y").onclick = function () {
             var msg ="";
             // AFFICHAGE ET AFFECTATION DE LA VARIABLE POUR LE MESSAGE D'ERREUR
             msg = "Vous ne pouvez pas sortir du damier ! 🤣🤣🤣";
-            document.getElementById('error').innerText = msg;
+            $('#error').text(msg);
         }
-    }
+    })
 
-    document.getElementById('right-bottom').onclick = function(){
+    $('#right-bottom').click(function(){
         // TEST SI LA CASE EST VALIDE
-        if(document.getElementById((x+1)+"-"+(y+1))){
+        if($("#"+(x+1)+"-"+(y+1)).length != 0){
             // ETAPE 1 : RESET DE LA CASE PRECEDENTE
             damier[x][y] = "" ;
-            document.getElementById(x+"-"+y).innerText =  damier[x][y];
+            $("#"+x+"-"+y).text(damier[x][y]);
 
             // ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
             x += 1;
@@ -206,11 +206,11 @@ document.getElementById("x-y").onclick = function () {
 
             // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
             damier[x][y] = "🔘" ;
-            document.getElementById(x+"-"+y).innerText =  damier[x][y];
+            $("#"+x+"-"+y).text(damier[x][y]);
 
             // ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
             flag = false;
-            document.getElementById('error').innerText = "";
+            $('#error').text("");
         } else {
             // AFFICHAGE DE L'ERREUR
             flag = true;
@@ -218,11 +218,11 @@ document.getElementById("x-y").onclick = function () {
             var msg ="";
             // AFFICHAGE ET AFFECTATION DE LA VARIABLE POUR LE MESSAGE D'ERREUR
             msg = "Vous ne pouvez pas sortir du damier ! 🤣🤣🤣";
-            document.getElementById('error').innerText = msg;
+            $('#error').text(msg);
         }
-    }
+    })
 
-    document.getElementById('command').style.display = "block";
-    document.getElementById('start').style.display = "none";
+    $('#command').show();
+    $('#start').hide();
 
-}
+})
