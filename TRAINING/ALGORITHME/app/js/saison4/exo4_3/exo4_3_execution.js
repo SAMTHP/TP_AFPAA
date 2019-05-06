@@ -13,9 +13,19 @@ document.getElementById("submit").onclick = function () {
             if(new_min == 60){
                 new_min = 0;
                 hour += 1;
+                if(hour == 24){
+                    hour = 0;
+                } else if (hour > 24){
+                    hour = 1;
+                }
             } else if(new_min > 60){
                 new_min = 1;
                 hour += 1;
+                if(hour == 24){
+                    hour = 0;
+                } else if (hour > 24){
+                    hour = 1;
+                }
             }
             array_future.push(hour,new_min,rest);
         } else {

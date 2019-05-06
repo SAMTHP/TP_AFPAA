@@ -14,9 +14,19 @@ function generateFuture($hour,$min,$sec){
         if($new_min == 60){
             $new_min = 0;
             $hour += 1;
+            if($new_hour == 24){
+                $hour = 0;
+            } elseif($new_hour > 24){
+                $hour = 1;
+            }
         } elseif($new_min > 60){
             $new_min = 1;
             $hour += 1;
+            if($new_hour == 24){
+                $hour = 0;
+            } elseif($new_hour > 24){
+                $hour = 1;
+            }
         }
         array_push($array_future, $hour,$new_min,$rest);
     } else {

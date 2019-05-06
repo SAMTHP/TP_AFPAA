@@ -20,7 +20,7 @@ function generateFuture($hour,$min){
         array_push($array_future, $hour, $new_min);
     }
     return $array_future;
-}
+} 
 
 function showNewHour($array){
     echo "\n";
@@ -39,3 +39,4 @@ function showNewHour($array){
 
 $array_future = generateFuture($hour,$min);
 showNewHour($array_future);
+

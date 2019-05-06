@@ -1,0 +1,48 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 9.4 en PSEUDO CODE
+    
+    VARIABLE sentence en STRING
+    FONCTION countWords(1 argument)
+    TABLEAU vowel(5)
+    VARIABLE count en ENTIER
+
+DEBUT INSTRUCTION
+    
+    // DECLARATION ET INITIALISAITON DE LA VARIABLE QUI VA RECUPERER LA PHRASE
+    ECRIRE "Ecrivez votre phrase :"
+    LIRE choixUtilisateur
+    sentence = choixUtilisateur
+
+    // DECLARATION ET INITIALISATION DU TABLEAU QUI VA CONTENIR LES VOYELLES
+    vowel = ["a","e","i","o","u","y"]
+
+    // CREATION D'UNE FONCTION QUI RENVOIE LE NOMBRE DE MOTS DANS UNE PHRASE
+    Fonction countVowel(vowel en TABLEAU,sentence en STRING) en STRING
+        // DECLARATION ET INITIALISATION DU COMPTEUR A ZERO
+        count = 0
+        // PREMIERE BOUCLE SUR LES VOYELLES
+        Pour(e=0;e < count(vowel);e++) Faire
+            // SECONDES BOUCLES SUR CHAQUE LETTRE
+            Pour(i = 0;i < strlen(sentence);i++) Faire
+                // TEST SI LA LETTRE ANALYSE EST EGALE A L'UNE DES VOYELLES
+                Si(sentence[i] == vowel[e]) Alors
+                    // INCREMENTATION DU COMPTEUR
+                    count++
+                Fin Si
+            Fin Pour
+        Fin Pour
+
+        // AFFICHAGE DU RESULTAT
+        ECRIRE "Votre phrase contient $count voyelles."
+        
+    }
+
+    // APPEL DE LA FONCTION
+    countVowel(vowel,sentence)
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

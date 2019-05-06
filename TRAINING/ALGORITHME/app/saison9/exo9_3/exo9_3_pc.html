@@ -1,0 +1,36 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 9.3 en PSEUDO CODE
+    
+    VARIABLE sentence en STRING
+    FONCTION countWords(1 argument)
+    TABLEAU array_word(1..n)
+    VARIABLE count_words en ENTIER
+
+DEBUT INSTRUCTION
+    
+    // DECLARATION ET INITIALISAITON DE LA VARIABLE QUI VA RECUPERER LA PHRASE
+    ECRIRE "Ecrivez votre phrase :"
+    LIRE choixUtilisateur
+    sentence = SUP_ESPCACE(whoixUtilisateur)
+
+    // CREATION D'UNE FONCTION QUI RENVOIE LE NOMBRE DE MOTS DANS UNE PHRASE
+    Fonction countWords(sentence) en STRING
+        // DECLARATION DU TABLEAU VA QUI VA RECUPERER LE NOMBRE DE MOTS
+        array_word = []
+        // AFFECTATION DU TABLEAU
+        array_word = EXPLODE(" ", sentence)
+        // CALCUL DU NOMBRE DE MOTS
+        count_words = COMPTE(array_word)
+        // AFFICHAGE DU RESULTAT
+        ECRIRE "Votre phrase contient " & count_words & " mot(s).";
+    Fin Fonction
+
+    // APPEL DE LA FONCTION
+    countWords(sentence)
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

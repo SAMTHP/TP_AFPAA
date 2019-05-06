@@ -1,0 +1,25 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 9.2 en JS
+
+DEBUT INSTRUCTION JS
+    document.getElementById("submit").onclick = function () {
+        // DECLARATION ET INITIALISAITON DE LA VARIABLE QUI VA RECUPERER LE MOT
+        var word = (document.getElementById('word').value).trim();
+
+        // CREATION D'UNE FONCTION QUI RENVOIE LE NOMBRE DE LETTRES D'UN MOT
+        function showLength(str){
+            // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE NOMBRE DE LETTRES
+            var str_length = str.length;
+            // AFFICHAGE DU RESULTAT
+            document.getElementById('result').innerText = "Votre mot contient "+str_length+" lettres.";
+        }
+
+        // APPEL DE LA FONCTION
+        showLength(word);
+    }
+FIN INSTRUCTION JS
+
+        </textarea>
+</div>

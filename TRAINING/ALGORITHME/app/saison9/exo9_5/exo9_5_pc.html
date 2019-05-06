@@ -1,0 +1,42 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 9.5 en PSEUDO CODE
+    
+    VARIABLE sentence, new_sentence, message en STRING
+    VARIABLE index en ENTIER
+
+DEBUT INSTRUCTION
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA PHRASE
+    sentence = "Tu peux supprimer une de mes lettres, mais seulement pour cette fois"
+    new_sentence = ""
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER L'INDEX
+    ECRIRE "Choisissez le rang de la lettre à supprimer"
+    Lire choixUtilisateur
+    index = choixUtilisateur
+
+    // TEST SI LE RANG DEMANDE CORRESPOND A UNE LETTRE EXISTENTE
+    Si(sentence[index]) Alors
+        // SUPPRESION DE L'ELEMENT SELECTIONNE
+        Pour(i=0;i < LONGUEUR_STRING(sentence);i++) Faire
+            Si(i != index) Alors
+                new_sentence &= sentence[i]
+            Fin Si
+        Fin Pour
+        // REAFFECTATION DE LA VARIABLE SENTENCE
+        sentence = new_sentence
+        // AFFICHAGE DE LA PHRASE MODIFIE
+        ECRIRE sentence
+    Sinon
+        // DECLARATION ET INITIALISATION DU MESSAGE D'ERREUR
+        $message = "La valeur que vous avez demandé n'existe pas"
+        // AFFICHAGE DU MESSAGE D'ERREUR
+        ECRIRE $message
+    Fin Si
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

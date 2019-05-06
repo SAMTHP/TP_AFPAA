@@ -29,6 +29,8 @@ function dateValidation($month,$day,$flag){
         } else {
             echo "La date est valide";
         }
+    } elseif ($day > 31){
+        echo "La date est non valide";
     } else {
         if($month == 2 && $day <= 28){
             echo "La date est valide";
@@ -37,7 +39,7 @@ function dateValidation($month,$day,$flag){
         } else {
             echo "La date est valide";
         }
-    }
+    } 
 }
 
 $flag = analyzeYear($year);

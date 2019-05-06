@@ -1,0 +1,31 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 9.2 en PSEUDO CODE
+    
+    VARIABLE word en STRING
+    FONCTION showLength(1 argument)
+    VARIABLE str_length en ENTIER
+
+DEBUT INSTRUCTION
+    
+    // DECLARATION ET INITIALISAITON DE LA VARIABLE QUI VA RECUPERER LE MOT
+    ECRIRE "Choisissez un mot :"
+    LIRE choixUtilisateur
+    word = SUP_ESPACE(choixUtilisateur)
+
+    // CREATION D'UNE FONCTION QUI RENVOIE LE NOMBRE DE LETTRES D'UN MOT
+    Fonction showLength(str en STRING) en STRING
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE NOMBRE DE LETTRES
+        str_length = Length(str)
+        // AFFICHAGE DU RESULTAT
+        ECRIRE "Votre mot contient " & str_length & " lettres."
+    Fin Fonction
+
+    // APPEL DE LA FONCTION
+    showLength(word)
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>
