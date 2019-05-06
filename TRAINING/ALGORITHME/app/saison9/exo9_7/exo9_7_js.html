@@ -1,0 +1,23 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/js.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 9.6 en JS
+
+DEBUT INSTRUCTION JS
+    document.getElementById("submit").onclick = function () {
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE NOMBRE
+        var num = parseInt(document.getElementById('num').value);
+
+        // TEST SI LE NOMBRE EST IMPAIR
+        if(num % 2 == 0){
+            // AFFICHAGE DU RESULTAT
+            document.getElementById('result').innerHTML = "Ce nombre est pair";
+        }else{
+            // AFFICHAGE DU RESULTAT
+            document.getElementById('result').innerHTML =  "Ce nombre est impair";
+        }
+    }
+FIN INSTRUCTION JS
+
+        </textarea>
+</div>

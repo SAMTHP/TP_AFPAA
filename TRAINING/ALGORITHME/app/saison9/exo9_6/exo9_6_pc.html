@@ -1,0 +1,38 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 9.6 en PSEUDO CODE
+    
+    VARIABLE sentence, new_sentence, message en STRING
+    VARIABLE index en ENTIER
+
+DEBUT INSTRUCTION
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA PHRASE DE DEPART
+    ECRIRE "Entrez votre phrase :"
+    LIRE choixUtilisateur
+    sentence = choixUtilisateur
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LES VALEURS CRYPTE
+    crypto = ""
+
+    // BOUCLE QUI VA TRANSOFRMER TOUS LES CARACTERES AVEC LEURS VALEURS ASII
+    Pour (i=0;i < LONGUEUR_STRING(sentence);i++) Faire
+        // DECLRATION ET INITIALISATION DE LA VARIABLE QUI VA CONVERTIR CHAQUE CARACTERE EN ASCII
+        asc = ord(sentence[i])
+        // TEST SI LES CARACTERES NE SONT PAS DES ESPACES
+        Si (ord(sentence[i]) != 32) Alors
+            // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA MODIFIER TOUTES LES VALEURS ASCII
+            decalage = asc + 1
+        Sinon
+            // AUCUNES MODIFICATION SI L'ELEMENT ANALYSE EST UN ESPACE
+            decalage = asc
+        Fin Si
+        // AFFECTATION DE LA VARIABLE CRYPTO PAR UNE CONCATENATION QUI S'INCREMENTE DE LA VALEUR ASCII MODIFIE A CHAQUE TOUR
+        crypto .= chr(decalage)
+    Fin Pour
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

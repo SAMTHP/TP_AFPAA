@@ -1,0 +1,33 @@
+<div class="form-group php" style="display: flex; flex-direction: column;" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/php.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 9.6 en PHP
+
+DEBUT INSTRUCTION PHP
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LA PHRASE DE DEPART
+    $sentence = $_POST['sentence'];
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LES VALEURS CRYPTE
+    $crypto = "";
+
+    // BOUCLE QUI VA TRANSOFRMER TOUS LES CARACTERES AVEC LEURS VALEURS ASII
+    for($i=0;$i < strlen($sentence);$i++){
+        // DECLRATION ET INITIALISATION DE LA VARIABLE QUI VA CONVERTIR CHAQUE CARACTERE EN ASCII
+        $asc = ord($sentence[$i]);
+        // TEST SI LES CARACTERES NE SONT PAS DES ESPACES
+        if(ord($sentence[$i]) != 32){
+            // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA MODIFIER TOUTES LES VALEURS ASCII
+            $decalage = $asc + 1;
+        } else {
+            // AUCUNES MODIFICATION SI L'ELEMENT ANALYSE EST UN ESPACE
+            $decalage = $asc;
+        }
+        // AFFECTATION DE LA VARIABLE CRYPTO PAR UNE CONCATENATION QUI S'INCREMENTE DE LA VALEUR ASCII MODIFIE A CHAQUE TOUR
+        $crypto .= chr($decalage);
+    }
+
+FIN INSTRUCTION PHP
+
+        </textarea>
+</div>

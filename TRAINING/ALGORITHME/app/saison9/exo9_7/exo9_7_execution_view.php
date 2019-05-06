@@ -24,11 +24,7 @@
                 <div class="card-body" >
                     <h5 class="card-title">RESULTAT</h5>
                     <p class="card-text">
-                        <?php require_once "exo9_6_execution.php" ?>
-                        <span><strong>Phrase d'origine : </strong><?= $sentence ?></span>
-                        <br>
-                        <span><strong>Phrase modifiée : </strong><?= $crypto ?></span>
-
+                        <?php require_once "exo9_7_execution.php" ?>
                     </p>
                     <div style="display: flex; justify-content: center;">
                         <a href="../index_global_saison9.php" class="btn btn-warning " >RETOUR</a>
