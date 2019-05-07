@@ -1,13 +1,64 @@
 <div class="form-group php" style="display: flex; flex-direction: column" >
     <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
     <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
-ALGORITHME EXO 5.2 en PSEUDO CODE (A TERMINER !!!)
+ALGORITHME EXO 5.2 en PSEUDO CODE 
 
-    VARIABLE choice en ENTIER
+    VARIABLES random,choice, choice_2, session['tour'] en ENTIER
+    VARIABLES flag, form en BOOLEEN
 
 DEBUT INSTRUCTION
-    
-    
+    // DEMARRAGE DE SESSION
+    session_start()
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE RANDOM
+    random = GET_RANDOM
+
+    // TEST SI LE CHOIX A ETE ENVOYE
+    Si (EXISTE(POST[choice_1])) Alors
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE CHOIX
+        choice = POST[choice_1]
+        // TEST DU CHOIX
+        Si (choice < 10 || choice > 20) Alors
+            Si (choice < 10 ) Alors
+                ECRIRE "Section A : Plus grand !"
+                flag = true
+            Sinon Si(choice > 20) Alors
+                ECRIRE "Section A : Plus petit !"
+                flag = true
+            Fin Si
+        Sinon
+            flag = false
+            ECRIRE "Section A : Bravo, vous avez trouvé un nombre valide !"
+        Fin Si
+    Fin Si
+
+    // DECLARATION ET INITIALISATION D'UN FLAG POUR L'AFFICHAGE DU FORMULAIRE
+    form = true
+
+    // TEST SI LE CHOIX 2 A ETE ENVOYE
+    Si(EXISTE(POST[choice_2])){
+        // DECLARATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE DE TOUR EN SESSION
+        session['tour']
+        // INCREMENTATION DU NOMBRE DE TOUR
+        session['tour'] += 1
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE CHOIX DE LA SECTION B
+        choice_2 = POST[choice_2]
+        // TEST DU CHOIX
+        Si (choice_2 != random) Alors    
+            Si (choice_2 < random ) Alors
+                ECRIRE "Section B : Plus grand !"
+                ECRIRE session['tour']
+            Sinon Si(choice_2 > random) Alors
+                ECRIRE "Section B : Plus petit !"
+                ECRIRE session['tour']
+            Fin Si
+        Sinon
+            form = false
+            ECRIRE "Section B : Bravo, vous avez trouvé un nombre valide au bout du " & session['tour'] & " ° coup(s)!"
+            session['tour'] = 0
+        Fin Si    
+    Fin Si
+        
 FIN INSTRUCTION
 
         </textarea>

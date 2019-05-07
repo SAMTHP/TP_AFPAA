@@ -1,0 +1,77 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 9.9 en PSEUDO CODE
+    
+    VARIABLES key, sentence, crypto en ENTIER
+    VARIABLES index_key, ascii_sentence, ascii_a, pos, ascii_key, decalage en ENTIER
+
+DEBUT INSTRUCTION
+    
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA CLE DE VIGENERE
+    ECRIRE "Entrez votre clé"
+    LIRE choixUtilisateur_key
+    key = strtolower(choixUtilisateur_key)
+
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA PHRASE A ENCODER
+    ECRIRE "Entrez votre phrase"
+    LIRE choixUtilisateur_sentence
+    sentence = strtolower(choixUtilisateur_sentence)
+
+    // CREATION DE LA FONCTION QUI VA ENCRYPTER LA PHRASE
+    Fonction crytoVigenere(key en STRING,sentence en STRING){
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA SAUVEGARDER LA PHRASE CRYPTE
+        crypto = ""
+        
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RENSEIGNER L'INDEX DE LA CLE
+        index_key = 0
+
+        // BOUCLE SUR TOUTE LA LONGUEUR DE LA PHRASE
+        Pour (i=0;i < strlen(sentence);i++) Faire
+            // TEST SI L'INDEX DE LA CLE EST EGAL A LA LONGUEUR DE LA CLE
+            Si (index_key == strlen(key)) Alors
+                // SI LE TEST EST VALIDE, ON REINITIALISE L'INDEX DE LA CLE
+                index_key = 0
+            Fin Si
+
+            // TESI SI LE CODE ASCII EST DIFFERENTE DE 32 (ESPACE)
+            Si (ord(sentence[i]) != 32) Alors
+                // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RENSEIGNE LE CODE ASCII DE LA LETTRE DE LA PHRASE
+                ascii_sentence = ord(sentence[i])
+                // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE CODE ASCII DE LA LETTRE A (EN MINUSCULE)
+                ascii_a = ord("a")
+                // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RENSEIGNER LE RANG DE LA LETTRE DE LA PHRASE
+                pos = ascii_sentence - ascii_a
+                // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RENSEIGNER LE CODE ASCII DE LA LETTRE DE LA CLE
+                ascii_key = ord(key[index_key])
+                // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA GENERER LE CODE ASCII DE LA NOUVELLE LETTRE CRYPTEE
+                decalage = pos + ascii_key
+                // INCREMENTATION DE L'INDEX DE LA CLE
+                index_key++
+            Sinon
+                // AFFECTATION DE LA VARIABLE DECALAGE A 32 SI L'ELEMENT EST UN ESPACE
+                decalage = 32 
+            Fin Si
+
+            // TEST SI LE CODE ASCII EST SUPERIEUR A 22
+            Si (decalage > 122) Alors
+                // SI LE TEST EST VALIDE ON RECUPERE LA DIFFERENCE POUR REPARTIR DU DEBUT DE L'ALPHABET
+                decalage = (decalage - 122) + ord("a")-1
+            Fin Si
+            // CONCATENATION PAR INCREMENTATION DE LA VARIABLE CRYPTO
+            crypto &= chr(decalage)
+            
+        Fin Pour
+
+        // AFFICHAGE DU RESULTAT
+        ECRIRE crypto
+    Fin Fonction
+
+    // APPEL DE LA FONCTION
+    crytoVigenere(key,sentence)
+
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

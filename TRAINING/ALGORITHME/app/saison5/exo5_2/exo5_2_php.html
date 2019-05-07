@@ -5,61 +5,57 @@ ALGORITHME EXO 5.2 en PHP (EXO TYPE DESKTOP)
 
 DEBUT INSTRUCTION PHP
 
-    echo "Secton A : \n";
+    // DEMARRAGE DE SESSION
+    session_start();
 
-    // INITIALISATION DU CHOIX A NULL
-    $choice = null;
+    // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE RANDOM
+    $random = $_POST['rand'];
 
-    // INITIALISATION DU FLAG A FALSE
-    $flag = false;
-    $i = 0;
-
-    // BOUCLE TANT QUE LE CHOIX RENSEIGNEE N'EST PAS BON
-    while($choice < 10 || $choice > 20){
-        if($choice < 10 ){
-            if($i == 0){
-                echo "";
-            }else{
-                echo "Plus grand !\n";
-            }
-        }elseif($choice > 20){
-            echo "Plus petit !\n";
+    // TEST SI LE CHOIX A ETE ENVOYE
+    if(isset($_POST['choice'])){
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE CHOIX
+        $choice = $_POST['choice'];
+        // TESI DU CHOIX
+        if($choice < 10 || $choice > 20){
+            if($choice < 10 ){
+                echo "Section A : Plus grand !";
+                $flag = true;
+            } elseif($choice > 20){
+                echo "Section A : Plus petit !";
+                $flag = true;
+            } 
+        } else {
+            $flag = false;
+            echo "Section A : Bravo, vous avez trouvé un nombre valide !";
         }
-        $choice = readline("Choisissez un nombre : \n");
-        $i++;
     }
+    
+    // DECLARATION ET INITIALISATION D'UN FLAG POUR L'AFFICHAGE DU FORMULAIRE
+    $form = true;
 
-    $flag = true;
-
-    // AFFICHAGE DU RESULTAT DE LA SECTION A
-    echo "Bravo, vous avez trouvé un nombre valide !\n";
-    echo "\n";
-    echo "Secton B : \n";
-    echo "\n";
-
-    // TEST SI LE FLAG EST A TRUE
-    if($flag){
-        $random = rand(1,100);
-        $choice_2 = "";
-        $e = 0;
-        // BOUCLE TANT QUE LE CHOIX N'EST PAS LE BON
-        while($choice_2 != $random){
+    // TEST SI LE CHOIX 2 A ETE ENVOYE
+    if(isset($_POST['choice-2'])){
+        // DECLARATION DE LA VARIABLE QUI VA STOCKER LE NOMBRE DE TOUR EN SESSION
+        $_SESSION['tour'];
+        // INCREMENTATION DU NOMBRE DE TOUR
+        $_SESSION['tour'] += 1;
+        // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LE CHOIX DE LA SECTION B
+        $choice_2 = $_POST['choice-2'];
+        // TEST DU CHOIX
+        if($choice_2 != $random){    
             if($choice_2 < $random ){
-                if($e == 0){
-                    echo "";
-                } else {
-                    echo "Plus grand !\n";
-                }
+                echo "Section B : Plus grand !\n";
+                echo $_SESSION['tour'];
             }elseif($choice_2 > $random){
-                echo "Plus petit !\n";
+                echo "Section B : Plus petit !\n";
+                echo $_SESSION['tour'];
             }
-            $choice_2 = readline("Choisissez un nombre : \n");
-            $e++;
-        }
-        // AFFICHAGE DU RESULTAT DE LA SECTION B
-        echo "Bravo, vous avez trouvé un nombre valide au bout du $e ° coup(s)!\n";
-        echo "\n";
-    }
+        } else {
+            $form = false;
+            echo "Section B : Bravo, vous avez trouvé un nombre valide au bout du ".$_SESSION['tour']." ° coup(s)!\n";
+            $_SESSION['tour'] = 0;
+        }    
+    } 
 
 FIN INSTRUCTION PHP
 
