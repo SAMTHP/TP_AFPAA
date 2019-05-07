@@ -1,77 +1,63 @@
-<div class="form-group php" style="display: flex; flex-direction: column" >
-    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
-    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
-ALGORITHME EXO 9.9 en PSEUDO CODE
-    
-    VARIABLES key, sentence, crypto en STRING
-    VARIABLES index_key, ascii_sentence, ascii_a, pos, ascii_key, decalage en ENTIER
+$('#result').hide();
 
-DEBUT INSTRUCTION
-    
+$("#submit").click(function () {
     // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA CLE DE VIGENERE
-    ECRIRE "Entrez votre clé"
-    LIRE choixUtilisateur_key
-    key = strtolower(choixUtilisateur_key)
+    var key = ($('#key').val()).toLowerCase();
 
     // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LA PHRASE A ENCODER
-    ECRIRE "Entrez votre phrase"
-    LIRE choixUtilisateur_sentence
-    sentence = strtolower(choixUtilisateur_sentence)
+    var sentence = ($('#sentence').val()).toLowerCase();
 
     // CREATION DE LA FONCTION QUI VA ENCRYPTER LA PHRASE
-    Fonction crytoVigenere(key en STRING,sentence en STRING){
+    function crytoVigenere(key,sentence){
         // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA SAUVEGARDER LA PHRASE CRYPTE
-        crypto = ""
+        var crypto = "";
         
         // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RENSEIGNER L'INDEX DE LA CLE
-        index_key = 0
+        var index_key = 0;
 
         // BOUCLE SUR TOUTE LA LONGUEUR DE LA PHRASE
-        Pour (i=0;i < strlen(sentence);i++) Faire
+        for(var i=0;i<sentence.length;i++){
             // TEST SI L'INDEX DE LA CLE EST EGAL A LA LONGUEUR DE LA CLE
-            Si (index_key == strlen(key)) Alors
+            if(index_key == key.length){
                 // SI LE TEST EST VALIDE, ON REINITIALISE L'INDEX DE LA CLE
-                index_key = 0
-            Fin Si
-
+                var index_key = 0;
+            }
             // TESI SI LE CODE ASCII EST DIFFERENTE DE 32 (ESPACE)
-            Si (ord(sentence[i]) != 32) Alors
+            if(sentence.charCodeAt(i) != 32){
                 // DECLARATION ET INITIALISATION DE LA VARIABLE QUI RENSEIGNE LE CODE ASCII DE LA LETTRE DE LA PHRASE
-                ascii_sentence = ord(sentence[i])
+                var ascii_sentence = sentence.charCodeAt(i);
                 // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA STOCKER LE CODE ASCII DE LA LETTRE A (EN MINUSCULE)
-                ascii_a = ord("a")
+                var a = "a";
+                var ascii_a = a.charCodeAt(0);
                 // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RENSEIGNER LE RANG DE LA LETTRE DE LA PHRASE
-                pos = ascii_sentence - ascii_a
+                var pos = ascii_sentence - ascii_a;
                 // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RENSEIGNER LE CODE ASCII DE LA LETTRE DE LA CLE
-                ascii_key = ord(key[index_key])
+                var ascii_key = key.charCodeAt(index_key);
                 // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA GENERER LE CODE ASCII DE LA NOUVELLE LETTRE CRYPTEE
-                decalage = pos + ascii_key
+                var decalage = pos + ascii_key;
                 // INCREMENTATION DE L'INDEX DE LA CLE
-                index_key++
-            Sinon
+                index_key++;
+            }else{
                 // AFFECTATION DE LA VARIABLE DECALAGE A 32 SI L'ELEMENT EST UN ESPACE
-                decalage = 32 
-            Fin Si
-
+                decalage = 32; 
+            }
             // TEST SI LE CODE ASCII EST SUPERIEUR A 22
-            Si (decalage > 122) Alors
+            if(decalage > 122){
                 // SI LE TEST EST VALIDE ON RECUPERE LA DIFFERENCE POUR REPARTIR DU DEBUT DE L'ALPHABET
-                decalage = (decalage - 122) + ord("a")-1
-            Fin Si
+                decalage = (decalage - 122) + ascii_a-1;
+            }
             // CONCATENATION PAR INCREMENTATION DE LA VARIABLE CRYPTO
-            crypto &= chr(decalage)
+            crypto += String.fromCharCode(decalage);
             
-        Fin Pour
+        }
 
         // AFFICHAGE DU RESULTAT
-        ECRIRE crypto
-    Fin Fonction
+        $('#crypto').text(crypto);
+
+        $('#result').show();
+    }
 
     // APPEL DE LA FONCTION
-    crytoVigenere(key,sentence)
-
-
-FIN INSTRUCTION
-
-        </textarea>
-</div>
+    crytoVigenere(key,sentence);
+    
+})

@@ -1,0 +1,30 @@
+<div class="form-group php" style="display: flex; flex-direction: column" >
+    <label for="exampleFormControlTextarea1"><img src="../../img/code.png"></label>
+    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="16" style="width:1000px" readonly="readonly">
+ALGORITHME EXO 10.2 en PSEUDO CODE
+    
+    VARIABLES example, line, new_line en STRING
+
+DEBUT INSTRUCTION
+    
+    // OUVERTURE DU FICHIER EN LECTURE
+    example = fopen('exemple.txt', 'r')
+
+    // BOUCLE TANT QUE LA FIN DU FICHIER N'A PAS ETE ATTEINT
+    Tant que (!feof(example)) Faire
+        // LECTURE DE LA LIGNE
+        line = fgets(example)
+
+        // REMPLACEMENT DE CARACTERE
+        new_line= str_replace("/", " ", line)
+
+        // AFFICHAGE DU RESULTAT
+        echo new_line
+    }
+    // FERMETURE DU FICHIER
+    fclose(example)
+
+FIN INSTRUCTION
+
+        </textarea>
+</div>

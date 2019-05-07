@@ -12,3 +12,4 @@ echo $rand_3."\n";
 echo $rand_4."\n";
 echo $rand_5."\n";
 echo $rand_6."\n";
+
