@@ -1,0 +1,7 @@
+     NAME          AGE           CITY     
+    samir     
+    samir     
+    Samir           28       Montpellier  
+   Yasmine          23       Montpellier  
+     sam            28       MONTPELLIER  
+    samir           28       Montpellier  

@@ -1,0 +1,5 @@
+     NAME          AGE           CITY     
+    samir           25       montpellier  
+     abir           26          Paris     
+     cour          221            pa      
+   Yasmine          23       Montpellier  

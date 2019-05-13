@@ -9,8 +9,8 @@ $monfichier = fopen('compteur.txt', 'r+');
 //$ligne = fgets($monfichier);
 
 // ECRITURE : 
-//$addLigne = fputs($monfichier, 'Texte à écrire1');µ
-
+$addLigne = fputs($monfichier, "Texte à écrire2 \n");
+/*
 $pages_vues = fgets($monfichier); // On lit la première ligne (nombre de pages vues)
 $pages_vues += 1; // On augmente de 1 ce nombre de pages vues
 fseek($monfichier, 0); // On remet le curseur au début du fichier
@@ -27,7 +27,7 @@ while(!feof($example)){
     // AFFICHAGE DU RESULTAT
     echo $new_ligne;
 }
-fclose($example);
+fclose($example);*/
 
 // 3 : quand on a fini de l'utiliser, on ferme le fichier
 fclose($monfichier);
