@@ -9,7 +9,7 @@ document.getElementById("submit").onclick = function () {
         // CALCUL DU NOMBRE DE MOTS
         var count_words = array_word.length;
         // AFFICHAGE DU RESULTAT
-        document.getElementById('result').innerText = "Votre mot contient "+count_words+" lettres.";
+        document.getElementById('result').innerText = "Votre phrase contient "+count_words+" mot(s).";
     }
 
     // APPEL DE LA FONCTION

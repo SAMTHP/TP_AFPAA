@@ -1,0 +1,7 @@
+   DAY        DEALER       SALE   
+10/05/2019    SAMIR        9999   
+11/05/2019    SAMIR       18909   
+12/05/2019    SAMIR       26055       
+10/05/2019   YASMINE       9999   
+11/05/2019   YASMINE      17000   
+12/05/2019   YASMINE      25658   

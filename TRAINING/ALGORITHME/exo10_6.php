@@ -2,30 +2,8 @@
 define('BR',"<br>");
 
 // OUVERTURE DU FICHIER EN LECTURE ET ECRITURE
-$address_note = fopen('exo10_4.txt', 'a+');
 
-$array_name = [];
-
-$name = readline("Entrez le nom : ");
-array_push($array_name, $name);
-$name = str_pad($name, 14, " ", STR_PAD_BOTH);
-
-$age = readline("Entrez l'age : ");
-$age = str_pad($age, 14, " ", STR_PAD_BOTH);
-
-$city = readline("Entrez la ville : ");
-$city = str_pad($city, 14, " ", STR_PAD_BOTH);
-
-$new_person = $name.$age.$city;
-
-
-$line = fputs($address_note, $new_person."\n");
-
-
-// FERMETURE DU FICHIER
-fclose($address_note);
-
-$note = fopen('exo10_4.txt', 'a+');
+$note = fopen('exo10_6.txt', 'a+');
 
 $array_register = [];
 
@@ -61,5 +39,3 @@ ftruncate($note, 0);
 foreach($array_register as $person){
     fputs($note, $person."\n");
 }
-
-fclose($note);
