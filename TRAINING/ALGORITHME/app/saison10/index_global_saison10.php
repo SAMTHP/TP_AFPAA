@@ -30,6 +30,7 @@
             <a class="dropdown-item" href="exo10_7/index_exo10_7.php">10.7</a>
             <a class="dropdown-item" href="exo10_8/index_exo10_8.php">10.8</a>
             <a class="dropdown-item" href="exo10_9/index_exo10_9.php">10.9</a>
+            <a class="dropdown-item" href="dame/dame.php">🔘</a>
           </div>
         </div>
       </div>

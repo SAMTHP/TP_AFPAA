@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link href="../../css/algo.css" rel="stylesheet">
       <script type="text/javascript" src="../../js/jquery_3_3_1.js" ></script>
-      <script type="text/javascript" src="../../js/saison10/exo10_2/season10_exo_2.js"></script>
+      <script type="text/javascript" src="../../js/saison10/dame/dame.js"></script>
       
     </head>
   <body>
@@ -40,9 +40,8 @@
         <div class="card" id="card" style="width: 25rem;">
           <img src="../../img/code.jpeg" class="card-img-top" alt="wallpaper" style="height: 200px">
           <div class="card-body" >
-              <h5 class="card-title">Exercice 10.2</h5>
-              <p class="card-text">Ecrivez l’algorithme qui produit un résultat similaire au précédent, mais le fichier texte "Exemple.txt" est cette fois de type délimité (caractère de délimitation : /).<br>
-               On produira à l'écran un affichage où pour des raisons esthétiques, ce caractère sera remplacé avec des espaces.
+              <h5 class="card-title">Jeu de dame</h5>
+              <p class="card-text">Jeu de dame complet.
               </p>
               <div style="display: flex; justify-content: center;">
                   <a href="#" class="btn btn-success " id="btn-pc">PSEUDO CODE</a>
