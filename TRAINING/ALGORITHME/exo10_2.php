@@ -6,6 +6,7 @@ $example = fopen('exemple.txt', 'r');
 while(!feof($example)){
     // LECTURE
     $ligne = fgets($example);
+    echo gettype($ligne)."\n";
     // CHANGEMENT DE CARACTERE
     $new_ligne= str_replace("/", " ", $ligne);
     // AFFICHAGE DU RESULTAT

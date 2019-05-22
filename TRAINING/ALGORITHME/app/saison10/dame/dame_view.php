@@ -262,7 +262,7 @@
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["7"]["9"] == "⚪" || $_SESSION['tab_board']["7"]["9"] == "⚫"){echo $_SESSION['tab_board']["7"]["9"] ;} ?></td>
                                 <td><?php if($_SESSION['tab_board']["8"]["9"] == "⚪" || $_SESSION['tab_board']["8"]["9"] == "⚫"){echo $_SESSION['tab_board']["8"]["9"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["9"]["9"] == "⚪" || $_SESSION['tab_board']["9"]["9"] == "⚫"){echo $_SESSION['tab_board']["9"]["9"] ;} ?></td>
-                                <td><?php if($_SESSION['tab_board']["10"]["9"] == "⚪" || $_SESSION['tab_board']["10"]["9"] == "⚫"){echo $_SESSION['tab_board']["10"]["9"] ;} ?>></td>
+                                <td><?php if($_SESSION['tab_board']["10"]["9"] == "⚪" || $_SESSION['tab_board']["10"]["9"] == "⚫"){echo $_SESSION['tab_board']["10"]["9"] ;} ?></td>
                                 <th class="table-active" scope="row">9</th>
                             </tr>
                             <tr class="text-center">

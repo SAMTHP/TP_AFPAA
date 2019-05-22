@@ -67,7 +67,7 @@ class Game
         /***  Board control ***/
 
         // ETAPE 0 : Test if left-top button is active
-        if(isset($_POST['left-top'])){
+        if(isset($left_top)){
             // TEST SI LA CASE EST VALIDE
             if(isset($tab_board[$this->x-1][$this->y-1])){
                 // ETAPE 1 : RESET DE LA CASE PRECEDENTE
@@ -75,8 +75,9 @@ class Game
                 
                 if($tab_board[$this->x-1][$this->y-1] == $pion){
                     echo "ERROR <br>";
-                } elseif($tab_board[$this->x-1][$this->y-1] != $pion && $tab_board[$this->x-1][$this->y-1] == ("⚪" || "⚫") ){
-                    if($tab_board[$this->x-2][$this->y-2] == " "){
+                } elseif($tab_board[$this->x-1][$this->y-1] == "⚪" || $tab_board[$this->x-1][$this->y-1] == "⚫" ){
+                    if($tab_board[$this->x-1][$this->y-1] != $pion && $tab_board[$this->x-2][$this->y-2] == " "){
+                        
                         $tab_board[$this->x][$this->y] = " " ;
                         $tab_board[$this->x-1][$this->y-1] = " ";
                         $tab_board[$this->x-2][$this->y-2] = $pion;
@@ -98,7 +99,7 @@ class Game
                 // AFFICHAGE DE L'ERREUR
                 $flag = true;
             }
-        }elseif(isset($_POST['right-top'])){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
+        }elseif(isset($right_top)){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
             // TEST SI LA CASE EST VALIDE
             if(isset($tab_board[$this->x+1][$this->y-1])){
                 // ETAPE 1 : RESET DE LA CASE PRECEDENTE
@@ -106,11 +107,21 @@ class Game
                 
                 if($tab_board[$this->x+1][$this->y-1] == $pion){
                     echo "ERROR <br>";
-                } elseif($tab_board[$this->x+1][$this->y-1] != $pion && $tab_board[$this->x+1][$this->y-1] == ("⚪" || "⚫") ){
-                    if($tab_board[$this->x+2][$this->y-2] == " "){
-                        $tab_board[$this->x][$this->y] = " " ;
-                        $tab_board[$this->x+1][$this->y-1] = " ";
-                        $tab_board[$this->x+2][$this->y-2] = $pion;
+                } elseif($tab_board[$this->x+1][$this->y-1] == "⚪" || $tab_board[$this->x+1][$this->y-1] == "⚫"){
+                    if($tab_board[$this->x+1][$this->y-1] != $pion && $tab_board[$this->x+2][$this->y-2] == " "){
+                        if($tab_board[$this->x+3][$this->y-1] == "⚪" || $tab_board[$this->x+3][$this->y-1] == "⚫"){
+                            if($tab_board[$this->x+3][$this->y-1] != $pion && $tab_board[$this->x+4][$this->y] == " "){
+                                $tab_board[$this->x][$this->y] = " ";
+                                $tab_board[$this->x+1][$this->y-1] =  " ";
+                                $tab_board[$this->x+3][$this->y-1] =  " ";
+                                $this->x += 4;
+                                $tab_board[$this->x][$this->y] = $pion;
+                            }
+                        }else {
+                            $tab_board[$this->x][$this->y] = " " ;
+                            $tab_board[$this->x+1][$this->y-1] = " ";
+                            $tab_board[$this->x+2][$this->y-2] = $pion;
+                        }     
                     }
                 } else {
                     $tab_board[$this->x][$this->y] = " " ;
@@ -129,7 +140,7 @@ class Game
                 // AFFICHAGE DE L'ERREUR
                 $flag = true;
             }
-        }elseif(isset($_POST['left-bottom'])){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
+        }elseif(isset($left_bottom)){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
             // TEST SI LA CASE EST VALIDE
             echo "LEFT-BOTTOM <br>";
             if(isset($tab_board[$this->x-1][$this->y+1])){
@@ -166,7 +177,7 @@ class Game
                 // AFFICHAGE DE L'ERREUR
                 $flag = true;
             }
-        }elseif(isset($_POST['right-bottom'])){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
+        }elseif(isset($right_bottom)){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
             // TEST SI LA CASE EST VALIDE
             echo "RIGHT-BOTTOM <br>";
             if(isset($tab_board[$this->x+1][$this->y+1])){
@@ -261,12 +272,14 @@ class Game
             }
         }
 
-        echo $count_black."<br>";
-        echo $count_white."<br>";
+        echo "Pion black : ".$count_black."<br>";
+        echo "Pion white : ".$count_white."<br>";
 
         if($count_white == 0){
+            echo "Joueur 2 a gagné";
             $flag_player_1 = true;
         }elseif($count_black == 0){
+            echo "Joueur 1 a gagné";
             $flag_player_2 = true;
         }
 
@@ -300,13 +313,13 @@ if(isset($_POST['x']) && isset($_POST['y'])){
     $game->choicePlayer1($_POST['x'],$_POST['y']);
 }
 
-if(isset($_POST['left-top']) || isset($_POST['right-top']) || isset($_POST['letf-bottom']) || isset($_POST['right-bottom'])){
+if(isset($_POST['left-top']) || isset($_POST['right-top']) || isset($_POST['left-bottom']) || isset($_POST['right-bottom'])){
 
     if(isset($_POST['left-top'])){
         $game->movements($_SESSION['tab_board'],$left_top = true,$right_top = null,$left_bottom = null,$right_bottom = null);
     } elseif(isset($_POST['right-top'])){
         $game->movements($_SESSION['tab_board'],$left_top = null,$right_top = true,$left_bottom = null,$right_bottom = null);
-    } elseif(isset($_POST['letf-bottom'])){
+    } elseif(isset($_POST['left-bottom'])){
         $game->movements($_SESSION['tab_board'],$left_top = null,$right_top = null,$left_bottom = true,$right_bottom = null);
     } elseif(isset($_POST['right-bottom'])){
         $game->movements($_SESSION['tab_board'],$left_top = null,$right_top = null,$left_bottom = null,$right_bottom = true);
