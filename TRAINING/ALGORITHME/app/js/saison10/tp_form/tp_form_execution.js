@@ -14,7 +14,7 @@ function showForm(){
 }
 
 // Call the method which generate the datable
-$('.mydatable').DataTable();
+$('.mydatatable').DataTable();
 
 // Creation of arrays which will save and create the new cars
 var array_brand = ['bmw'];
@@ -30,13 +30,14 @@ function tabIncrement(){
     for(var i = 0; i<array_brand.length;i++){
         var newElement = document.createElement('tr');
         newElement.id = 'car-'+i;
+        newElement.className = 'mydatatable';
         document.getElementById('body').appendChild(newElement);
     }
     
     
     for(var i = 0; i < array_car.length; i++ ){
         if(array_car[0][i] != undefined){
-            document.getElementById('car-'+i).innerHTML = "<th scope='row'>"+array_car[0][i]+"</th><td>"+array_car[1][i]+"</td><td>"+array_car[2][i]+"</td><td>"+array_car[3][i]+"</td><td>"+array_car[4][i]+" €</td><td><button type='submit' id='delete'><i class='fas fa-trash-alt' id='"+i+"' onclick='deleteCar(this.id)'></i></button></td><td><button type='submit' ><i class='fas fa-edit' id='"+i+"' onclick='editCar(this.id)'></i></button></td>";
+            document.getElementById('car-'+i).innerHTML = "<th scope='row' >"+array_car[0][i]+"</th><td>"+array_car[1][i]+"</td><td>"+array_car[2][i]+"</td><td>"+array_car[3][i]+"</td><td>"+array_car[4][i]+" €</td><td><button type='submit' id='delete'><i class='fas fa-trash-alt' id='"+i+"' onclick='deleteCar(this.id)'></i></button></td><td><button type='submit' ><i class='fas fa-edit' id='"+i+"' onclick='editCar(this.id)'></i></button></td>";
         }
     }
 }
