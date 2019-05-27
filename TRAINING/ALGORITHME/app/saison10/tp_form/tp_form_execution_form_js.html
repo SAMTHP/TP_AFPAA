@@ -4,6 +4,7 @@
         <button type="submit" class="btn btn-success col-3" id="show" onclick="showCars()">Afficher les voitures</button>
         &nbsp
         <button type="submit" class="btn btn-primary col-3" id="create" onclick="showForm()">Ajouter une voiture</button>
+        
     </div>
 </div>
 <br>
@@ -23,6 +24,10 @@
                 <button type="submit" class="btn btn-primary col-3" id="add_car">Valider</button>
             </div>
             <br>
+            <div class="row">
+                <button type="submit" class="btn btn-success col-3" id="create" onclick="createMany()">Créer voitures de test</button>
+            </div>
+            <br>
             <div id="error">
 
             </div>
@@ -39,7 +44,8 @@
                     <th>Motorisation</th>
                     <th>Carburant</th>
                     <th>Prix</th>
-                    <th colspan="2">Action</th>
+                    <th >Supprimer </th>
+                    <th >Editer </th>
                 </tr>
             </thead>
             <tbody id="body">

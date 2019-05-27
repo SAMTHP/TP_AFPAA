@@ -76,11 +76,52 @@ class Game
                 if($tab_board[$this->x-1][$this->y-1] == $pion){
                     echo "ERROR <br>";
                 } elseif($tab_board[$this->x-1][$this->y-1] == "⚪" || $tab_board[$this->x-1][$this->y-1] == "⚫" ){
+                    // Left top horizontal eat
                     if($tab_board[$this->x-1][$this->y-1] != $pion && $tab_board[$this->x-2][$this->y-2] == " "){
-                        
-                        $tab_board[$this->x][$this->y] = " " ;
-                        $tab_board[$this->x-1][$this->y-1] = " ";
-                        $tab_board[$this->x-2][$this->y-2] = $pion;
+                        if($tab_board[$this->x-7][$this->y-1] == "⚪" || $tab_board[$this->x-7][$this->y-1] == "⚫"){
+                            if($tab_board[$this->x-7][$this->y-1] != $pion && $tab_board[$this->x-8][$this->y] == " "){
+                                if($tab_board[$this->x-5][$this->y-1] == "⚪" || $tab_board[$this->x-5][$this->y-1] == "⚫"){
+                                    if($tab_board[$this->x-5][$this->y-1] != $pion && $tab_board[$this->x-6][$this->y] == " "){
+                                        if($tab_board[$this->x-3][$this->y-1] == "⚪" || $tab_board[$this->x-3][$this->y-1] == "⚫"){
+                                            if($tab_board[$this->x-3][$this->y-1] != $pion && $tab_board[$this->x-4][$this->y] == " "){
+                                                $tab_board[$this->x][$this->y] = " ";
+                                                $tab_board[$this->x-1][$this->y-1] =  " ";
+                                                $tab_board[$this->x-3][$this->y-1] =  " ";
+                                                $tab_board[$this->x-5][$this->y-1] =  " ";
+                                                $tab_board[$this->x-7][$this->y-1] =  " ";
+                                                $this->x -= 8;
+                                                $tab_board[$this->x][$this->y] = $pion;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } elseif($tab_board[$this->x-5][$this->y-1] == "⚪" || $tab_board[$this->x-5][$this->y-1] == "⚫"){
+                            if($tab_board[$this->x-5][$this->y-1] != $pion && $tab_board[$this->x-6][$this->y] == " "){
+                                if($tab_board[$this->x-3][$this->y-1] == "⚪" || $tab_board[$this->x-3][$this->y-1] == "⚫"){
+                                    if($tab_board[$this->x-3][$this->y-1] != $pion && $tab_board[$this->x-4][$this->y] == " "){
+                                        $tab_board[$this->x][$this->y] = " ";
+                                        $tab_board[$this->x-1][$this->y-1] =  " ";
+                                        $tab_board[$this->x-3][$this->y-1] =  " ";
+                                        $tab_board[$this->x-5][$this->y-1] =  " ";
+                                        $this->x -= 6;
+                                        $tab_board[$this->x][$this->y] = $pion;
+                                    }
+                                }
+                            }
+                        } elseif($tab_board[$this->x-3][$this->y-1] == "⚪" || $tab_board[$this->x-3][$this->y-1] == "⚫"){
+                            if($tab_board[$this->x-3][$this->y-1] != $pion && $tab_board[$this->x-4][$this->y] == " "){
+                                $tab_board[$this->x][$this->y] = " ";
+                                $tab_board[$this->x-1][$this->y-1] =  " ";
+                                $tab_board[$this->x-3][$this->y-1] =  " ";
+                                $this->x -= 4;
+                                $tab_board[$this->x][$this->y] = $pion;
+                            }
+                        } else {
+                            $tab_board[$this->x][$this->y] = " " ;
+                            $tab_board[$this->x-1][$this->y-1] = " ";
+                            $tab_board[$this->x-2][$this->y-2] = $pion;
+                        }
                     }
                 } else {
                     $tab_board[$this->x][$this->y] = " " ;
@@ -108,8 +149,40 @@ class Game
                 if($tab_board[$this->x+1][$this->y-1] == $pion){
                     echo "ERROR <br>";
                 } elseif($tab_board[$this->x+1][$this->y-1] == "⚪" || $tab_board[$this->x+1][$this->y-1] == "⚫"){
+                    // Right top horizontal eat
                     if($tab_board[$this->x+1][$this->y-1] != $pion && $tab_board[$this->x+2][$this->y-2] == " "){
-                        if($tab_board[$this->x+3][$this->y-1] == "⚪" || $tab_board[$this->x+3][$this->y-1] == "⚫"){
+                        if($tab_board[$this->x+7][$this->y-1] == "⚪" || $tab_board[$this->x+7][$this->y-1] == "⚫"){
+                            if($tab_board[$this->x+7][$this->y-1] != $pion && $tab_board[$this->x+8][$this->y] == " "){
+                                if($tab_board[$this->x+5][$this->y-1] == "⚪" || $tab_board[$this->x+5][$this->y-1] == "⚫"){
+                                    if($tab_board[$this->x+5][$this->y-1] != $pion && $tab_board[$this->x+6][$this->y] == " "){
+                                        if($tab_board[$this->x+3][$this->y-1] == "⚪" || $tab_board[$this->x+3][$this->y-1] == "⚫"){
+                                            if($tab_board[$this->x+3][$this->y-1] != $pion && $tab_board[$this->x+4][$this->y] == " "){
+                                                $tab_board[$this->x][$this->y] = " ";
+                                                $tab_board[$this->x+1][$this->y-1] =  " ";
+                                                $tab_board[$this->x+3][$this->y-1] =  " ";
+                                                $tab_board[$this->x+5][$this->y-1] =  " ";
+                                                $tab_board[$this->x+7][$this->y-1] =  " ";
+                                                $this->x += 8;
+                                                $tab_board[$this->x][$this->y] = $pion;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } elseif($tab_board[$this->x+5][$this->y-1] == "⚪" || $tab_board[$this->x+5][$this->y-1] == "⚫"){
+                            if($tab_board[$this->x+5][$this->y-1] != $pion && $tab_board[$this->x+6][$this->y] == " "){
+                                if($tab_board[$this->x+3][$this->y-1] == "⚪" || $tab_board[$this->x+3][$this->y-1] == "⚫"){
+                                    if($tab_board[$this->x+3][$this->y-1] != $pion && $tab_board[$this->x+4][$this->y] == " "){
+                                        $tab_board[$this->x][$this->y] = " ";
+                                        $tab_board[$this->x+1][$this->y-1] =  " ";
+                                        $tab_board[$this->x+3][$this->y-1] =  " ";
+                                        $tab_board[$this->x+5][$this->y-1] =  " ";
+                                        $this->x += 6;
+                                        $tab_board[$this->x][$this->y] = $pion;
+                                    }
+                                }
+                            }
+                        } elseif($tab_board[$this->x+3][$this->y-1] == "⚪" || $tab_board[$this->x+3][$this->y-1] == "⚫"){
                             if($tab_board[$this->x+3][$this->y-1] != $pion && $tab_board[$this->x+4][$this->y] == " "){
                                 $tab_board[$this->x][$this->y] = " ";
                                 $tab_board[$this->x+1][$this->y-1] =  " ";
@@ -117,7 +190,7 @@ class Game
                                 $this->x += 4;
                                 $tab_board[$this->x][$this->y] = $pion;
                             }
-                        }else {
+                        } else {
                             $tab_board[$this->x][$this->y] = " " ;
                             $tab_board[$this->x+1][$this->y-1] = " ";
                             $tab_board[$this->x+2][$this->y-2] = $pion;
@@ -367,5 +440,3 @@ if(isset($_POST['left-top']) || isset($_POST['right-top']) || isset($_POST['letf
     $y = $game->getYposition();
 }
 */
-
-//session_destroy();

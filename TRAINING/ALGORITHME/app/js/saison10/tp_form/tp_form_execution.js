@@ -13,14 +13,11 @@ function showForm(){
     $('#create_car').show();
 }
 
-// Call the method which generate the datable
-$('.mydatatable').DataTable();
-
 // Creation of arrays which will save and create the new cars
-var array_brand = ['bmw'];
+var array_brand = ['BMW'];
 var array_year = ['2005'];
 var array_model = ['320 cd'];
-var array_fuel = ['diesel'];
+var array_fuel = ['DIESEL'];
 var array_price = ['4009'];
 
 var array_car = new Array(array_brand,array_year,array_model,array_fuel,array_price);
@@ -30,7 +27,7 @@ function tabIncrement(){
     for(var i = 0; i<array_brand.length;i++){
         var newElement = document.createElement('tr');
         newElement.id = 'car-'+i;
-        newElement.className = 'mydatatable';
+        
         document.getElementById('body').appendChild(newElement);
     }
     
@@ -42,8 +39,28 @@ function tabIncrement(){
     }
 }
 
+// Function which allow to create many cars
+function createMany(){
+    for(var i = 0; i < 50; i++){
+        array_brand.push("MARQUE_"+i);
+        array_year.push("ANNEE"+i);
+        array_model.push("MODEL"+i);
+        array_fuel.push("CARBURANT"+i);
+        array_price.push(0000);
+    }
+
+    $('#create_car').hide();
+    $('#show_cars').show();
+
+    tabIncrement()
+    $('.mydatatable').DataTable();
+}
+
 // Call of the tabIncrement method
 tabIncrement()
+
+// Call the method which generate the datable
+$('.mydatatable').DataTable();
 
 // Execution when the add_car button is activate
 document.getElementById('add_car').onclick = function(){
@@ -75,14 +92,10 @@ document.getElementById('add_car').onclick = function(){
 
         // Call of the tabIncrement method
         tabIncrement();
+        $('.mydatatable').DataTable();
     } else{
         $('#error').html("<span style='color:red'>Enregistrement invalide, veuillez recommencer !</span>");
     }
-    
-
-    
-
-    
 
 }
 
