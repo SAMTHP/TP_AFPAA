@@ -116,17 +116,7 @@
                     </p>
                 </div>
             </div>
-            
-            
             <br>
-            
-            <script>
-            function selectPion(xPion, yPion)   {
-                $('#x').val(xPion);
-                $('#y').val(yPion);
-                $('#submit').click();
-            }
-            </script>
             <div class="container" >
                     <table class="table table-borderless" style="box-shadow: 0px 5px 3px gray;">
                         <thead>
@@ -162,127 +152,127 @@
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">2</th>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["1"]["2"] == "⚪" || $_SESSION['tab_board']["1"]["2"] == "⚫"){echo $_SESSION['tab_board']["1"]["2"] ;}?></td>
+                                <td onClick="selectPion(1,2)"><?php if($_SESSION['tab_board']["1"]["2"] == "⚪" || $_SESSION['tab_board']["1"]["2"] == "⚫"){echo $_SESSION['tab_board']["1"]["2"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["2"]["2"] == "⚪" || $_SESSION['tab_board']["2"]["2"] == "⚫"){echo $_SESSION['tab_board']["2"]["2"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["3"]["2"] == "⚪" || $_SESSION['tab_board']["3"]["2"] == "⚫"){echo $_SESSION['tab_board']["3"]["2"] ;}?></td>
+                                <td onClick="selectPion(3,2)"><?php if($_SESSION['tab_board']["3"]["2"] == "⚪" || $_SESSION['tab_board']["3"]["2"] == "⚫"){echo $_SESSION['tab_board']["3"]["2"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["4"]["2"] == "⚪" || $_SESSION['tab_board']["4"]["2"] == "⚫"){echo $_SESSION['tab_board']["4"]["2"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["5"]["2"] == "⚪" || $_SESSION['tab_board']["5"]["2"] == "⚫"){echo $_SESSION['tab_board']["5"]["2"] ;}?></td>
+                                <td onClick="selectPion(5,2)"><?php if($_SESSION['tab_board']["5"]["2"] == "⚪" || $_SESSION['tab_board']["5"]["2"] == "⚫"){echo $_SESSION['tab_board']["5"]["2"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["6"]["2"] == "⚪" || $_SESSION['tab_board']["6"]["2"] == "⚫"){echo $_SESSION['tab_board']["6"]["2"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["7"]["2"] == "⚪" || $_SESSION['tab_board']["7"]["2"] == "⚫"){echo $_SESSION['tab_board']["7"]["2"] ;}?></td>
+                                <td onClick="selectPion(7,2)"><?php if($_SESSION['tab_board']["7"]["2"] == "⚪" || $_SESSION['tab_board']["7"]["2"] == "⚫"){echo $_SESSION['tab_board']["7"]["2"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["8"]["2"] == "⚪" || $_SESSION['tab_board']["8"]["2"] == "⚫"){echo $_SESSION['tab_board']["8"]["2"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["9"]["2"] == "⚪" || $_SESSION['tab_board']["9"]["2"] == "⚫"){echo $_SESSION['tab_board']["9"]["2"] ;}?></td>
+                                <td onClick="selectPion(9,2)"><?php if($_SESSION['tab_board']["9"]["2"] == "⚪" || $_SESSION['tab_board']["9"]["2"] == "⚫"){echo $_SESSION['tab_board']["9"]["2"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["10"]["2"] != 0){echo $_SESSION['tab_board']["10"]["2"] ;}?></td>
                                 <th class="table-active" scope="row">2</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">3</th>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["1"]["3"] == "⚪" || $_SESSION['tab_board']["1"]["3"] == "⚫"){echo $_SESSION['tab_board']["1"]["3"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["2"]["3"] == "⚪" || $_SESSION['tab_board']["2"]["3"] == "⚫"){echo $_SESSION['tab_board']["2"]["3"] ;} ?></td>
+                                <td onClick="selectPion(2,3)"><?php if($_SESSION['tab_board']["2"]["3"] == "⚪" || $_SESSION['tab_board']["2"]["3"] == "⚫"){echo $_SESSION['tab_board']["2"]["3"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["3"]["3"] == "⚪" || $_SESSION['tab_board']["3"]["3"] == "⚫"){echo $_SESSION['tab_board']["3"]["3"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["4"]["3"] == "⚪" || $_SESSION['tab_board']["4"]["3"] == "⚫"){echo $_SESSION['tab_board']["4"]["3"] ;} ?></td>
+                                <td onClick="selectPion(4,3)"><?php if($_SESSION['tab_board']["4"]["3"] == "⚪" || $_SESSION['tab_board']["4"]["3"] == "⚫"){echo $_SESSION['tab_board']["4"]["3"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["5"]["3"] == "⚪" || $_SESSION['tab_board']["5"]["3"] == "⚫"){echo $_SESSION['tab_board']["5"]["3"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["6"]["3"] == "⚪" || $_SESSION['tab_board']["6"]["3"] == "⚫"){echo $_SESSION['tab_board']["6"]["3"] ;} ?></td>
+                                <td onClick="selectPion(6,3)"><?php if($_SESSION['tab_board']["6"]["3"] == "⚪" || $_SESSION['tab_board']["6"]["3"] == "⚫"){echo $_SESSION['tab_board']["6"]["3"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["7"]["3"] == "⚪" || $_SESSION['tab_board']["7"]["3"] == "⚫"){echo $_SESSION['tab_board']["7"]["3"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["8"]["3"] == "⚪" || $_SESSION['tab_board']["8"]["3"] == "⚫"){echo $_SESSION['tab_board']["8"]["3"] ;} ?></td>
+                                <td onClick="selectPion(8,3)"><?php if($_SESSION['tab_board']["8"]["3"] == "⚪" || $_SESSION['tab_board']["8"]["3"] == "⚫"){echo $_SESSION['tab_board']["8"]["3"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["9"]["3"] == "⚪" || $_SESSION['tab_board']["9"]["3"] == "⚫"){echo $_SESSION['tab_board']["9"]["3"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["10"]["3"] == "⚪" || $_SESSION['tab_board']["10"]["3"] == "⚫"){echo $_SESSION['tab_board']["10"]["3"] ;} ?></td>
+                                <td onClick="selectPion(10,3)"><?php if($_SESSION['tab_board']["10"]["3"] == "⚪" || $_SESSION['tab_board']["10"]["3"] == "⚫"){echo $_SESSION['tab_board']["10"]["3"] ;} ?></td>
                                 <th class="table-active" scope="row">3</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">4</th>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["1"]["4"] == "⚪" || $_SESSION['tab_board']["1"]["4"] == "⚫"){echo $_SESSION['tab_board']["1"]["4"] ;}?></td>
+                                <td onClick="selectPion(1,4)"><?php if($_SESSION['tab_board']["1"]["4"] == "⚪" || $_SESSION['tab_board']["1"]["4"] == "⚫"){echo $_SESSION['tab_board']["1"]["4"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["2"]["4"]  == "⚪" || $_SESSION['tab_board']["2"]["4"] == "⚫"){echo $_SESSION['tab_board']["2"]["4"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["3"]["4"]  == "⚪" || $_SESSION['tab_board']["3"]["4"] == "⚫"){echo $_SESSION['tab_board']["3"]["4"] ;}?></td>
+                                <td onClick="selectPion(3,4)"><?php if($_SESSION['tab_board']["3"]["4"]  == "⚪" || $_SESSION['tab_board']["3"]["4"] == "⚫"){echo $_SESSION['tab_board']["3"]["4"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["4"]["4"]  == "⚪" || $_SESSION['tab_board']["4"]["4"] == "⚫"){echo $_SESSION['tab_board']["4"]["4"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["5"]["4"]  == "⚪" || $_SESSION['tab_board']["5"]["4"] == "⚫"){echo $_SESSION['tab_board']["5"]["4"] ;}?></td>
+                                <td onClick="selectPion(5,4)"><?php if($_SESSION['tab_board']["5"]["4"]  == "⚪" || $_SESSION['tab_board']["5"]["4"] == "⚫"){echo $_SESSION['tab_board']["5"]["4"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["6"]["4"]  == "⚪" || $_SESSION['tab_board']["6"]["4"] == "⚫"){echo $_SESSION['tab_board']["6"]["4"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["7"]["4"]  == "⚪" || $_SESSION['tab_board']["7"]["4"] == "⚫"){echo $_SESSION['tab_board']["7"]["4"] ;}?></td>
+                                <td onClick="selectPion(7,4)"><?php if($_SESSION['tab_board']["7"]["4"]  == "⚪" || $_SESSION['tab_board']["7"]["4"] == "⚫"){echo $_SESSION['tab_board']["7"]["4"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["8"]["4"]  == "⚪" || $_SESSION['tab_board']["8"]["4"] == "⚫"){echo $_SESSION['tab_board']["8"]["4"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["9"]["4"]  == "⚪" || $_SESSION['tab_board']["9"]["4"] == "⚫"){echo $_SESSION['tab_board']["9"]["4"] ;}?></td>
+                                <td onClick="selectPion(9,4)"><?php if($_SESSION['tab_board']["9"]["4"]  == "⚪" || $_SESSION['tab_board']["9"]["4"] == "⚫"){echo $_SESSION['tab_board']["9"]["4"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["10"]["4"]  == "⚪" || $_SESSION['tab_board']["10"]["4"] == "⚫"){echo $_SESSION['tab_board']["10"]["4"] ;}?></td>
                                 <th class="table-active" scope="row">4</th>
                             </tr >
                             <tr class="text-center">
                                 <th class="table-active" scope="row">5</th>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["1"]["5"]  == "⚪" || $_SESSION['tab_board']["1"]["5"] == "⚫"){echo $_SESSION['tab_board']["1"]["5"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["2"]["5"] == "⚪" || $_SESSION['tab_board']["2"]["5"] == "⚫"){echo $_SESSION['tab_board']["2"]["5"] ;} ?></td>
+                                <td onClick="selectPion(2,5)"><?php if($_SESSION['tab_board']["2"]["5"] == "⚪" || $_SESSION['tab_board']["2"]["5"] == "⚫"){echo $_SESSION['tab_board']["2"]["5"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["3"]["5"] == "⚪" || $_SESSION['tab_board']["3"]["5"] == "⚫"){echo $_SESSION['tab_board']["3"]["5"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["4"]["5"] == "⚪" || $_SESSION['tab_board']["4"]["5"] == "⚫"){echo $_SESSION['tab_board']["4"]["5"] ;} ?></td>
+                                <td onClick="selectPion(4,5)"><?php if($_SESSION['tab_board']["4"]["5"] == "⚪" || $_SESSION['tab_board']["4"]["5"] == "⚫"){echo $_SESSION['tab_board']["4"]["5"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["5"]["5"] == "⚪" || $_SESSION['tab_board']["5"]["5"] == "⚫"){echo $_SESSION['tab_board']["5"]["5"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["6"]["5"] == "⚪" || $_SESSION['tab_board']["6"]["5"] == "⚫"){echo $_SESSION['tab_board']["6"]["5"] ;} ?></td>
+                                <td onClick="selectPion(6,5)"><?php if($_SESSION['tab_board']["6"]["5"] == "⚪" || $_SESSION['tab_board']["6"]["5"] == "⚫"){echo $_SESSION['tab_board']["6"]["5"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["7"]["5"] == "⚪" || $_SESSION['tab_board']["7"]["5"] == "⚫"){echo $_SESSION['tab_board']["7"]["5"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["8"]["5"] == "⚪" || $_SESSION['tab_board']["8"]["5"] == "⚫"){echo $_SESSION['tab_board']["8"]["5"] ;} ?></td>
+                                <td onClick="selectPion(8,5)"><?php if($_SESSION['tab_board']["8"]["5"] == "⚪" || $_SESSION['tab_board']["8"]["5"] == "⚫"){echo $_SESSION['tab_board']["8"]["5"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["9"]["5"] == "⚪" || $_SESSION['tab_board']["9"]["5"] == "⚫"){echo $_SESSION['tab_board']["9"]["5"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["10"]["5"] == "⚪" || $_SESSION['tab_board']["10"]["5"] == "⚫"){echo $_SESSION['tab_board']["10"]["5"] ;} ?></td>
+                                <td onClick="selectPion(10,5)"><?php if($_SESSION['tab_board']["10"]["5"] == "⚪" || $_SESSION['tab_board']["10"]["5"] == "⚫"){echo $_SESSION['tab_board']["10"]["5"] ;} ?></td>
                                 <th class="table-active" scope="row">5</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">6</th>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["1"]["6"] == "⚪" || $_SESSION['tab_board']["1"]["6"] == "⚫"){echo $_SESSION['tab_board']["1"]["6"] ;}?></td>
+                                <td onClick="selectPion(1,6)"><?php if($_SESSION['tab_board']["1"]["6"] == "⚪" || $_SESSION['tab_board']["1"]["6"] == "⚫"){echo $_SESSION['tab_board']["1"]["6"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["2"]["6"] == "⚪" || $_SESSION['tab_board']["2"]["6"] == "⚫"){echo $_SESSION['tab_board']["2"]["6"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["3"]["6"] == "⚪" || $_SESSION['tab_board']["3"]["6"] == "⚫"){echo $_SESSION['tab_board']["3"]["6"] ;}?></td>
+                                <td onClick="selectPion(3,6)"><?php if($_SESSION['tab_board']["3"]["6"] == "⚪" || $_SESSION['tab_board']["3"]["6"] == "⚫"){echo $_SESSION['tab_board']["3"]["6"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["4"]["6"] == "⚪" || $_SESSION['tab_board']["4"]["6"] == "⚫"){echo $_SESSION['tab_board']["4"]["6"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["5"]["6"] == "⚪" || $_SESSION['tab_board']["5"]["6"] == "⚫"){echo $_SESSION['tab_board']["5"]["6"] ;}?></td>
+                                <td onClick="selectPion(5,6)"><?php if($_SESSION['tab_board']["5"]["6"] == "⚪" || $_SESSION['tab_board']["5"]["6"] == "⚫"){echo $_SESSION['tab_board']["5"]["6"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["6"]["6"] == "⚪" || $_SESSION['tab_board']["6"]["6"] == "⚫"){echo $_SESSION['tab_board']["6"]["6"]; }?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["7"]["6"] == "⚪" || $_SESSION['tab_board']["7"]["6"] == "⚫"){echo $_SESSION['tab_board']["7"]["6"] ;}?></td>
+                                <td onClick="selectPion(7,6)"><?php if($_SESSION['tab_board']["7"]["6"] == "⚪" || $_SESSION['tab_board']["7"]["6"] == "⚫"){echo $_SESSION['tab_board']["7"]["6"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["8"]["6"] == "⚪" || $_SESSION['tab_board']["8"]["6"] == "⚫"){echo $_SESSION['tab_board']["8"]["6"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["9"]["6"] == "⚪" || $_SESSION['tab_board']["9"]["6"] == "⚫"){echo $_SESSION['tab_board']["9"]["6"] ;}?></td>
+                                <td onClick="selectPion(9,6)"><?php if($_SESSION['tab_board']["9"]["6"] == "⚪" || $_SESSION['tab_board']["9"]["6"] == "⚫"){echo $_SESSION['tab_board']["9"]["6"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["10"]["6"] == "⚪" || $_SESSION['tab_board']["10"]["6"] == "⚫"){echo $_SESSION['tab_board']["10"]["6"] ;}?></td>
                                 <th class="table-active" scope="row">6</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">7</th>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["1"]["7"] == "⚪" || $_SESSION['tab_board']["1"]["7"] == "⚫"){echo $_SESSION['tab_board']["1"]["7"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["2"]["7"] == "⚪" || $_SESSION['tab_board']["2"]["7"] == "⚫"){echo $_SESSION['tab_board']["2"]["7"] ;} ?></td>
+                                <td onClick="selectPion(2,7)"><?php if($_SESSION['tab_board']["2"]["7"] == "⚪" || $_SESSION['tab_board']["2"]["7"] == "⚫"){echo $_SESSION['tab_board']["2"]["7"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["3"]["7"] == "⚪" || $_SESSION['tab_board']["3"]["7"] == "⚫"){echo $_SESSION['tab_board']["3"]["7"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["4"]["7"] == "⚪" || $_SESSION['tab_board']["4"]["7"] == "⚫"){echo $_SESSION['tab_board']["4"]["7"] ;} ?></td>
+                                <td onClick="selectPion(4,7)"><?php if($_SESSION['tab_board']["4"]["7"] == "⚪" || $_SESSION['tab_board']["4"]["7"] == "⚫"){echo $_SESSION['tab_board']["4"]["7"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["5"]["7"] == "⚪" || $_SESSION['tab_board']["5"]["7"] == "⚫"){echo $_SESSION['tab_board']["5"]["7"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["6"]["7"] == "⚪" || $_SESSION['tab_board']["6"]["7"] == "⚫"){echo $_SESSION['tab_board']["6"]["7"] ;} ?></td>
+                                <td onClick="selectPion(6,7)"><?php if($_SESSION['tab_board']["6"]["7"] == "⚪" || $_SESSION['tab_board']["6"]["7"] == "⚫"){echo $_SESSION['tab_board']["6"]["7"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["7"]["7"] == "⚪" || $_SESSION['tab_board']["7"]["7"] == "⚫"){echo $_SESSION['tab_board']["7"]["7"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["8"]["7"] == "⚪" || $_SESSION['tab_board']["8"]["7"] == "⚫"){echo $_SESSION['tab_board']["8"]["7"];  } ?></td>
+                                <td onClick="selectPion(8,7)"><?php if($_SESSION['tab_board']["8"]["7"] == "⚪" || $_SESSION['tab_board']["8"]["7"] == "⚫"){echo $_SESSION['tab_board']["8"]["7"];  } ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["9"]["7"] == "⚪" || $_SESSION['tab_board']["9"]["7"] == "⚫"){echo $_SESSION['tab_board']["9"]["7"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["10"]["7"] == "⚪" || $_SESSION['tab_board']["10"]["7"] == "⚫"){echo $_SESSION['tab_board']["10"]["7"];  } ?></td>
+                                <td onClick="selectPion(10,7)"><?php if($_SESSION['tab_board']["10"]["7"] == "⚪" || $_SESSION['tab_board']["10"]["7"] == "⚫"){echo $_SESSION['tab_board']["10"]["7"];  } ?></td>
                                 <th class="table-active" scope="row">7</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">8</th>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["1"]["8"] == "⚪" || $_SESSION['tab_board']["1"]["8"] == "⚫"){echo $_SESSION['tab_board']["1"]["8"] ;}?></td>
+                                <td onClick="selectPion(1,8)"><?php if($_SESSION['tab_board']["1"]["8"] == "⚪" || $_SESSION['tab_board']["1"]["8"] == "⚫"){echo $_SESSION['tab_board']["1"]["8"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["2"]["8"] == "⚪" || $_SESSION['tab_board']["2"]["8"] == "⚫"){echo $_SESSION['tab_board']["2"]["8"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["3"]["8"] == "⚪" || $_SESSION['tab_board']["3"]["8"] == "⚫"){echo $_SESSION['tab_board']["3"]["8"] ;}?></td>
+                                <td onClick="selectPion(3,8)"><?php if($_SESSION['tab_board']["3"]["8"] == "⚪" || $_SESSION['tab_board']["3"]["8"] == "⚫"){echo $_SESSION['tab_board']["3"]["8"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["4"]["8"] == "⚪" || $_SESSION['tab_board']["4"]["8"] == "⚫"){echo $_SESSION['tab_board']["4"]["8"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["5"]["8"] == "⚪" || $_SESSION['tab_board']["5"]["8"] == "⚫"){echo $_SESSION['tab_board']["5"]["8"] ;}?></td>
+                                <td onClick="selectPion(5,8)"><?php if($_SESSION['tab_board']["5"]["8"] == "⚪" || $_SESSION['tab_board']["5"]["8"] == "⚫"){echo $_SESSION['tab_board']["5"]["8"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["6"]["8"] == "⚪" || $_SESSION['tab_board']["6"]["8"] == "⚫"){echo $_SESSION['tab_board']["6"]["8"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["7"]["8"] == "⚪" || $_SESSION['tab_board']["7"]["8"] == "⚫"){echo $_SESSION['tab_board']["7"]["8"] ;}?></td>
+                                <td onClick="selectPion(7,8)"><?php if($_SESSION['tab_board']["7"]["8"] == "⚪" || $_SESSION['tab_board']["7"]["8"] == "⚫"){echo $_SESSION['tab_board']["7"]["8"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["8"]["8"] == "⚪" || $_SESSION['tab_board']["8"]["8"] == "⚫"){echo $_SESSION['tab_board']["8"]["8"] ;}?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["9"]["8"] == "⚪" || $_SESSION['tab_board']["9"]["8"] == "⚫"){echo $_SESSION['tab_board']["9"]["8"] ;}?></td>
+                                <td onClick="selectPion(9,8)"><?php if($_SESSION['tab_board']["9"]["8"] == "⚪" || $_SESSION['tab_board']["9"]["8"] == "⚫"){echo $_SESSION['tab_board']["9"]["8"] ;}?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["10"]["8"] == "⚪" || $_SESSION['tab_board']["10"]["8"] == "⚫"){echo $_SESSION['tab_board']["10"]["8"] ;}?></td>
                                 <th class="table-active" scope="row">8</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">9</th>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["1"]["9"] == "⚪" || $_SESSION['tab_board']["1"]["9"] == "⚫"){echo $_SESSION['tab_board']["1"]["9"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["2"]["9"] == "⚪" || $_SESSION['tab_board']["2"]["9"] == "⚫"){echo $_SESSION['tab_board']["2"]["9"] ;} ?></td>
+                                <td onClick="selectPion(2,9)"><?php if($_SESSION['tab_board']["2"]["9"] == "⚪" || $_SESSION['tab_board']["2"]["9"] == "⚫"){echo $_SESSION['tab_board']["2"]["9"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["3"]["9"] == "⚪" || $_SESSION['tab_board']["3"]["9"] == "⚫"){echo $_SESSION['tab_board']["3"]["9"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["4"]["9"] == "⚪" || $_SESSION['tab_board']["4"]["9"] == "⚫"){echo $_SESSION['tab_board']["4"]["9"] ;} ?></td>
+                                <td onClick="selectPion(4,9)"><?php if($_SESSION['tab_board']["4"]["9"] == "⚪" || $_SESSION['tab_board']["4"]["9"] == "⚫"){echo $_SESSION['tab_board']["4"]["9"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["5"]["9"] == "⚪" || $_SESSION['tab_board']["5"]["9"] == "⚫"){echo $_SESSION['tab_board']["5"]["9"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["6"]["9"] == "⚪" || $_SESSION['tab_board']["6"]["9"] == "⚫"){echo $_SESSION['tab_board']["6"]["9"] ;} ?></td>
+                                <td onClick="selectPion(6,9)"><?php if($_SESSION['tab_board']["6"]["9"] == "⚪" || $_SESSION['tab_board']["6"]["9"] == "⚫"){echo $_SESSION['tab_board']["6"]["9"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["7"]["9"] == "⚪" || $_SESSION['tab_board']["7"]["9"] == "⚫"){echo $_SESSION['tab_board']["7"]["9"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["8"]["9"] == "⚪" || $_SESSION['tab_board']["8"]["9"] == "⚫"){echo $_SESSION['tab_board']["8"]["9"] ;} ?></td>
+                                <td onClick="selectPion(8,9)"><?php if($_SESSION['tab_board']["8"]["9"] == "⚪" || $_SESSION['tab_board']["8"]["9"] == "⚫"){echo $_SESSION['tab_board']["8"]["9"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["9"]["9"] == "⚪" || $_SESSION['tab_board']["9"]["9"] == "⚫"){echo $_SESSION['tab_board']["9"]["9"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["10"]["9"] == "⚪" || $_SESSION['tab_board']["10"]["9"] == "⚫"){echo $_SESSION['tab_board']["10"]["9"] ;} ?></td>
+                                <td onClick="selectPion(10,9)"><?php if($_SESSION['tab_board']["10"]["9"] == "⚪" || $_SESSION['tab_board']["10"]["9"] == "⚫"){echo $_SESSION['tab_board']["10"]["9"] ;} ?></td>
                                 <th class="table-active" scope="row">9</th>
                             </tr>
                             <tr class="text-center">
                                 <th class="table-active" scope="row">10</th>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["1"]["10"] == "⚪" || $_SESSION['tab_board']["1"]["10"] == "⚫"){echo $_SESSION['tab_board']["1"]["10"] ;} ?></td>
+                                <td onClick="selectPion(1,10)"><?php if($_SESSION['tab_board']["1"]["10"] == "⚪" || $_SESSION['tab_board']["1"]["10"] == "⚫"){echo $_SESSION['tab_board']["1"]["10"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["2"]["10"] == "⚪" || $_SESSION['tab_board']["2"]["10"] == "⚫"){echo $_SESSION['tab_board']["2"]["10"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["3"]["10"] == "⚪" || $_SESSION['tab_board']["3"]["10"] == "⚫"){echo $_SESSION['tab_board']["3"]["10"] ;} ?></td>
+                                <td onClick="selectPion(3,10)"><?php if($_SESSION['tab_board']["3"]["10"] == "⚪" || $_SESSION['tab_board']["3"]["10"] == "⚫"){echo $_SESSION['tab_board']["3"]["10"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["4"]["10"] == "⚪" || $_SESSION['tab_board']["4"]["10"] == "⚫"){echo $_SESSION['tab_board']["4"]["10"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["5"]["10"] == "⚪" || $_SESSION['tab_board']["5"]["10"] == "⚫"){echo $_SESSION['tab_board']["5"]["10"] ;} ?></td>
+                                <td onClick="selectPion(5,10)"><?php if($_SESSION['tab_board']["5"]["10"] == "⚪" || $_SESSION['tab_board']["5"]["10"] == "⚫"){echo $_SESSION['tab_board']["5"]["10"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["6"]["10"] == "⚪" || $_SESSION['tab_board']["6"]["10"] == "⚫"){echo $_SESSION['tab_board']["6"]["10"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["7"]["10"] == "⚪" || $_SESSION['tab_board']["7"]["10"] == "⚫"){echo $_SESSION['tab_board']["7"]["10"] ;} ?></td>
+                                <td onClick="selectPion(7,10)"><?php if($_SESSION['tab_board']["7"]["10"] == "⚪" || $_SESSION['tab_board']["7"]["10"] == "⚫"){echo $_SESSION['tab_board']["7"]["10"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["8"]["10"] == "⚪" || $_SESSION['tab_board']["8"]["10"] == "⚫"){echo $_SESSION['tab_board']["8"]["10"] ;} ?></td>
-                                <td onClick="selectPion()"><?php if($_SESSION['tab_board']["9"]["10"] == "⚪" || $_SESSION['tab_board']["9"]["10"] == "⚫"){echo $_SESSION['tab_board']["9"]["10"] ;} ?></td>
+                                <td onClick="selectPion(9,10)"><?php if($_SESSION['tab_board']["9"]["10"] == "⚪" || $_SESSION['tab_board']["9"]["10"] == "⚫"){echo $_SESSION['tab_board']["9"]["10"] ;} ?></td>
                                 <td style="background-color: #994d00"><?php if($_SESSION['tab_board']["10"]["10"] == "⚪" || $_SESSION['tab_board']["10"]["10"] == "⚫"){echo $_SESSION['tab_board']["10"]["10"] ;} ?></td>
                                 <th class="table-active" scope="row">10</th>
                             </tr>
@@ -315,5 +305,6 @@
       
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="../../js/saison10/dame/main.js"></script>
   </body>
 </html>

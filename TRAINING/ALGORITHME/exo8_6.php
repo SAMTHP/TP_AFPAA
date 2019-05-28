@@ -16,9 +16,8 @@ $array = [
     [22,28,117,215,67,80,99,87]
 ];
 
-$max = 0;
-
 for($i=0;$i<count($array);$i++){
+    $max = $array[$i][0];
     for($j=0;$j<count($array[$i]);$j++){
         if($array[$i][$j] > $max ){
             $max = $array[$i][$j];
