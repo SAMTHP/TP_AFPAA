@@ -169,19 +169,81 @@ SET @moyenne = (SELECT AVG(pilote.salaire_brut) FROM pilote);
 
 SELECT pilote.nom AS "Nom pilote", pilote.salaire_brut AS "Salaire pilote", @moyenne AS "Moyenne salaire" FROM pilote WHERE pilote.salaire_brut > @moyenne;
 
+# 39 Quels sont les noms des pilotes qui conduisent un avion que conduit aussi le pilote n°1 ?
+
+SELECT DISTINCT(vol.pil_num) AS "Numéro pilote", pilote.nom AS 'Nom pilote', vol.av_num AS "Numéro avion" FROM pilote, vol WHERE pilote.pil_num = vol.pil_num AND pilote.pil_num <> '1' AND vol.av_num IN (SELECT vol.av_num FROM vol WHERE vol.pil_num = '1');
+
+# 40 Quel est le taux de remplissage des vols ?
+
+
+
+# 41 Quel est le taux de remplissage des liaisons (ville de départ, ville d’arrivée) du 01/11/2008 ?
+
+
+
+# 42 Donnez le code et le nom des pilotes qui ne sont pas affectés à un vol.
+
+SELECT pilote.nom AS "Nom pilote" FROM pilote WHERE pilote.pil_num NOT IN(SELECT vol.pil_num FROM vol);
+
+# 43 Quels sont les numéros des vols auxquels qui ne sont affectés aucun passager ?
+
+SELECT vol.vol_num AS "Numéro de vol" FROM vol WHERE vol.av_num  NOT IN(SELECT affectevol.vol_num FROM affectevol);
+
+# 44 Quels sont les noms des passagers affectés à aucun vol ?
+
+SELECT passager.nom AS "Nom passager" FROM passager WHERE passager.pas_num  NOT IN(SELECT affectevol.pas_num FROM affectevol);
 
 #------------------------------------------------------------
 #   Requêtes utilisant les fonctions intégrées de traitement de date
 #------------------------------------------------------------
 
+# 45 Donnez la liste des pilotes qui prendront leur retraite dans les 2 ans à venir (60 ans) avec le montant de leur indemnité de départ (1 mois de salaire brut par année d’ancienneté).
+
+SELECT pilote.nom AS "Nom pilote",(DATEDIFF(DATE(NOW()),pilote.date_naissance)/365) FROM pilote WHERE (DATEDIFF(DATE(NOW()),pilote.date_naissance)/365) BETWEEN '58' AND '60';
+
+# 46 Créez une vue qui permet d’extraire les coordonnées des pilotes dont la date d’anniversaire est J+5, J étant la date d’exécution de la requête. Vous calculerez de plus l’âge du pilote.
+
+CREATE VIEW INDEMNITE_PILOTE AS
+SELECT * ,(DATEDIFF(DATE(NOW()),pilote.date_naissance)/365) AS "Age pilote",(YEAR(DATE(NOW())) - YEAR(pilote.date_debut_activite)) AS 'Ancienneté',(YEAR(DATE(NOW())) - YEAR(pilote.date_debut_activite)) * pilote.salaire_brut AS 'Indemnité de départ' FROM pilote WHERE (DATEDIFF(DATE(NOW()),pilote.date_naissance)/365) BETWEEN '58' AND '60';
+
+SELECT * FROM INDEMNITE_PILOTE;
+
+DROP VIEW INDEMNITE_PILOTE;
+
 #------------------------------------------------------------
 #   Requêtes de mise à jour
 #------------------------------------------------------------
+
+# 47 Réduisez de 5 (€) le prix des places du vol 103.
+
+UPDATE affectevol SET prix = prix - 5 WHERE affectevol.vol_num = '103';
+
+# 48 La compagnie aérienne souhaite réaliser une augmentation générale de ces pilotes. Les règles de l’augmentation sont les suivantes : 
+3 % pour les salaires inférieurs à 2 250 €, 
+2 % pour les salaires compris entre 2 250 et 5 250 €, 
+0,5 % pour les salaires supérieurs à 5 250 €.
+Utilisez une seule requête et la clause conditionnelle CASE.
+
+UPDATE pilote SET salaire_brut = (
+    CASE 
+        WHEN salaire_brut < 2250 THEN salaire_brut * 1.03
+        WHEN salaire_brut BETWEEN 2250 AND 5250 THEN salaire_brut * 1.02
+        ELSE salaire_brut * 1.005
+    END
+)
 
 #------------------------------------------------------------
 #   Requêtes ajout
 #------------------------------------------------------------
 
+# 49 La compagnie vient d’embaucher un nouveau pilote. Il s’agit de Tanguy. Il entre dans la compagnie aujourd’hui. Son salaire de base est de 900 €. Il est domicilié à Toulouse.
+
+INSERT INTO pilote(nom,ville,date_naissance,date_debut_activite,date_fin_activite,salaire_brut) VALUES('Tanguy','Toulouse',NULL,DATE(NOW()),NULL,900);
+
 #------------------------------------------------------------
 #   Requêtes de suppression
 #------------------------------------------------------------
+
+# 50 Supprimer les passagers habitant Brive.
+
+DELETE FROM passager WHERE passager.ville = 'Brive';
