@@ -175,11 +175,15 @@ SELECT DISTINCT(vol.pil_num) AS "Numéro pilote", pilote.nom AS 'Nom pilote', vo
 
 # 40 Quel est le taux de remplissage des vols ?
 
+SET @nb_passager = 100;
 
+SELECT vol.vol_num AS "Numéro vol", vol.av_num AS "Numéro d'avion", @nb_passager / avion.capacite AS 'Taux de remplissage' FROM vol JOIN avion ON vol.av_num = avion.av_num;
 
 # 41 Quel est le taux de remplissage des liaisons (ville de départ, ville d’arrivée) du 01/11/2008 ?
 
+SET @nb_passager = 100;
 
+SELECT DISTINCT(@nb_passager / avion.capacite) AS 'Taux de remplissage' FROM affectevol, vol, avion WHERE affectevol.date_vol = '2008-11-01' AND affectevol.vol_num = vol.vol_num AND vol.av_num = avion.av_num;
 
 # 42 Donnez le code et le nom des pilotes qui ne sont pas affectés à un vol.
 

@@ -89,10 +89,10 @@ $damier = [
 /***  DEMMARAGE DU JEU ***/
 
 // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LES ABSCISSES
-$x = $_POST['x'];
+$x = $xInit= $_POST['x'];
 
 // DECLARATION ET INITIALISATION DE LA VARIABLE QUI VA RECUPERER LES ORDONNES
-$y = $_POST['y'];
+$y = $xIniY= $_POST['y'];
 
 // AFFECTATION DU TABLEAU EN FONCTION DU CHOIX UTILISATEUR
 $damier[$x][$y] = "🔘" ;
@@ -100,7 +100,7 @@ $damier[$x][$y] = "🔘" ;
 /***  GESTION DES ERREURS  ***/
 
 // DECLARATION ET INITIALISATION DU DRAPEAU A FAUX
-$flag = false;
+$flag = true;
 
 /***  COMMANDES DU DAMIER ***/
 
@@ -108,78 +108,43 @@ $flag = false;
 if(isset($_POST['left-top'])){
 	// TEST SI LA CASE EST VALIDE
 	if(isset($damier[$x-1][$y-1])){
-		// ETAPE 1 : RESET DE LA CASE PRECEDENTE
-		$damier[$x][$y] = "" ;
-
 		// ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
 		$x -= 1;
 		$y -= 1;
 
-		// ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
-		$damier[$x][$y] = "🔘" ;
-
 		// ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
 		$flag = false;
-	} else {
-		// AFFICHAGE DE L'ERREUR
-		$flag = true;
 	}
 }elseif(isset($_POST['right-top'])){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
 	// TEST SI LA CASE EST VALIDE
 	if(isset($damier[$x+1][$y-1])){
-		// ETAPE 1 : RESET DE LA CASE PRECEDENTE
-		$damier[$x][$y] = "" ;
-		
 		// ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
 		$x += 1;
 		$y -= 1;
 
-		// ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
-		$damier[$x][$y] = "🔘" ;
-
 		// ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
 		$flag = false;
-	} else {
-		// AFFICHAGE DE L'ERREUR
-		$flag = true;
 	}
 }elseif(isset($_POST['left-bottom'])){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
 	// TEST SI LA CASE EST VALIDE
 	if(isset($damier[$x-1][$y+1])){
-		// ETAPE 1 : RESET DE LA CASE PRECEDENTE
-		$damier[$x][$y] = "" ;
-		
 		// ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
 		$x -= 1;
 		$y += 1;
 
-		// ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
-		$damier[$x][$y] = "🔘" ;
-
 		// ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
 		$flag = false;
-	} else {
-		// AFFICHAGE DE L'ERREUR
-		$flag = true;
 	}
 }elseif(isset($_POST['right-bottom'])){ // ETAPE 0 : TEST SI LE BOUTON LEFT-TOP A ETE ACTIVE
 	// TEST SI LA CASE EST VALIDE
 	if(isset($damier[$x+1][$y+1])){
-		// ETAPE 1 : RESET DE LA CASE PRECEDENTE
-		$damier[$x][$y] = "" ;
-		
+	
 		// ETAPE 2 : MODIFICATIONS DES ABSCISSES ET DES ORDONNES
 		$x += 1;
 		$y += 1;
 
-		// ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
-		$damier[$x][$y] = "🔘" ;
-
 		// ETAPE 4 : PASSAGE DE L'ERREUR A FAUX
 		$flag = false;
-	} else {
-		// AFFICHAGE DE L'ERREUR
-		$flag = true;
 	}
 }
 
@@ -192,4 +157,12 @@ $msg ="";
 if($flag){
 	// AFFICHAGE ET AFFECTATION DE LA VARIABLE POUR LE MESSAGE D'ERREUR
 	$msg = "Vous ne pouvez pas sortir du damier ! 🤣🤣🤣";
+}  else  {
+		// ETAPE 1 : RESET DE LA CASE PRECEDENTE
+		$damier[$xInit][$yInit] = "" ;
+                
+        // ETAPE 3 : DEPLACEMENT SUR LA CASE VOULUE
+        $damier[$x][$y] = "🔘" ;
+
+
 }
