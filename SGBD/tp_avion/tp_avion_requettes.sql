@@ -129,7 +129,7 @@ SELECT pilote.nom AS nom_pilote, count(*) AS nbvol FROM pilote, vol WHERE pilote
 
 # 29 Quel est le nombre de types d’avion différents que conduit chaque pilote ?
 
-SELECT DISTINCT vol.pil_num, pilote.nom, COUNT(DISTINCT avion.type_avion) FROM pilote JOIN vol JOIN avion ON pilote.pil_num = vol.pil_num AND vol.av_num = avion.av_num GROUP BY vol.pil_num ORDER BY pilote.nom;
+SELECT DISTINCT vol.pil_num AS 'Identificaiton pilote', pilote.nom AS 'Nom pilote', COUNT(DISTINCT avion.type_avion) AS "Nombre type d'avion" FROM pilote JOIN vol JOIN avion ON pilote.pil_num = vol.pil_num AND vol.av_num = avion.av_num GROUP BY vol.pil_num ORDER BY pilote.nom;
 
 # 30 Quels sont les noms des pilotes qui habitent dans la ville de localisation d un Airbus ?
 
@@ -157,7 +157,7 @@ SELECT vol.vol_num AS 'Numéro de vol' FROM vol WHERE (ville_depart, ville_arriv
 
 # 36 Donnez toutes les paires de pilotes habitant la même ville (si possible sans doublon).
 
-SELECT pilote_initial.ville AS 'Ville', pilote_initial.nom AS 'Nom pilote_initial', pilote_compare.nom AS 'Nom pilote_compare' FROM pilote AS pilote_initial JOIN pilote AS pilote_compare ON pilote_initial.ville = pilote_compare.ville AND pilote_initial.nom <> pilote_compare.nom;
+SELECT pilote_initial.ville AS 'Ville pilote initial', pilote_initial.nom AS 'Nom pilote_initial', pilote_compare.ville AS 'Ville pilote comparé', pilote_compare.nom AS 'Nom pilote comparé' FROM pilote AS pilote_initial JOIN pilote AS pilote_compare ON pilote_initial.ville = pilote_compare.ville AND pilote_initial.nom <> pilote_compare.nom;
 
 # 37 Donner toutes les paires de villes telles qu'un avion localisé dans la ville de départ soit conduit par un pilote résidant dans la ville d'arrivée.
 
