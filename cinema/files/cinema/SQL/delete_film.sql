@@ -1,0 +1,1 @@
+delete from film where id_film=@id_film

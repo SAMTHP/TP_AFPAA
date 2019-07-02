@@ -1,0 +1,1 @@
+select id_film, titre_film, date_film, duree_film from film where id_film=@id_film

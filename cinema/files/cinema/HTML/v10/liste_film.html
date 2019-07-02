@@ -1,0 +1,91 @@
+			<script type="text/javascript">
+			
+			function updateFilm()	{
+				var datas = {
+					bJSON: 1,
+					id_film: 39, 
+					titre_film: "Anthony et les minimois", 
+					date_film: "2028-11-05", 
+					duree_film: 59, 
+					page: "update_film_ajax"
+				}
+				$.ajax(
+					{
+						type: "POST",
+						url: "route.php",
+						async: true,
+						data: datas,
+						dataType: "json",
+						cache: false,
+
+					})
+					.done(function(result)
+					{
+						alert(result[0]["texte"]);
+						if (result[0]["error"] == 0)	{
+							// je met à jour mon affichage
+						}
+					})
+					.fail(function(err)
+					{
+						alert('error : ' + err.status);
+					}
+				);
+
+			}			
+			function listeFilmDatas()	{
+				var datas = {
+					bJSON: 1,
+					sPrenom: "JiJou" , 
+					page: "liste_film_ajax"
+				}
+				$.ajax(
+					{
+						type: "POST",
+						url: "route.php",
+						async: true,
+						data: datas,
+						dataType: "json",
+						cache: false,
+
+					})
+					.done(function(arrayOfListeFilms)
+					{
+						var sHTML= "";
+						sHTML+= "<tr>";
+						sHTML+= "<td>ID FILM</td>";
+						sHTML+= "<td>TITRE</td>";
+						sHTML+= "<td>DATE</td>";
+						sHTML+= "<td>DUREE</td>";
+						sHTML+= "<td>EDITION</td>";
+						sHTML+= "<td>SUPPRESSION</td>";
+						sHTML+= "</tr>";
+						for(var ligne in arrayOfListeFilms)	{
+							sHTML+= "<tr>";
+							sHTML+= "<td>" + arrayOfListeFilms[ligne]["id_film"] + "</td>";
+							sHTML+= "<td>" + arrayOfListeFilms[ligne]["titre_film"] + "</td>";
+							sHTML+= "<td>" + arrayOfListeFilms[ligne]["date_film"] + "</td>";
+							sHTML+= "<td>" + arrayOfListeFilms[ligne]["duree_film"] + "</td>";
+							sHTML+= "<td><a href=\"route.php?page=edit_film&id_film=" + arrayOfListeFilms[ligne]["id_film"] + "\">EDIT</a></td>";
+							sHTML+= "<td><a href=\"route.php?page=supprime_film&id_film=" + arrayOfListeFilms[ligne]["id_film"] + "\">X</a></td>";
+							sHTML+= "</tr>";
+						}
+						$('#table_liste_film').html(sHTML);
+					})
+					.fail(function(err)
+					{
+						alert('error : ' + err.status);
+					}
+				);
+
+			}
+			$(document).ready(function() {
+				listeFilmDatas();
+			});
+			</script>
+			<h1>Liste des films</h1>
+			<hr>
+			<table border="1" align="center" id="table_liste_film">
+
+			</table>
+			

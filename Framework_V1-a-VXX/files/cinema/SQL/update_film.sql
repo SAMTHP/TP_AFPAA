@@ -1,0 +1,1 @@
+update film set titre_film="@titre_film", date_film="@date_film", duree_film=@duree_film where id_film=@id_film

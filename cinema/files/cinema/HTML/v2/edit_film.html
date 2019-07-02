@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Liste de mes films</title>
+		<meta charset="utf-8">
+		<meta name="description" content="165c. uniques">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- main css and js -->
+		<style type="text/css">
+		table {
+			text-align: center;
+		}
+		td {
+			margin: 15px;
+			padding: 10px;
+		}
+		h1 {
+			text-align: center;
+		}
+		</style>
+	</head>
+
+<body>
+
+	<div id="page">
+		<!-- Entête de la zone considérée -->
+		<header></header>
+
+		<!-- Nav. principale de la page -->
+		<nav>
+			<?php include $GLOBALS_INI["PATH_HOME"] . $GLOBALS_INI["PATH_FILES"] . $version . "/nav_film.html" ?>
+		</nav>
+
+		<!-- Les à-cotés de la page -->
+		<aside></aside>
+
+		<!-- Contenu textuel de la page -->
+		<section>
+			<h1>Edition d'un film</h1>
+			<hr>
+			<form action="update_film.php" method="POST">
+				<p>
+					ID du film : 
+					<input type="text" name="id_film" id="id_film" value="<?= $resultat[0]["id_film"] ?>">
+				</p>
+				<p>
+					Titre du film : 
+					<input type="text" name="titre_film" id="titre_film" value="<?= $resultat[0]["titre_film"] ?>">
+				</p>
+				<p>
+					Date du film (format aaaa-mm-jj) : 
+					<input type="text" name="date_film" id="date_film" value="<?= $resultat[0]["date_film"] ?>" size="10">
+				</p>
+				<p>
+					Durée du film (en minutes) : 
+					<input type="text" name="duree_film" id="duree_film" value="<?= $resultat[0]["duree_film"] ?>" size="4">
+				</p>
+				<p>
+					<input type="submit" value="METTRE A JOUR">
+				</p>
+			</form>
+		</section>
+
+		<!-- Pied-de-page de la page -->
+		<footer></footer>
+	</div>
+
+</body>
+</html>
+

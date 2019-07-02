@@ -1,0 +1,1 @@
+insert into film (titre_film, date_film, duree_film) values ("@titre_film", "@date_film", @duree_film)

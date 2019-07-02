@@ -1,0 +1,1 @@
+select * from acteur where id_acteur=@id_acteur;

@@ -1,0 +1,1 @@
+select id_film, titre_film, date_film, duree_film from film order by titre_film
