@@ -87,3 +87,27 @@ VALUES(3,4,199);
 Requette numéro 12: Afficher le prix de toutes les catégorie de chambres selon les différentes classes
 
 SELECT categorie.code_categorie AS "Type catégorie",classe.nombre_etoile_classe AS "Nombre d'étoiles",facturer.prix_categorie_chambre AS "Prix de la catégorie de chambre" FROM categorie JOIN classe JOIN facturer;
+
+# Requette numéro 13 : Ajout d°une chambre
+
+INSERT INTO chambre(num_chambre,tel_chambre,id_hotel,id_categorie) VALUES("115B","0505050505",4,3);
+
+# Requette numéro 14 : Ajout d°un hotel
+
+INSERT INTO hotel(num_hotel,nom_hotel,adresse_hotel,CPH_hotel,tel_hotel,id_class) VALUES(1154,"IBIS PLUS","1 rue de SQL","IBISSQL","0505050505",5)
+
+# Requette numéro 15 : Update d°un hotel
+
+UPDATE hotel SET nom_hotel = "IBIS PLUS PLUS" WHERE id_hotel = 1154;
+
+# Requette numéro 16 : Afficher les noms d°hotel, qui ont une deuxième classe
+
+SELECT hotel.nom_hotel AS "Nom hotel" FROM hotel JOIN classe ON hotel.id_class = classe.id_class AND classe.nombre_etoile_classe = 2;
+
+# Requette numéro 17 : Afficher les noms des clients, leurs numéros de chambres, et le nom de l°hotel 
+
+SELECT nom_client AS "NOM CLIENT", num_chambre AS "NUMERO DE CHAMBRE", nom_hotel AS "NOM HOTEL" FROM client JOIN reservation JOIN chambre JOIN hotel ON reservation.id_client = client.id_client AND chambre.id_chambre = reservation.id_chambre AND chambre.id_hotel = hotel.id_hotel;  
+
+# Requette numéro 18 : Supprimer la classe avec l°id 4
+
+DELETE FROM classe WHERE classe.id_class = 4;
